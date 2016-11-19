@@ -4,8 +4,7 @@
     <div class="ui fixed inverted menu">
       <div class="ui container">
         <a href="#" class="header item">
-          <img class="logo" src="assets/images/logo.png">
-          Project Name
+          VueJS 2 Test
         </a>
         <a href="#" class="item">Home</a>
         <div class="ui simple dropdown item">
@@ -29,7 +28,10 @@
       </div>
     </div>
 
+    <div class="ui container" style="margin-top: 50px;"><todos></todos></div>
+
   </div>
+
 </template>
 
 <script>
@@ -44,6 +46,9 @@ export default {
 </script>
 
 <style>
+  body {
+    background: ghostwhite;
+  }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -51,5 +56,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
 }
 </style>
