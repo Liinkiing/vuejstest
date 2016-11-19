@@ -5,7 +5,7 @@
     </header>
     <section class="main">
       <ul class="todo-list">
-        <li class="todo" :class="{'completed': todo.complete}" v-for="todo in todos">
+        <li class="todo" :class="{'completed': todo.complete}" v-for="todo in filteredTodos">
           <div class="view">
             <input type="checkbox" v-model="todo.complete" class="toggle">
             <label>{{ todo.name }}</label>
@@ -46,6 +46,20 @@
     computed: {
       remainingTodos () {
         return this.todos.filter(todo => !todo.complete ).length
+      },
+      filteredTodos () {
+        switch (this.filter){
+          case 'all':
+            return this.todos.filter((todo, index, array) => array );
+            break;
+          case 'todo':
+            return this.todos.filter(todo => !todo.complete );
+            break;
+          case 'done':
+            return this.todos.filter(todo => todo.complete );
+            break;
+        }
+
       }
     },
     methods: {
@@ -55,18 +69,6 @@
       },
       changeFilter(filter) {
         this.filter = filter;
-        switch (filter){
-          case 'all':
-            this.todos.filter((todo, index, array) => {return array} )
-            break;
-          case 'todo':
-            this.todos.filter(todo => {return !todo.complete} )
-
-            break;
-          case 'done':
-            this.todos.filter(todo => {return todo.complete} )
-            break;
-        }
       }
     }
   }
