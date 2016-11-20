@@ -32,28 +32,39 @@
 			<todos></todos>
 		</div>
 
+		<div class="ui container" style="margin-top: 50px;">
+			<h1>Carousel component</h1>
+			<carousel>
+				<carousel-slide v-for="n in 9" :index="n - 1">
+					<div style="position:absolute; left:0; right: 0; text-align:center; top: 50%; color: #FFF; font-size:16px; padding: 20px; background: rgba(0,0,0,0.5); width: 100%;"><h2>Slide n°{{ n }}</h2></div>
+					<img :src="'http://lorempicsum.com/futurama/600/400/' + n" width="100%" >
+				</carousel-slide>
+			</carousel>
+		</div>
+
+
 	</div>
 
 </template>
 
 <script>
 	import Todos from './components/Todos'
+	import Carousel from './components/carousel/Carousel'
+	import CarouselSlide from './components/carousel/CarouselSlide'
 
 	export default {
 		name: 'app',
 		components: {
-			Todos
+			Todos,
+			Carousel,
+			CarouselSlide
 		}
 	}
 </script>
 
 <style>
-	body {
-		background: ghostwhite;
-	}
 
 	#app {
-		font-family: 'Bk Avenir Book', Helvetica, Arial, sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
