@@ -34,14 +34,34 @@
 
 		<div class="ui container" style="margin-top: 50px;">
 			<h1>Carousel component</h1>
-			<carousel>
+			<carousel style="width: 48%; display: inline-block; vertical-align: top;" :autoplay="false" slide-duration="200">
 				<carousel-slide v-for="n in 9" :index="n - 1">
-					<div style="position:absolute; left:0; right: 0; text-align:center; top: 50%; color: #FFF; font-size:16px; padding: 20px; background: rgba(0,0,0,0.5); width: 100%;"><h2>Slide n°{{ n }}</h2></div>
-					<img :src="'http://lorempicsum.com/futurama/600/400/' + n" width="100%" >
+					<img :src="'http://lorempicsum.com/futurama/600/450/' + n">
 				</carousel-slide>
 			</carousel>
+			<carousel style="width: 48%; display: inline-block;" :autoplay="false" slide-duration="400">
+				<carousel-slide v-for="n in 4" :index="n - 1">
+					<img :src="'http://lorempicsum.com/rio/200/200/' + n">
+				</carousel-slide>
+			</carousel>
+			<br><br><br><br>
 		</div>
 
+		<carousel autoplay="true" slide-duration="5000" style="width: 1400px; margin: 0 auto;">
+			<carousel-slide :index="0">
+				<img src="https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg" height="1000">
+			</carousel-slide>
+			<carousel-slide :index="1">
+				<img src="https://static.pexels.com/photos/30986/pexels-photo.jpg" height="1000">
+			</carousel-slide>
+			<carousel-slide :index="2">
+				<img src="https://static.pexels.com/photos/190076/pexels-photo-190076.jpeg" height="1000">
+			</carousel-slide>
+			<carousel-slide :index="3">
+				<img src="https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg" height="1000">
+			</carousel-slide>
+		</carousel>
+		<br><br><br><br>
 
 	</div>
 
@@ -62,7 +82,24 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		font: 14px 'Avenir LT Std 35 Light', Helvetica, Arial, sans-serif;
+		line-height: 1.4em;
+		background: #f5f5f5;
+		color: #4d4d4d;
+		min-width: 230px;
+		max-width: 1920px;
+		margin: 0 auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-font-smoothing: antialiased;
+		font-smoothing: antialiased;
+		font-weight: 300;
+	}
 
 	#app {
 		-webkit-font-smoothing: antialiased;
