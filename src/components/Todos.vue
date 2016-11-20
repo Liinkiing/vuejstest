@@ -98,14 +98,14 @@
 				this.todos = this.todos.filter(t => t !== todo)
 			},
 			editTodo (todo) {
-				this.oldTodoText = todo.name
+				this.oldTodoText = todo.name;
 				this.editing = todo;
 			},
 			doneEditing() {
 				this.editing = null
 			},
 			cancelEditing() {
-				this.editing.name = this.oldTodoText
+				this.editing.name = this.oldTodoText;
 				this.doneEditing()
 			},
 			removeDoneTodos () {
@@ -114,6 +114,12 @@
 			changeFilter(filter) {
 				this.filter = filter;
 			}
+		},
+		mounted () {
+			this.todos = this.$localStorage.get('todos');
+		},
+		updated () {
+			this.$localStorage.set('todos', this.todos);
 		},
 		directives: {
 			focus (el, value) {
