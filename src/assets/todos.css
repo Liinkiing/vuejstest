@@ -1,3 +1,4 @@
+
 html,
 body {
 	margin: 0;
@@ -252,6 +253,7 @@ label[for='toggle-all'] {
 	color: #777;
 	padding: 10px 15px;
 	height: 38px;
+	max-height: 38px;
 	text-align: center;
 	border-top: 1px solid #e6e6e6;
 }
