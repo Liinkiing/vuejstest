@@ -34,50 +34,60 @@
 
 		<div class="ui container" style="margin-top: 50px;">
 			<h1>Carousel component</h1>
-			<carousel style="width: 48%; display: inline-block; vertical-align: top;" :autoplay="false" slide-duration="200">
+			<carousel style="width: 48%; display: inline-block; vertical-align: top;" :autoplay="false" slide-duration="500">
 				<carousel-slide v-for="n in 9" :index="n - 1">
 					<img :src="'http://lorempicsum.com/futurama/600/450/' + n">
 				</carousel-slide>
 			</carousel>
-			<carousel style="width: 48%; display: inline-block;" :autoplay="false" slide-duration="400">
-				<carousel-slide v-for="n in 4" :index="n - 1">
-					<img :src="'http://lorempicsum.com/rio/200/200/' + n">
-				</carousel-slide>
-			</carousel>
-			<br><br><br><br>
-		</div>
+			<!--<carousel style="width: 48%; display: inline-block;" :autoplay="false" slide-duration="400">-->
+				<!--<carousel-slide v-for="n in 4" :index="n - 1">-->
+					<!--<img :src="'http://lorempicsum.com/rio/200/200/' + n">-->
+				<!--</carousel-slide>-->
+			<!--</carousel>-->
+			<!--<br><br><br><br>-->
+		<!--</div>-->
 
-		<carousel autoplay="true" slide-duration="5000" style="width: 1400px; margin: 0 auto;">
-			<carousel-slide :index="0">
-				<img src="https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg" height="1000">
-			</carousel-slide>
-			<carousel-slide :index="1">
-				<img src="https://static.pexels.com/photos/30986/pexels-photo.jpg" height="1000">
-			</carousel-slide>
-			<carousel-slide :index="2">
-				<img src="https://static.pexels.com/photos/190076/pexels-photo-190076.jpeg" height="1000">
-			</carousel-slide>
-			<carousel-slide :index="3">
-				<img src="https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg" height="1000">
-			</carousel-slide>
-		</carousel>
+		<!--<carousel autoplay="true" slide-duration="5000" style="width: 1400px; margin: 0 auto;">-->
+			<!--<carousel-slide :index="0">-->
+				<!--<img src="https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg" height="1000">-->
+			<!--</carousel-slide>-->
+			<!--<carousel-slide :index="1">-->
+				<!--<img src="https://static.pexels.com/photos/30986/pexels-photo.jpg" height="1000">-->
+			<!--</carousel-slide>-->
+			<!--<carousel-slide :index="2">-->
+				<!--<img src="https://static.pexels.com/photos/190076/pexels-photo-190076.jpeg" height="1000">-->
+			<!--</carousel-slide>-->
+			<!--<carousel-slide :index="3">-->
+				<!--<img src="https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg" height="1000">-->
+			<!--</carousel-slide>-->
+		<!--</carousel>-->
 		<br><br><br><br>
+		<tabs-container>
+			<tab header="Test 1" :index="0">wesh</tab>
+			<tab header="Et moi un autre" :index="1">wesh morray</tab>
+			<tab header="Et moi encore un pp" :index="2">wesh morray c'est encore moi</tab>
+		</tabs-container>
 
 	</div>
 
+	</div>
 </template>
 
 <script>
 	import Todos from './components/Todos'
 	import Carousel from './components/carousel/Carousel'
 	import CarouselSlide from './components/carousel/CarouselSlide'
+	import Tab from './components/tabs/Tab';
+	import TabsContainer from './components/tabs/TabsContainer';
 
 	export default {
 		name: 'app',
 		components: {
 			Todos,
 			Carousel,
-			CarouselSlide
+			CarouselSlide,
+			Tab,
+			TabsContainer
 		}
 	}
 </script>

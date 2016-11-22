@@ -10,6 +10,7 @@
 				 :class="{active: activeSlide == slide.index}"></div>
 		</div>
 	</div>
+
 </template>
 <style lang="scss">
 	.carousel {
