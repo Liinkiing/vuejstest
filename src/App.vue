@@ -34,39 +34,95 @@
 
 		<div class="ui container" style="margin-top: 50px;">
 			<h1>Carousel component</h1>
-			<carousel style="width: 48%; display: inline-block; vertical-align: top;" :autoplay="false" slide-duration="500">
+			<h2>Carousel avec autoplay à 'false'</h2>
+			<carousel style="width: 48%; display: inline-block; vertical-align: top;" :autoplay="false"
+					  slide-duration="500">
 				<carousel-slide v-for="n in 9" :index="n - 1">
 					<img :src="'http://lorempicsum.com/futurama/600/450/' + n">
 				</carousel-slide>
 			</carousel>
-			<!--<carousel style="width: 48%; display: inline-block;" :autoplay="false" slide-duration="400">-->
-				<!--<carousel-slide v-for="n in 4" :index="n - 1">-->
-					<!--<img :src="'http://lorempicsum.com/rio/200/200/' + n">-->
-				<!--</carousel-slide>-->
-			<!--</carousel>-->
-			<!--<br><br><br><br>-->
-		<!--</div>-->
+			<pre><code class="language-markup" style="text-align: left;">
+&lt;carousel style="width: 48%; display: inline-block; vertical-align: top;" :autoplay="false" slide-duration="500">
+		&lt;carousel-slide v-for="n in 9" :index="n - 1">
+				&lt;img :src="'http://lorempicsum.com/futurama/600/450/' + n">
+		&lt;/carousel-slide>
+&lt;/carousel>
+			</code></pre>
+			<h2>Carousel avec autoplay à 'true' et slide-duration: 2500</h2>
+			<carousel style="width: 48%; display: inline-block;" :autoplay="true" slide-duration="2500">
+				<carousel-slide v-for="n in 4" :index="n - 1">
+					<img :src="'http://lorempicsum.com/rio/200/200/' + n">
+				</carousel-slide>
+			</carousel>
+			<pre><code class="language-markup" style="text-align: left;">
+&lt;carousel style="width: 48%; display: inline-block; vertical-align: top;" :autoplay="true" slide-duration="2500">
+		&lt;carousel-slide v-for="n in 9" :index="n - 1">
+				&lt;img :src="'http://lorempicsum.com/futurama/600/450/' + n">
+		&lt;/carousel-slide>
+&lt;/carousel>
+			</code></pre>
+			<br><br>
+			<h2>Tab component</h2>
+			<tabs-container>
+				<tab header="Et moi un autre" :index="0">wesh morray</tab>
+				<tab header="Et moi encore un pp" :index="1">wesh morray c'est encore moi <br>
+					<tabs-container>
+						<tab header="sous tab" :index="0">XD</tab>
+						<tab header="sous tab 2" :index="1">XD 2
+							<tabs-container>
+								<tab header="sous tab" :index="0">XD</tab>
+								<tab header="sous tab 2" :index="1">Des onglets dans des onglets dans des onglets
+									<tabs-container>
+										<tab header="sous tab" :index="0">XD</tab>
+										<tab header="sous tab 2" :index="1">Des onglets dans des onglets dans des
+											onglets dans des onglets
+											<tabs-container>
+												<tab header="sous tab" :index="0">XD</tab>
+												<tab header="sous tab 2" :index="1">Des onglets dans des onglets dans
+													des onglets dans des onglets dans des onglets
+													<tabs-container>
+														<tab header="sous tab" :index="0">XD</tab>
+														<tab header="sous tab 2" :index="1">Des onglets dans des onglets
+															dans des onglets dans des onglets dans des onglets dans des
+															onglets
+															<tabs-container>
+																<tab header="sous tab" :index="0">XD</tab>
+																<tab header="sous tab 2" :index="1">Des onglets dans des
+																	onglets dans des onglets dans des onglets dans des
+																	onglets dans des onglets dans des onglets
+																	<tabs-container>
+																		<tab header="sous tab" :index="0">XD</tab>
+																		<tab header="sous tab 2" :index="1">Tu te fais
+																			du mal à aller jusque là
+																		</tab>
+																	</tabs-container>
+																</tab>
+															</tabs-container>
+														</tab>
+													</tabs-container>
+												</tab>
+											</tabs-container>
+										</tab>
+									</tabs-container>
+								</tab>
+							</tabs-container>
+						</tab>
+					</tabs-container>
+				</tab>
+				<tab header="Et moi encore un pp" :index="2">Test 2</tab>
+				<tab header="Et moi un autre" :index="3">Test 3</tab>
 
-		<!--<carousel autoplay="true" slide-duration="5000" style="width: 1400px; margin: 0 auto;">-->
-			<!--<carousel-slide :index="0">-->
-				<!--<img src="https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg" height="1000">-->
-			<!--</carousel-slide>-->
-			<!--<carousel-slide :index="1">-->
-				<!--<img src="https://static.pexels.com/photos/30986/pexels-photo.jpg" height="1000">-->
-			<!--</carousel-slide>-->
-			<!--<carousel-slide :index="2">-->
-				<!--<img src="https://static.pexels.com/photos/190076/pexels-photo-190076.jpeg" height="1000">-->
-			<!--</carousel-slide>-->
-			<!--<carousel-slide :index="3">-->
-				<!--<img src="https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg" height="1000">-->
-			<!--</carousel-slide>-->
-		<!--</carousel>-->
-		<br><br><br><br>
-		<tabs-container>
-			<tab header="Test 1" :index="0">wesh</tab>
-			<tab header="Et moi un autre" :index="1">wesh morray</tab>
-			<tab header="Et moi encore un pp" :index="2">wesh morray c'est encore moi</tab>
-		</tabs-container>
+			</tabs-container>
+			<br><br><br>
+			<pre><code class="language-markup" style="text-align: left">
+&lt;tabs-container>
+		&lt;tab header="Test 1" :index="1">Contenu onglet 1&lt;/tab>
+		&lt;tab header="Test 2" :index="2">Contenu onglet 2&lt;/tab>
+		&lt;tab header="Test 3" :index="3">Contenu onglet 3&lt;/tab>
+		&lt;tab header="Test 4" :index="4">Contenu onglet 4&lt;/tab>
+&lt;/tabs-container>
+			</code></pre>
+		</div>
 
 	</div>
 
