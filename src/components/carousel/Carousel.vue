@@ -83,7 +83,8 @@
 				activeSlide: 0,
 				slides: this.$children || [],
 				direction: 'next',
-				autoplayIntervalID: undefined
+				autoplayIntervalID: undefined,
+				auto: this.autoplay
 			}
 		},
 		props: {
@@ -91,7 +92,7 @@
 			slideDuration: {default: 3000}
 		},
 		mounted() {
-			if (this.autoplay) {
+			if (this.auto) {
 				this.unsetSetAutoplay();
 			}
 		},
@@ -101,6 +102,11 @@
 		computed: {
 			slidesCount() {
 				return this.slides.length;
+			}
+		},
+		watch: {
+			auto() {
+				this.unsetSetAutoplay();
 			}
 		},
 		methods: {
@@ -126,9 +132,10 @@
 				this.activeSlide = i;
 			},
 			unsetSetAutoplay() {
-				if(this.autoplay){
-					if(this.autoplayIntervalID) window.clearInterval(this.autoplayIntervalID);
+				if(this.autoplayIntervalID) window.clearInterval(this.autoplayIntervalID);
+				if(this.auto){
 					this.autoplayIntervalID = setInterval(() => {
+						console.log('call');
 						this.next();
 					}, this.slideDuration);
 				}

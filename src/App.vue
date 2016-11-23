@@ -49,18 +49,20 @@
 &lt;/carousel>
 			</code></pre>
 			<h2>Carousel avec autoplay à 'true' et slide-duration: 2500</h2>
-			<carousel style="width: 48%; display: inline-block;" :autoplay="true" slide-duration="2500">
-				<carousel-slide v-for="n in 4" :index="n - 1">
+			<carousel style="width: 48%; display: inline-block;" :autoplay="rioAutoplay" :slide-duration="rioDuration">
+				<carousel-slide v-for="n in rioSlides" :index="n - 1">
 					<img :src="'http://lorempicsum.com/rio/200/200/' + n">
 				</carousel-slide>
 			</carousel>
-			<pre><code class="language-markup" style="text-align: left;">
+			<pre><code class="language-markup" id="rio" style="text-align: left;">
 &lt;carousel style="width: 48%; display: inline-block; vertical-align: top;" :autoplay="true" slide-duration="2500">
-		&lt;carousel-slide v-for="n in 9" :index="n - 1">
-				&lt;img :src="'http://lorempicsum.com/futurama/600/450/' + n">
+		&lt;carousel-slide v-for="n in {{rioSlides}}" :index="n - 1">
+				&lt;img :src="'http://lorempicsum.com/rio/200/200/' + n">
 		&lt;/carousel-slide>
 &lt;/carousel>
 			</code></pre>
+			Nombre de slides : <input type="number" v-model="rioSlides"> Autoplay : <input type="checkbox" v-model="rioAutoplay"> Duration :
+			<input type="number" min="400" max="3000" v-model="rioDuration">
 			<br><br>
 			<h2>Tab component</h2>
 			<tabs-container>
@@ -144,8 +146,33 @@
 			CarouselSlide,
 			Tab,
 			TabsContainer
+		},
+		data() {
+			return {
+				rioSlides: 5,
+				rioAutoplay: true,
+				rioDuration: 2500
+			}
+		},
+		watch: {
+			rioSlides(val, oldVal) {
+				if(val > 9) this.rioSlides = 1;
+				if(val < 1) this.rioSlides = 9;
+				var rioCarousel = this.$children[2];
+				if(this.rioSlides != 1 && rioCarousel.activeSlide >= (this.rioSlides - 1)) rioCarousel.activeSlide--;
+				document.querySelector('#rio span.token.tag:nth-of-type(2) .token.attr-value').innerHTML = (`<span class="token punctuation">="</span>n in ${val}</span class="token punctuation">"</span>`);
+			},
+			rioAutoplay(val) {
+				var rioCarousel = this.$children[2];
+				rioCarousel.auto = val;
+				document.querySelector('#rio span.token.tag:nth-of-type(1) > .token.attr-value').innerHTML = (`<span class="token punctuation">="</span>${val}</span class="token punctuation">"</span>`);
+			},
+			rioDuration(val, oldVal) {
+				document.querySelector('#rio span.token.tag:nth-of-type(1) > .token.attr-value:nth-child(3n)').innerHTML = (`<span class="token punctuation">="</span>${val}</span class="token punctuation">"</span>`);
+			}
 		}
 	}
+
 </script>
 
 <style lang="scss">
