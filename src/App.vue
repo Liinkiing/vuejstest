@@ -186,11 +186,18 @@
 		&lt;tab header="Test 4" :index="3">Contenu onglet 4&lt;/tab>
 &lt;/tabs-container>
 			</code></pre>
+			<br><br><br><br>
+			<h2>Tags component</h2>
+			<div  style="margin: 0 auto; width: 50%;">			<tags></tags>
+			</div>
 		</div>
 
+		<footer style="margin-top: 40px;">
+			&nbsp;
+		</footer>
 	</div>
 
-	</div>
+
 </template>
 
 <script>
@@ -199,6 +206,7 @@
 	import CarouselSlide from './components/carousel/CarouselSlide'
 	import Tab from './components/tabs/Tab';
 	import TabsContainer from './components/tabs/TabsContainer';
+	import Tags from './components/tags/Tags'
 
 	export default {
 		name: 'app',
@@ -207,7 +215,8 @@
 			Carousel,
 			CarouselSlide,
 			Tab,
-			TabsContainer
+			TabsContainer,
+			Tags
 		},
 		data() {
 			return {
