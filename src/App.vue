@@ -94,8 +94,71 @@
 																	onglets dans des onglets dans des onglets
 																	<tabs-container>
 																		<tab header="sous tab" :index="0">XD</tab>
-																		<tab header="sous tab 2" :index="1">Tu te fais
-																			du mal à aller jusque là
+																		<tab header="sous tab 2" :index="1">Des onglets dans des
+																			onglets dans des onglets dans des onglets dans des
+																			onglets dans des onglets dans des onglets
+																			<tabs-container>
+																				<tab header="sous tab" :index="0">XD</tab>
+																				<tab header="sous tab 2" :index="1">Des onglets dans des
+																					onglets dans des onglets dans des onglets dans des
+																					onglets dans des onglets dans des onglets
+																					<tabs-container>
+																						<tab header="sous tab" :index="0">XD</tab>
+																						<tab header="sous tab 2" :index="1">Des onglets dans des
+																							onglets dans des onglets dans des onglets dans des
+																							onglets dans des onglets dans des onglets
+																							<tabs-container>
+																								<tab header="sous tab" :index="0">XD</tab>
+																								<tab header="sous tab 2" :index="1">Des onglets dans des
+																									onglets dans des onglets dans des onglets dans des
+																									onglets dans des onglets dans des onglets
+																									<tabs-container>
+																										<tab header="sous tab" :index="0">XD</tab>
+																										<tab header="sous tab 2" :index="1">Des onglets dans des
+																											onglets dans des onglets dans des onglets dans des
+																											onglets dans des onglets dans des onglets
+																											<tabs-container>
+																												<tab header="sous tab" :index="0">XD</tab>
+																												<tab header="sous tab 2" :index="1">Des onglets dans des
+																													onglets dans des onglets dans des onglets dans des
+																													onglets dans des onglets dans des onglets
+																													<tabs-container>
+																														<tab header="sous tab" :index="0">XD</tab>
+																														<tab header="sous tab 2" :index="1">Des onglets dans des
+																															onglets dans des onglets dans des onglets dans des
+																															onglets dans des onglets dans des onglets
+																															<tabs-container>
+																																<tab header="sous tab" :index="0">XD</tab>
+																																<tab header="sous tab 2" :index="1">Des onglets dans des
+																																	onglets dans des onglets dans des onglets dans des
+																																	onglets dans des onglets dans des onglets
+																																	<tabs-container>
+																																		<tab header="sous tab" :index="0">XD</tab>
+																																		<tab header="sous tab 2" :index="1">Des onglets dans des
+																																			onglets dans des onglets dans des onglets dans des
+																																			onglets dans des onglets dans des onglets
+																																			<tabs-container>
+																																				<tab header="sous tab" :index="0">XD</tab>
+																																				<tab header="sous tab 2" :index="1">Tu te fais
+																																					du mal à aller jusque là
+																																				</tab>
+																																			</tabs-container>
+																																		</tab>
+																																	</tabs-container>
+																																</tab>
+																															</tabs-container>
+																														</tab>
+																													</tabs-container>
+																												</tab>
+																											</tabs-container>
+																										</tab>
+																									</tabs-container>
+																								</tab>
+																							</tabs-container>
+																						</tab>
+																					</tabs-container>
+																				</tab>
+																			</tabs-container>
 																		</tab>
 																	</tabs-container>
 																</tab>
@@ -113,15 +176,14 @@
 				</tab>
 				<tab header="Et moi encore un pp" :index="2">Test 2</tab>
 				<tab header="Et moi un autre" :index="3">Test 3</tab>
-
 			</tabs-container>
 			<br><br><br>
 			<pre><code class="language-markup" style="text-align: left">
 &lt;tabs-container>
-		&lt;tab header="Test 1" :index="1">Contenu onglet 1&lt;/tab>
-		&lt;tab header="Test 2" :index="2">Contenu onglet 2&lt;/tab>
-		&lt;tab header="Test 3" :index="3">Contenu onglet 3&lt;/tab>
-		&lt;tab header="Test 4" :index="4">Contenu onglet 4&lt;/tab>
+		&lt;tab header="Test 1" :index="0">Contenu onglet 1&lt;/tab>
+		&lt;tab header="Test 2" :index="1">Contenu onglet 2&lt;/tab>
+		&lt;tab header="Test 3" :index="2">Contenu onglet 3&lt;/tab>
+		&lt;tab header="Test 4" :index="3">Contenu onglet 4&lt;/tab>
 &lt;/tabs-container>
 			</code></pre>
 		</div>
