@@ -1,13 +1,15 @@
 <template>
 	<div class="input-tags">
-		<div class="input-wrapper">
+		<div class="input-wrapper" @click="focusInput">
 			<transition-group name="slide-left" tag="p">
 				<span class="tag" v-for="tag in tags" :key="tag">#{{tag.name}}<i @click="removeTag(tag.index)">x</i></span>
 			</transition-group>
 			<input type="text" v-model="newTag" :value="newTag" @keyup.enter.space="addTag()"
 				   @keyup.backspace="removeLastTag()" :style="style">
 		</div>
-		<div v-if="errorMessage != null"><span style="color: red;">{{errorMessage}}</span></div>
+		<transition name="fade-blur">
+			<div v-if="errorMessage != null"><span style="color: red; margin-top: 10px; display: inline-block;">{{errorMessage}}</span></div>
+		</transition>
 	</div>
 </template>
 <style lang="scss" src="./tags.scss">
@@ -28,6 +30,7 @@
 				newTag: '',
 				errorMessage: null,
 				inputSize: '50px',
+				messageErrorIntervalID: null
 			}
 		},
 		watch: {
@@ -37,6 +40,17 @@
 			}
 		},
 		methods: {
+			unsetSetError() {
+				if(this.messageErrorIntervalID) window.clearInterval(this.messageErrorIntervalID);
+					this.messageErrorIntervalID = setInterval(() => {
+						console.log('call erreur');
+						this.errorMessage = null;
+						window.clearInterval(this.messageErrorIntervalID);
+					}, 4000);
+			},
+			focusInput() {
+				this.$el.querySelector('input').focus();
+			},
 			addTag() {
 				if (this.newTag.startsWith(" ")) {
 					this.newTag = "";
@@ -48,6 +62,7 @@
 						let alreadyPresent = this.tags.filter((tag) => tag.name == this.newTag.trim()).length > 0;
 						if (alreadyPresent) {
 							this.errorMessage = "Le tag est déjà présent !";
+							this.unsetSetError();
 							this.newTag = "";
 							return false;
 						}

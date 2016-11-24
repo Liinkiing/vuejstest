@@ -338,7 +338,10 @@
 			<div style="margin: 0 auto; width: 50%;">
 				<tags></tags>
 			</div>
-			<p>Affichage de vos tags</p>
+			<br><br><br><br>
+			<pre><code class="language-markup" style="text-align: left">
+				&lt;tags>&lt;/tags>
+			</code></pre>
 
 		</div>
 
