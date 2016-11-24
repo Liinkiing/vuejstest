@@ -61,7 +61,9 @@
 		&lt;/carousel-slide>
 &lt;/carousel>
 			</code></pre>
-			Nombre de slides : <input type="number" v-model="rioSlides"> Autoplay : <input type="checkbox" v-model="rioAutoplay"> Duration :
+			Nombre de slides : <input type="number" v-model="rioSlides"> Autoplay : <input type="checkbox"
+																						   v-model="rioAutoplay">
+			Duration :
 			<input type="number" min="400" max="3000" v-model="rioDuration">
 			<br><br>
 			<h2>Tab component</h2>
@@ -94,53 +96,198 @@
 																	onglets dans des onglets dans des onglets
 																	<tabs-container>
 																		<tab header="sous tab" :index="0">XD</tab>
-																		<tab header="sous tab 2" :index="1">Des onglets dans des
-																			onglets dans des onglets dans des onglets dans des
+																		<tab header="sous tab 2" :index="1">Des onglets
+																			dans des
+																			onglets dans des onglets dans des onglets
+																			dans des
 																			onglets dans des onglets dans des onglets
 																			<tabs-container>
-																				<tab header="sous tab" :index="0">XD</tab>
-																				<tab header="sous tab 2" :index="1">Des onglets dans des
-																					onglets dans des onglets dans des onglets dans des
-																					onglets dans des onglets dans des onglets
+																				<tab header="sous tab" :index="0">XD
+																				</tab>
+																				<tab header="sous tab 2" :index="1">Des
+																					onglets dans des
+																					onglets dans des onglets dans des
+																					onglets dans des
+																					onglets dans des onglets dans des
+																					onglets
 																					<tabs-container>
-																						<tab header="sous tab" :index="0">XD</tab>
-																						<tab header="sous tab 2" :index="1">Des onglets dans des
-																							onglets dans des onglets dans des onglets dans des
-																							onglets dans des onglets dans des onglets
+																						<tab header="sous tab"
+																							 :index="0">XD
+																						</tab>
+																						<tab header="sous tab 2"
+																							 :index="1">Des onglets dans
+																							des
+																							onglets dans des onglets
+																							dans des onglets dans des
+																							onglets dans des onglets
+																							dans des onglets
 																							<tabs-container>
-																								<tab header="sous tab" :index="0">XD</tab>
-																								<tab header="sous tab 2" :index="1">Des onglets dans des
-																									onglets dans des onglets dans des onglets dans des
-																									onglets dans des onglets dans des onglets
+																								<tab header="sous tab"
+																									 :index="0">XD
+																								</tab>
+																								<tab header="sous tab 2"
+																									 :index="1">Des
+																									onglets dans des
+																									onglets dans des
+																									onglets dans des
+																									onglets dans des
+																									onglets dans des
+																									onglets dans des
+																									onglets
 																									<tabs-container>
-																										<tab header="sous tab" :index="0">XD</tab>
-																										<tab header="sous tab 2" :index="1">Des onglets dans des
-																											onglets dans des onglets dans des onglets dans des
-																											onglets dans des onglets dans des onglets
+																										<tab
+																											header="sous tab"
+																											:index="0">
+																											XD
+																										</tab>
+																										<tab
+																											header="sous tab 2"
+																											:index="1">
+																											Des onglets
+																											dans des
+																											onglets dans
+																											des onglets
+																											dans des
+																											onglets dans
+																											des
+																											onglets dans
+																											des onglets
+																											dans des
+																											onglets
 																											<tabs-container>
-																												<tab header="sous tab" :index="0">XD</tab>
-																												<tab header="sous tab 2" :index="1">Des onglets dans des
-																													onglets dans des onglets dans des onglets dans des
-																													onglets dans des onglets dans des onglets
+																												<tab
+																													header="sous tab"
+																													:index="0">
+																													XD
+																												</tab>
+																												<tab
+																													header="sous tab 2"
+																													:index="1">
+																													Des
+																													onglets
+																													dans
+																													des
+																													onglets
+																													dans
+																													des
+																													onglets
+																													dans
+																													des
+																													onglets
+																													dans
+																													des
+																													onglets
+																													dans
+																													des
+																													onglets
+																													dans
+																													des
+																													onglets
 																													<tabs-container>
-																														<tab header="sous tab" :index="0">XD</tab>
-																														<tab header="sous tab 2" :index="1">Des onglets dans des
-																															onglets dans des onglets dans des onglets dans des
-																															onglets dans des onglets dans des onglets
+																														<tab
+																															header="sous tab"
+																															:index="0">
+																															XD
+																														</tab>
+																														<tab
+																															header="sous tab 2"
+																															:index="1">
+																															Des
+																															onglets
+																															dans
+																															des
+																															onglets
+																															dans
+																															des
+																															onglets
+																															dans
+																															des
+																															onglets
+																															dans
+																															des
+																															onglets
+																															dans
+																															des
+																															onglets
+																															dans
+																															des
+																															onglets
 																															<tabs-container>
-																																<tab header="sous tab" :index="0">XD</tab>
-																																<tab header="sous tab 2" :index="1">Des onglets dans des
-																																	onglets dans des onglets dans des onglets dans des
-																																	onglets dans des onglets dans des onglets
+																																<tab
+																																	header="sous tab"
+																																	:index="0">
+																																	XD
+																																</tab>
+																																<tab
+																																	header="sous tab 2"
+																																	:index="1">
+																																	Des
+																																	onglets
+																																	dans
+																																	des
+																																	onglets
+																																	dans
+																																	des
+																																	onglets
+																																	dans
+																																	des
+																																	onglets
+																																	dans
+																																	des
+																																	onglets
+																																	dans
+																																	des
+																																	onglets
+																																	dans
+																																	des
+																																	onglets
 																																	<tabs-container>
-																																		<tab header="sous tab" :index="0">XD</tab>
-																																		<tab header="sous tab 2" :index="1">Des onglets dans des
-																																			onglets dans des onglets dans des onglets dans des
-																																			onglets dans des onglets dans des onglets
+																																		<tab
+																																			header="sous tab"
+																																			:index="0">
+																																			XD
+																																		</tab>
+																																		<tab
+																																			header="sous tab 2"
+																																			:index="1">
+																																			Des
+																																			onglets
+																																			dans
+																																			des
+																																			onglets
+																																			dans
+																																			des
+																																			onglets
+																																			dans
+																																			des
+																																			onglets
+																																			dans
+																																			des
+																																			onglets
+																																			dans
+																																			des
+																																			onglets
+																																			dans
+																																			des
+																																			onglets
 																																			<tabs-container>
-																																				<tab header="sous tab" :index="0">XD</tab>
-																																				<tab header="sous tab 2" :index="1">Tu te fais
-																																					du mal à aller jusque là
+																																				<tab
+																																					header="sous tab"
+																																					:index="0">
+																																					XD
+																																				</tab>
+																																				<tab
+																																					header="sous tab 2"
+																																					:index="1">
+																																					Tu
+																																					te
+																																					fais
+																																					du
+																																					mal
+																																					à
+																																					aller
+																																					jusque
+																																					là
 																																				</tab>
 																																			</tabs-container>
 																																		</tab>
@@ -188,8 +335,11 @@
 			</code></pre>
 			<br><br><br><br>
 			<h2>Tags component</h2>
-			<div  style="margin: 0 auto; width: 50%;">			<tags></tags>
+			<div style="margin: 0 auto; width: 50%;">
+				<tags></tags>
 			</div>
+			<p>Affichage de vos tags</p>
+
 		</div>
 
 		<footer style="margin-top: 40px;">
@@ -222,15 +372,15 @@
 			return {
 				rioSlides: 5,
 				rioAutoplay: true,
-				rioDuration: 2500
+				rioDuration: 2500,
 			}
 		},
 		watch: {
 			rioSlides(val, oldVal) {
-				if(val > 9) this.rioSlides = 1;
-				if(val < 1) this.rioSlides = 9;
+				if (val > 9) this.rioSlides = 1;
+				if (val < 1) this.rioSlides = 9;
 				var rioCarousel = this.$children[2];
-				if(this.rioSlides != 1 && rioCarousel.activeSlide >= (this.rioSlides - 1)) rioCarousel.activeSlide--;
+				if (this.rioSlides != 1 && rioCarousel.activeSlide >= (this.rioSlides - 1)) rioCarousel.activeSlide--;
 				document.querySelector('#rio span.token.tag:nth-of-type(2) .token.attr-value').innerHTML = (`<span class="token punctuation">="</span>n in ${val}</span class="token punctuation">"</span>`);
 			},
 			rioAutoplay(val) {
