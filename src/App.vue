@@ -336,7 +336,7 @@
 			<br><br><br><br>
 			<h2>Tags component</h2>
 			<div style="margin: 0 auto; width: 50%;">
-				<tags></tags>
+				<tags max="10"></tags>
 			</div>
 			<br><br><br><br>
 			<pre><code class="language-markup" style="text-align: left">

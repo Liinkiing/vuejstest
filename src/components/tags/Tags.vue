@@ -16,7 +16,9 @@
 </style>
 <script>
 	export default {
-		props: {},
+		props: {
+			max: {default: null}
+		},
 		computed: {
 			style() {
 				return {
@@ -35,8 +37,8 @@
 		},
 		watch: {
 			newTag(val) {
-				if (val.length >= 0 && val.length <= 5 ) this.inputSize = '50px';
-				else this.inputSize = ((val.length + 1) * 9) + 'px';
+				if (val.length >= 0 && val.length <= 4 ) this.inputSize = '50px';
+				else this.inputSize = ((val.length + 1) * 10) + 'px';
 			}
 		},
 		methods: {
@@ -62,6 +64,12 @@
 						let alreadyPresent = this.tags.filter((tag) => tag.name == this.newTag.trim()).length > 0;
 						if (alreadyPresent) {
 							this.errorMessage = "Le tag est déjà présent !";
+							this.unsetSetError();
+							this.newTag = "";
+							return false;
+						}
+						if(this.max && this.tags.length >= this.max) {
+							this.errorMessage = `Vous pouvez entrer ${this.max} tags maximum !`;
 							this.unsetSetError();
 							this.newTag = "";
 							return false;

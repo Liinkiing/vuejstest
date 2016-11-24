@@ -37,7 +37,7 @@
 		},
 		props: {
 			index: {default: 0, type: Number},
-			header: {type: String, default: 'Tab'}
+			header: {type: String, default: 'Tab', required: true}
 		},
 		computed: {
 			active() {
