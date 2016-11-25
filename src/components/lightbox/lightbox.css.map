@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACC,WAAI;EACH,OAAO,EAAE,YAAY",
+"sources": ["lightbox.scss"],
+"names": [],
+"file": "lightbox.css"
+}

@@ -336,13 +336,36 @@
 			<br><br><br><br>
 			<h2>Tags component</h2>
 			<div style="margin: 0 auto; width: 50%;">
-				<tags max="10"></tags>
+				<tags max="5"></tags>
 			</div>
 			<br><br><br><br>
 			<pre><code class="language-markup" style="text-align: left">
-				&lt;tags>&lt;/tags>
+				&lt;tags max="5">&lt;/tags>
 			</code></pre>
-
+			<br><br><br><br>
+			<lightbox>
+				<a href="http://lorempicsum.com/futurama/800/600/1">
+					<img src="http://lorempicsum.com/futurama/150/150/1">
+				</a>
+				<a href="http://lorempicsum.com/futurama/800/600/2">
+					<img src="http://lorempicsum.com/futurama/150/150/2">
+				</a>
+				<a href="http://lorempicsum.com/futurama/800/600/3">
+					<img src="http://lorempicsum.com/futurama/150/150/3">
+				</a>
+				<a href="http://lorempicsum.com/futurama/800/600/4">
+					<img src="http://lorempicsum.com/futurama/150/150/4">
+				</a>
+				<a href="http://lorempicsum.com/futurama/800/600/5">
+					<img src="http://lorempicsum.com/futurama/150/150/5">
+				</a>
+				<a href="http://lorempicsum.com/futurama/800/600/6">
+					<img src="http://lorempicsum.com/futurama/150/150/6">
+				</a>
+				<a href="http://lorempicsum.com/futurama/800/600/7">
+					<img src="http://lorempicsum.com/futurama/150/150/7">
+				</a>
+			</lightbox>
 		</div>
 
 		<footer style="margin-top: 40px;">
@@ -360,6 +383,7 @@
 	import Tab from './components/tabs/Tab';
 	import TabsContainer from './components/tabs/TabsContainer';
 	import Tags from './components/tags/Tags'
+	import Lightbox from './components/lightbox/Lightbox'
 
 	export default {
 		name: 'app',
@@ -369,7 +393,8 @@
 			CarouselSlide,
 			Tab,
 			TabsContainer,
-			Tags
+			Tags,
+			Lightbox
 		},
 		data() {
 			return {
