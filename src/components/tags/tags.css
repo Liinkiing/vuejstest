@@ -1,0 +1,69 @@
+.input-tags .tag {
+  transition: all 0.3s;
+  float: left;
+  display: inline-block;
+  margin-right: 15px;
+  background: rgba(0, 0, 0, 0.11);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 1px 8px; }
+  .input-tags .tag i {
+    transition: all 0.3s;
+    opacity: 0;
+    transform: scale(0.5); }
+    .input-tags .tag i:hover {
+      color: red; }
+  .input-tags .tag:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.21); }
+    .input-tags .tag:hover i {
+      opacity: 1;
+      transform: scale(1);
+      margin-left: 10px; }
+.input-tags .input-wrapper {
+  width: 100%;
+  padding: 10px 15px 10px 15px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.31);
+  border-radius: 5px; }
+  .input-tags .input-wrapper:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .input-tags .input-wrapper:hover {
+    cursor: text; }
+  .input-tags .input-wrapper p {
+    position: relative;
+    margin-bottom: 0; }
+  .input-tags .input-wrapper input {
+    background: transparent;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 4px;
+    float: left; }
+
+.slide-left-move {
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important; }
+
+.slide-left-enter, .slide-left-leave-active {
+  opacity: 0;
+  filter: blur(3px);
+  transform: scale(0.7); }
+
+.slide-left-leave-active {
+  position: absolute;
+  filter: blur(3px);
+  transform: scale(0.7);
+  opacity: 0; }
+
+.fade-blur-enter-active, .fade-blur-leave-active {
+  transition: all 0.3s ease; }
+
+.fade-blur-enter, .fade-blur-leave-active {
+  opacity: 0;
+  filter: blur(3px);
+  transform: scale(0.7); }
+
+/*# sourceMappingURL=tags.css.map */
