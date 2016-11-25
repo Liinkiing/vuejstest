@@ -1,4 +1,13 @@
-.lightbox a {
-  display: inline-block; }
+.lightbox {
+  transition: all 0.3s;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.58); }
 
 /*# sourceMappingURL=lightbox.css.map */
