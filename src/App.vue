@@ -345,8 +345,8 @@
 			</code></pre>
 				<br><br><br><br>
 
-				<a :href="'http://lorempicsum.com/futurama/800/600/' + n" v-for="n in 7" v-lightbox.futurama="2 + 2"x>
-					<img :src="'http://lorempicsum.com/futurama/150/150/' + n">
+				<a :href="'http://lorempicsum.com/rio/800/600/' + n" v-for="n in 7" v-lightbox>
+					<img :src="'http://lorempicsum.com/rio/150/150/' + n">
 				</a>
 			</div>
 
