@@ -345,8 +345,8 @@
 			</code></pre>
 				<br><br><br><br>
 
-				<a :href="'http://lorempicsum.com/rio/800/600/' + n" v-for="n in 7" v-lightbox>
-					<img :src="'http://lorempicsum.com/rio/150/150/' + n">
+				<a :href="'http://lorempicsum.com/futurama/1920/1080/' + n" v-for="n in 5" v-lightbox="{title: 'Test de titre ' + n, desc: 'Je suis une ' + n + 'e description'}">
+					<img :src="'http://lorempicsum.com/futurama/150/150/' + n">
 				</a>
 			</div>
 

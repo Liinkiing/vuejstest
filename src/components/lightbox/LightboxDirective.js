@@ -3,12 +3,10 @@ import store from './LightboxStore'
 
 Vue.directive('lightbox', {
 	bind(el, binding) {
-		
-		store.addImage(el.getAttribute('href'));
-		
+		let i = store.addImage(el.getAttribute('href'), binding.value.title, binding.value.desc);
 		el.addEventListener('click', function(e) {
 			e.preventDefault();
-			store.setActiveImage(el.getAttribute('href'));
+			store.open(i);
 			
 		})
 	}

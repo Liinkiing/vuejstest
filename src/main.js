@@ -6,6 +6,9 @@ import VueAnimatedList from 'vue-animated-list'
 Vue.use(VueLocalStorage);
 Vue.config.keyCodes.backspace = 8;
 
+Number.prototype.clamp = function(min, max) {
+	return Math.min(Math.max(this, min), max);
+};
 
 /* eslint-disable no-new */
 new Vue({

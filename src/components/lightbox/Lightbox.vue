@@ -1,7 +1,9 @@
 <template>
 	<transition name="fade">
 		<div class="lightbox" v-if="imageUrl" @click="close">
-			<lightbox-image :image="imageUrl"></lightbox-image>
+			<transition :name="transition">
+				<lightbox-image :image="imageUrl" :key="imageUrl" :title="title" :desc="desc"></lightbox-image>
+			</transition>
 		</div>
 	</transition>
 
@@ -13,8 +15,19 @@
 	import store from './LightboxStore'
 	import LightboxImage from './LightboxImage'
 
+
 	function shortcutsEventListener(e) {
-		store.setActiveImage(null);
+		switch (e.keyCode) {
+			case 27: // Escape
+				store.close();
+				break;
+			case 37: // Left Arrow
+				store.prev();
+				break;
+			case 39: // Right Arrow
+				store.next();
+				break;
+		}
 	}
 
 	export default {
@@ -24,46 +37,42 @@
 		data() {
 			return {
 				state: store.state,
-				shortcutsEventListenerID: null,
 			}
 		},
 		computed: {
 			imageUrl() {
-				return this.state.activeUrl;
+				if (this.state.index != null) return this.state.images[this.state.index].url;
+			},
+			title() {
+				if (this.state.index != null) return this.state.images[this.state.index].title;
+			},
+			desc() {
+				if (this.state.index != null) return this.state.images[this.state.index].desc;
+			},
+			index() {
+				return this.state.index;
+			},
+			transition() {
+				return 'slide-' + store.state.direction;
 			}
 		},
 		methods: {
-			open() {
-				if (this.$children.length > 0) this.$children[0].loading = true;
-				let img = new window.Image();
-				img.onload = () => {
-					console.log('image chargé wsh');
-					if (this.$children.length > 0) this.$children[0].src = this.imageUrl;
-					if (this.$children.length > 0) this.$children[0].loading = false;
-				};
-				img.src = this.imageUrl;
-				console.log('ouvert');
-				window.addEventListener('keyup', shortcutsEventListener);
-				document.querySelector('body').classList.add('lightbox-opened');
-				document.querySelector('.wrapper').classList.add('lightbox-opened');
+			open(i) {
+				store.open(i);
 			},
 			close() {
-				console.log('fermé');
-				store.state.activeUrl = null;
-				if (this.$children.length > 0) this.$children[0].src = null;
-				if (this.$children.length > 0) this.$children[0].loading = false;
-				store.state.imageUrl = null;
-				window.removeEventListener('keyup', shortcutsEventListener);
-				document.querySelector('body').classList.remove('lightbox-opened');
-				document.querySelector('.wrapper').classList.remove('lightbox-opened');
+				store.close();
 			}
 		},
 		watch: {
-			imageUrl(val, oldVal) {
-				if(!oldVal) {
-					this.open();
-				} else if(!val && oldVal) {
-					this.close();
+			index(val, oldVal) {
+				if (oldVal == null) {
+					window.addEventListener('keyup', (e) => {
+						shortcutsEventListener(e)
+					})
+				} else if (val == null && oldVal != null) {
+					window.removeEventListener('keyup', shortcutsEventListener);
+
 				}
 			}
 		}
