@@ -2,7 +2,7 @@
 	<div class="input-tags">
 		<div class="input-wrapper" @click="focusInput">
 			<transition-group name="slide-left" tag="p">
-				<span class="tag" v-for="tag in tags" :key="tag">#{{tag.name}}<i @click="removeTag(tag.index)">x</i></span>
+				<span @dbclick="editTag(tag.index)" class="tag" v-for="tag in tags" :key="tag">#{{tag.name}}<i @click="removeTag(tag.index)">x</i></span>
 			</transition-group>
 			<input type="text" v-model="newTag" :value="newTag" @keyup.enter.space="addTag()"
 				   @keyup.backspace="removeLastTag()" :style="style">

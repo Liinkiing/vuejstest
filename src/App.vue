@@ -336,11 +336,11 @@
 			<br><br><br><br>
 			<h2>Tags component</h2>
 			<div style="margin: 0 auto; width: 50%;">
-				<tags max="10"></tags>
+				<tags max="5"></tags>
 			</div>
 			<br><br><br><br>
 			<pre><code class="language-markup" style="text-align: left">
-				&lt;tags>&lt;/tags>
+				&lt;tags max="5">&lt;/tags>
 			</code></pre>
 
 		</div>
