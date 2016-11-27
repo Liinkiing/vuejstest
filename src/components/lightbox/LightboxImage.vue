@@ -96,8 +96,8 @@
 	.lightbox-image .pagination .left, .lightbox-image .pagination .right {
 		width: 8%;
 		height: 8%;
-		max-width: 256px;
-		max-height: 256px;
+		max-width: 100px;
+		max-height: 100px;
 		display: inline-block;
 		transition: all 0.3s;
 		opacity: 0.8;
@@ -107,6 +107,10 @@
 			cursor: pointer;
 			background: rgba(0, 0, 0, 0.38);
 			width: 9%;
+			max-width: 128px;
+
+			max-height: 128px;
+
 		}
 	}
 

@@ -50,7 +50,8 @@
 &lt;/carousel>
 			</code></pre>
 				<h2>Carousel avec autoplay à 'true' et slide-duration: 2500</h2>
-				<carousel style="width: 48%; display: inline-block;" :autoplay="rioAutoplay" :slide-duration="rioDuration">
+				<carousel style="width: 48%; display: inline-block;" :autoplay="rioAutoplay"
+						  :slide-duration="rioDuration">
 					<carousel-slide v-for="n in rioSlides" :index="n - 1">
 						<img :src="'http://lorempicsum.com/rio/200/200/' + n">
 					</carousel-slide>
@@ -83,51 +84,66 @@
 												onglets dans des onglets
 												<tabs-container>
 													<tab header="sous tab" :index="0">XD</tab>
-													<tab header="sous tab 2" :index="1">Des onglets dans des onglets dans
+													<tab header="sous tab 2" :index="1">Des onglets dans des onglets
+														dans
 														des onglets dans des onglets dans des onglets
 														<tabs-container>
 															<tab header="sous tab" :index="0">XD</tab>
-															<tab header="sous tab 2" :index="1">Des onglets dans des onglets
-																dans des onglets dans des onglets dans des onglets dans des
+															<tab header="sous tab 2" :index="1">Des onglets dans des
+																onglets
+																dans des onglets dans des onglets dans des onglets dans
+																des
 																onglets
 																<tabs-container>
 																	<tab header="sous tab" :index="0">XD</tab>
-																	<tab header="sous tab 2" :index="1">Des onglets dans des
-																		onglets dans des onglets dans des onglets dans des
+																	<tab header="sous tab 2" :index="1">Des onglets dans
+																		des
+																		onglets dans des onglets dans des onglets dans
+																		des
 																		onglets dans des onglets dans des onglets
 																		<tabs-container>
 																			<tab header="sous tab" :index="0">XD</tab>
-																			<tab header="sous tab 2" :index="1">Des onglets
+																			<tab header="sous tab 2" :index="1">Des
+																				onglets
 																				dans des
-																				onglets dans des onglets dans des onglets
+																				onglets dans des onglets dans des
+																				onglets
 																				dans des
-																				onglets dans des onglets dans des onglets
+																				onglets dans des onglets dans des
+																				onglets
 																				<tabs-container>
 																					<tab header="sous tab" :index="0">XD
 																					</tab>
-																					<tab header="sous tab 2" :index="1">Des
+																					<tab header="sous tab 2" :index="1">
+																						Des
 																						onglets dans des
-																						onglets dans des onglets dans des
+																						onglets dans des onglets dans
+																						des
 																						onglets dans des
-																						onglets dans des onglets dans des
+																						onglets dans des onglets dans
+																						des
 																						onglets
 																						<tabs-container>
 																							<tab header="sous tab"
 																								 :index="0">XD
 																							</tab>
 																							<tab header="sous tab 2"
-																								 :index="1">Des onglets dans
+																								 :index="1">Des onglets
+																								dans
 																								des
 																								onglets dans des onglets
-																								dans des onglets dans des
+																								dans des onglets dans
+																								des
 																								onglets dans des onglets
 																								dans des onglets
 																								<tabs-container>
-																									<tab header="sous tab"
-																										 :index="0">XD
+																									<tab
+																										header="sous tab"
+																										:index="0">XD
 																									</tab>
-																									<tab header="sous tab 2"
-																										 :index="1">Des
+																									<tab
+																										header="sous tab 2"
+																										:index="1">Des
 																										onglets dans des
 																										onglets dans des
 																										onglets dans des
@@ -144,15 +160,21 @@
 																											<tab
 																												header="sous tab 2"
 																												:index="1">
-																												Des onglets
+																												Des
+																												onglets
 																												dans des
-																												onglets dans
-																												des onglets
-																												dans des
-																												onglets dans
+																												onglets
+																												dans
 																												des
-																												onglets dans
-																												des onglets
+																												onglets
+																												dans des
+																												onglets
+																												dans
+																												des
+																												onglets
+																												dans
+																												des
+																												onglets
 																												dans des
 																												onglets
 																												<tabs-container>
@@ -345,9 +367,18 @@
 			</code></pre>
 				<br><br><br><br>
 
-				<a :href="'http://lorempicsum.com/futurama/1920/1080/' + n" v-for="n in 5" v-lightbox="{title: 'Test de titre ' + n, desc: 'Je suis une ' + n + 'e description'}">
+				<h2>Futurama</h2>
+				<a :href="'http://lorempicsum.com/futurama/1920/1080/' + n" v-for="n in 5"
+				   v-lightbox="{title: 'Test de titre ' + n, desc: 'Je suis une ' + n + 'e description',}">
 					<img :src="'http://lorempicsum.com/futurama/150/150/' + n">
 				</a>
+				<h2>Rio</h2>
+				<a :href="'http://lorempicsum.com/rio/1920/1080/' + n" v-for="n in 8"
+				   v-lightbox="{title: 'Test de titre ' + n, desc: 'Je suis une ' + n + 'e description', group: 'rio'}">
+					<img :src="'http://lorempicsum.com/rio/150/150/' + n">
+				</a>
+
+				<br><br><br><br><br><br><br
 			</div>
 
 			<footer style="margin-top: 40px;">
@@ -389,6 +420,7 @@
 				rioSlides: 5,
 				rioAutoplay: true,
 				rioDuration: 2500,
+				section: 'futurama'
 			}
 		},
 		watch: {
