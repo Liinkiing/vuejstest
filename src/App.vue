@@ -378,7 +378,7 @@
 					<img :src="'http://lorempicsum.com/rio/150/150/' + n">
 				</a>
 
-				<br><br><br><br><br><br><br
+				<br><br><br><br><br><br><br>
 			</div>
 
 			<footer style="margin-top: 40px;">

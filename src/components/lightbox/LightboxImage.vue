@@ -10,7 +10,7 @@
 				<div class="close" @click.prevent="close">
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 371.23 371.23" style="enable-background:new 0 0 371.23 371.23;" xml:space="preserve" width="512px" height="512px">
 <polygon points="371.23,21.213 350.018,0 185.615,164.402 21.213,0 0,21.213 164.402,185.615 0,350.018 21.213,371.23   185.615,206.828 350.018,371.23 371.23,350.018 206.828,185.615 " fill="#FFFFFF"/></svg></div>
-				<div class="title"><h2>{{ title }}</h2></div>
+				<div class="title" v-if="title"><h2>{{ title }}</h2></div>
 				<div class="pagination">
 					<div class="left" @click.prevent="prev">
 						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -29,7 +29,7 @@
 </svg></div>
 
 				</div>
-				<div class="description">
+				<div class="description" v-if="desc">
 					{{ desc }}
 				</div>
 			</div>
@@ -140,6 +140,22 @@
 
 	import store from './LightboxStore'
 
+//	function shortcutsEventListener(e) {
+//		console.log(e);
+//		switch (e.keyCode) {
+//			case 27: // Escape
+//				store.close();
+//				break;
+//			case 37: // Left Arrow
+//				store.prev();
+//				break;
+//			case 39: // Right Arrow
+//				store.next();
+//				break;
+//		}
+//	}
+
+
 	export default {
 		data() {
 			return {
@@ -165,7 +181,20 @@
 				store.prev();
 
 			},
-			resize(image) {
+			shortcutsHandler(e) {
+				switch (e.keyCode) {
+					case 27: // Escape
+						store.close();
+						break;
+					case 37: // Left Arrow
+						store.prev();
+						break;
+					case 39: // Right Arrow
+						store.next();
+						break;
+				}
+			},
+ 			resize(image) {
 				let w = image.width;
 				let h = image.height;
 				if (w > window.innerWidth || h > window.innerHeight) {
@@ -197,21 +226,24 @@
 			let image = new window.Image();
 			image.onload = () => {
 				this.loading = false;
-				this.src = this.image
+				this.src = this.image;
 				this.resize(image);
-			}
+			};
 			image.src = this.image;
 			this.resizeEvent = () => {
 				this.resize(image);
-			}
+			};
+			this.shortcutEvent = (e) => { this.shortcutsHandler(e) };
 			document.querySelector('body').classList.add('lightbox-opened');
 			document.querySelector('.wrapper').classList.add('lightbox-opened');
 			window.addEventListener('resize', this.resizeEvent);
+			window.addEventListener('keyup', this.shortcutEvent);
 		},
 		destroyed() {
 			document.querySelector('body').classList.remove('lightbox-opened');
 			document.querySelector('.wrapper').classList.remove('lightbox-opened');
 			window.removeEventListener('resize', this.resizeEvent);
+			window.removeEventListener('keyup', this.shortcutEvent);
 		}
 	}
 
