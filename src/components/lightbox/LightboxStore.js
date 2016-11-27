@@ -9,11 +9,13 @@ class LightboxStore {
 	}
 	
 	
-	addImage(_url, _title, _desc) {
-		return this.state.images.push({url: _url, title: _title, desc: _desc}) - 1;
+	addImage(_url, _title, _desc, _thumbnail) {
+		return this.state.images.push({url: _url, title: _title, desc: _desc, thumbnail: _thumbnail, index: this.state.images.length}) - 1;
 	}
 	
 	open(i) {
+		if(this.state.index > i) this.state.direction = "out";
+		else this.state.direction = "in";
 		this.state.index = i;
 	}
 	
