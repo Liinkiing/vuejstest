@@ -2,9 +2,10 @@
 	transition: all 0.3s;
 	position: fixed;
 	display: flex;
+	flex-direction: column;
 
-	justify-content: center;
-	align-items: center;
+	justify-content: flex-end;
+	align-items: flex-end;
 
 	top: 0;
 	left: 0;
@@ -14,11 +15,11 @@
 }
 
 
-.fade-enter-active, .fade-enter-leave {
+.fade-enter-active, .fade-enter-leave-active {
 	transition: opacity 0.3s;
 }
 
-.fade-enter, .fade-leave {
+.fade-enter, .fade-leave-active {
 	opacity: 0;
 	position: fixed;
 }
@@ -62,4 +63,37 @@
 .slide-out-leave-active {
 	transform: translateX(200px);
 	opacity: 0;
+}
+
+nav.lightbox.navigation {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	height: 120px;
+	position: fixed;
+	padding: 20px;
+	bottom: 0;
+	left: 0;
+	top: calc(100vh - 120px);
+	z-index: 10000;
+;
+	& a {
+		margin-right: 15px;
+		border: white 1px solid;
+		height: 82px;
+		opacity: 0.3;
+		transition: all 0.3s;
+		&:last-of-type {
+			margin-right: 0;
+		}
+		&.active {
+			opacity: 1;
+		}
+		&:hover {
+			cursor: pointer;
+
+		}
+	}
 }

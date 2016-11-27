@@ -4,6 +4,11 @@
 			<transition :name="transition">
 				<lightbox-image :image="imageUrl" :key="imageUrl" :title="title" :desc="desc"></lightbox-image>
 			</transition>
+			<nav class="lightbox navigation" @click.stop>
+				<a v-for="image in state.images.filter((image, i) => i != 0)" :href="image.url" :alt="image.title" @click.prevent.stop="open(image.index)">
+					<img :src="image.thumbnail" width="80" height="80">
+				</a>
+			</nav>
 		</div>
 	</transition>
 
