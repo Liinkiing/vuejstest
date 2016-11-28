@@ -2,12 +2,6 @@
 
 > A test for learning Vue.js
 
-## Previews
-
-### Lightbox component
-
-![](http://puu.sh/swJK6/f8fc3aa8ef.gif)
-
 ## Build Setup
 
 ``` bash
