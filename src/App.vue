@@ -376,7 +376,8 @@
 &lt;/div>
 &lt;lightbox>&lt;/lightbox>
 				</code></pre>
-				<p>Ensuite, la seule chose qu'il vous reste à faire afin d'insérer une image dans la Lightbox : </p>
+				<p>Ensuite, pour rajouter une image à la lightbox, il n y a rien de plus simple. A n'importe quel endroit sur votre page, il suffit d'indiquer la directive
+					<code>v-lightbox</code> dans une balise <code>&lt;a>&lt;/a></code> avec dans cette balise une image qui sera celle affichée en taille réelle. </p>
 				<pre style="text-align: left;" class="language-markup"><code>
 &lt;a href="http://yoursupersite.com/awesome-fullscreen-image.png" v-lightbox>
 		&lt;img src="http://yoursupersite.com/awesome-thumbnail-image.png">&lt;/img>

@@ -5,7 +5,7 @@
 				<lightbox-image :image="imageUrl" :key="imageUrl" :title="title" :desc="desc"></lightbox-image>
 			</transition>
 			<nav class="lightbox navigation" @click.stop>
-				<a v-for="image in state.images[state.group]" :href="image.url" :alt="image.title" @click.prevent.stop="open(image.url, image.group)" :class="{active: image.index == state.index}">
+				<a v-for="image in state.images[state.group]" :href="image.url" :alt="image.title" :title="image.title" @click.prevent.stop="open(image.url, image.group)" :class="{active: image.index == state.index}">
 					<img :src="image.thumbnail" width="80" height="80">
 				</a>
 			</nav>
