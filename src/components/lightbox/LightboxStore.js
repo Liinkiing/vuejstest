@@ -18,8 +18,15 @@ class LightboxStore {
 		return this.state.images[_group].push({url: _url, title: _title, desc: _desc, thumbnail: _thumbnail, group: _group, index: this.state.images[_group].length}) - 1;
 	}
 
+	editImage(_url, _title, _desc, _thumbnail, _group, _index) {
+		this.state.images[_group][_index] = {url: _url, title: _title, desc: _desc, thumbnail: _thumbnail, group: _group, index: _index}
+	}
+
 	removeImage(url, group) {
 		this.state.images[group]= this.state.images[group].filter((image) => image.url != url)
+	}
+	removeAll() {
+		this.state.images = {}
 	}
 	open(url, group) {
 		this.state.group = group;

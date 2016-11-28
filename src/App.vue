@@ -416,7 +416,7 @@
 				</table>
 				<br><br>
 				<h2>Groupe 'nature'</h2>
-				<a href="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" v-lightbox="{group: 'nature', title: 'Je suis un titre'}">
+				<a href="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" v-lightbox="{group: 'nature', title: 'Je suis un titre et la première image'}">
 					<img src="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" width="266" height="150" alt="">
 				</a>
 				<a href="http://wallpapercave.com/wp/eaFUfBE.jpg" v-lightbox="{group: 'nature', desc: 'Je suis une description'}">
@@ -432,17 +432,20 @@
 				<a href="http://allfreedesigns.com/wp-content/uploads/2011/08/city-skyline-wallpapers-21.png" v-lightbox="{group: 'ville'}">
 					<img src="http://allfreedesigns.com/wp-content/uploads/2011/08/city-skyline-wallpapers-21.png" width="266" height="150" alt="">
 				</a>
-				<a href="http://wallpapercave.com/wp/NIAnj0Q.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+				<a href="http://wallpapercave.com/wp/NIAnj0Q.jpg" v-lightbox="{group: 'ville', title: 'City Skyline', desc: 'Je suis une description'}">
 					<img src="http://wallpapercave.com/wp/NIAnj0Q.jpg" width="266" height="150" alt="">
 				</a>
-				<a href="http://wallpapercave.com/wp/bnZNbJG.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
-					<img src="http://wallpapercave.com/wp/bnZNbJG.jpg" width="266" height="150" alt="">
+				<a href="http://allfreedesigns.com/wp-content/uploads/2011/08/city-skyline-wallpapers-28.png" v-lightbox="{group: 'ville'}">
+					<img src="http://allfreedesigns.com/wp-content/uploads/2011/08/city-skyline-wallpapers-28.png" width="266" height="150" alt="">
 				</a>
-				<a href="http://livehdwallpaper.com/wp-content/uploads/2015/01/New-York-City-Skyline-Wallpapers.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
-					<img src="http://livehdwallpaper.com/wp-content/uploads/2015/01/New-York-City-Skyline-Wallpapers.jpg" width="266" height="150" alt="">
+				<a href="http://www.howtogeek.com/wp-content/uploads/gg/up/sshot4ddf8753257e6.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+					<img src="http://www.howtogeek.com/wp-content/uploads/gg/up/sshot4ddf8753257e6.jpg" width="266" height="150" alt="">
 				</a>
-				<a href="http://cdn.pcwallart.com/images/city-skyline-wallpaper-wallpaper-4.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
-					<img src="http://cdn.pcwallart.com/images/city-skyline-wallpaper-wallpaper-4.jpg" width="266" height="150" alt="">
+				<a href="http://www.siwallpaperhd.com/wp-content/uploads/2015/05/New-York-City-Skyline-Wallpaper-HD-16-Image-1024x576.jpg" v-lightbox="{group: 'ville'}">
+					<img src="http://www.siwallpaperhd.com/wp-content/uploads/2015/05/New-York-City-Skyline-Wallpaper-HD-16-Image-1024x576.jpg" width="266" height="150" alt="">
+				</a>
+				<a href="http://www.intrawallpaper.com/static/images/eiffel-tower-wallpaper-18_TJ30uc8.jpg" v-lightbox="{title: 'Paris', desc:'Jsuis une desc', group: 'ville'}">
+					<img src="http://www.intrawallpaper.com/static/images/eiffel-tower-wallpaper-18_TJ30uc8.jpg" width="266" height="150" alt="">
 				</a>
 				<p>Exemple pour afficher la lightbox ci dessus</p>
 				<pre style="text-align:left;" class="language-markup"><code>

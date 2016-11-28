@@ -23,7 +23,7 @@ Vue.directive('lightbox', {
 
 		})
 	},
-	unbind(el) {
-		store.removeImage(el.getAttribute('href'));
+	unbind(el, binding) {
+		store.removeImage(el.getAttribute('href'), binding.value.group);
 	}
 });
