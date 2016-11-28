@@ -6,7 +6,7 @@
 
 ### Lightbox component
 
-![](http://puu.sh/swJ8T/b14fbf9065.gif)
+![](http://puu.sh/swJK6/f8fc3aa8ef.gif)
 
 ## Build Setup
 
