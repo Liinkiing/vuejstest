@@ -367,18 +367,124 @@
 			</code></pre>
 				<br><br><br><br>
 
-				<h2>Futurama</h2>
-				<a :href="'http://lorempicsum.com/futurama/1920/1080/' + n" v-for="n in 5"
-				   v-lightbox="{title: 'Test de titre ' + n, desc: 'Je suis une ' + n + 'e description',}">
-					<img :src="'http://lorempicsum.com/futurama/150/150/' + n">
+				<h2>Lightbox component</h2>
+				<p>Premièrement, insérez une balise
+				<pre class="language-markup" style="display: inline-block; padding: 5px; margin: 0; vertical-align: bottom;"><code>&lt;lightbox>&lt;/lightbox></code></pre>. Elle doit être soeur d'une div ayant comme id <pre>wrapper</pre> <br>exemple: </p>
+				<pre style="text-align:left;" class="language-markup"><code>
+&lt;div class="wrapper">
+		&lt;!-- Contenu de votre site web -->
+&lt;/div>
+&lt;lightbox>&lt;/lightbox>
+				</code></pre>
+				<p>Ensuite, la seule chose qu'il vous reste à faire afin d'insérer une image dans la Lightbox : </p>
+				<pre style="text-align: left;" class="language-markup"><code>
+&lt;a href="http://yoursupersite.com/awesome-fullscreen-image.png" v-lightbox>
+		&lt;img src="http://yoursupersite.com/awesome-thumbnail-image.png">&lt;/img>
+&lt;/a>
+				</code></pre>
+				<p>Vous pouvez de plus rajouter des paramètres supplémentaires à la directive <code>v-lightbox</code>.</p>
+				<table class="ui celled stripped table">
+					<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Type de valeur</th>
+						<th>Valeur par défaut</th>
+						<th></th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td><code>group</code></td>
+						<td><code>String</code></td>
+						<td><code>'default'</code></td>
+						<td>Utilisé afin de créer divers ensembles d'images</td>
+					</tr>
+					<tr>
+						<td><code>title</code></td>
+						<td><code>String</code></td>
+						<td><code>null</code></td>
+						<td>Permet de donner un titre à votre image, qui sera affiché en haut de l'image</td>
+					</tr>
+					<tr>
+						<td><code>desc</code></td>
+						<td><code>String</code></td>
+						<td><code>null</code></td>
+						<td>Permet de donner une description à votre image, qui sera affiché en bas de l'image</td>
+					</tr>
+					</tbody>
+				</table>
+				<br><br>
+				<h2>Groupe 'nature'</h2>
+				<a href="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" v-lightbox="{group: 'nature', title: 'Je suis un titre'}">
+					<img src="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" width="266" height="150" alt="">
 				</a>
-				<h2>Rio</h2>
-				<a :href="'http://lorempicsum.com/rio/1920/1080/' + n" v-for="n in 8"
-				   v-lightbox="{title: 'Test de titre ' + n, desc: 'Je suis une ' + n + 'e description', group: 'rio'}">
-					<img :src="'http://lorempicsum.com/rio/150/150/' + n">
+				<a href="http://wallpapercave.com/wp/eaFUfBE.jpg" v-lightbox="{group: 'nature', desc: 'Je suis une description'}">
+					<img src="http://wallpapercave.com/wp/eaFUfBE.jpg" width="266" height="150" alt="">
 				</a>
+				<a href="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/11/Full-Screen-HD-Wallpapers-7.jpg" v-lightbox="{group: 'nature', title: 'Titre', desc: 'Je suis une description'}">
+					<img src="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/11/Full-Screen-HD-Wallpapers-7.jpg" width="266" height="150" alt="">
+				</a>
+				<h2>Groupe 'ville'</h2>
+				<a href="http://www.pixelstalk.net/wp-content/uploads/2016/05/Full-HD-Desktop-Wallpaper.jpg" v-lightbox="{group: 'ville' }">
+					<img src="http://www.pixelstalk.net/wp-content/uploads/2016/05/Full-HD-Desktop-Wallpaper.jpg" width="266" height="150" alt="">
+				</a>
+				<a href="http://allfreedesigns.com/wp-content/uploads/2011/08/city-skyline-wallpapers-21.png" v-lightbox="{group: 'ville'}">
+					<img src="http://allfreedesigns.com/wp-content/uploads/2011/08/city-skyline-wallpapers-21.png" width="266" height="150" alt="">
+				</a>
+				<a href="http://wallpapercave.com/wp/NIAnj0Q.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+					<img src="http://wallpapercave.com/wp/NIAnj0Q.jpg" width="266" height="150" alt="">
+				</a>
+				<a href="http://wallpapercave.com/wp/bnZNbJG.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+					<img src="http://wallpapercave.com/wp/bnZNbJG.jpg" width="266" height="150" alt="">
+				</a>
+				<a href="http://livehdwallpaper.com/wp-content/uploads/2015/01/New-York-City-Skyline-Wallpapers.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+					<img src="http://livehdwallpaper.com/wp-content/uploads/2015/01/New-York-City-Skyline-Wallpapers.jpg" width="266" height="150" alt="">
+				</a>
+				<a href="http://cdn.pcwallart.com/images/city-skyline-wallpaper-wallpaper-4.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+					<img src="http://cdn.pcwallart.com/images/city-skyline-wallpaper-wallpaper-4.jpg" width="266" height="150" alt="">
+				</a>
+				<p>Exemple pour afficher la lightbox ci dessus</p>
+				<pre style="text-align:left;" class="language-markup"><code>
+		&lt;h2>Groupe 'nature'&lt;/h2>
 
-				<br><br><br><br><br><br><br>
+		&lt;a href="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" v-lightbox="{group: 'nature', title: 'Je suis un titre'}">
+				&lt;img src="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" width="266" height="150" alt="">
+		&lt;/a>
+
+		&lt;a href="http://wallpapercave.com/wp/eaFUfBE.jpg" v-lightbox="{group: 'nature', desc: 'Je suis une description'}">
+				&lt;img src="http://wallpapercave.com/wp/eaFUfBE.jpg" width="266" height="150" alt="">
+		&lt;/a>
+
+		&lt;a href="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/11/Full-Screen-HD-Wallpapers-7.jpg" v-lightbox="{group: 'nature', title: 'Titre', desc: 'Je suis une description'}">
+				&lt;img src="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/11/Full-Screen-HD-Wallpapers-7.jpg" width="266" height="150" alt="">
+		&lt;/a>
+
+		&lt;h2>Groupe 'ville'&lt;/h2>
+
+		&lt;a href="http://www.pixelstalk.net/wp-content/uploads/2016/05/Full-HD-Desktop-Wallpaper.jpg" v-lightbox="{group: 'ville' }">
+				&lt;img src="http://www.pixelstalk.net/wp-content/uploads/2016/05/Full-HD-Desktop-Wallpaper.jpg" width="266" height="150" alt="">
+		&lt;/a>
+
+		&lt;a href="http://allfreedesigns.com/wp-content/uploads/2011/08/city-skyline-wallpapers-21.png" v-lightbox="{group: 'ville'}">
+				&lt;img src="http://allfreedesigns.com/wp-content/uploads/2011/08/city-skyline-wallpapers-21.png" width="266" height="150" alt="">
+		&lt;/a>
+
+		&lt;a href="http://wallpapercave.com/wp/NIAnj0Q.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+				&lt;img src="http://wallpapercave.com/wp/NIAnj0Q.jpg" width="266" height="150" alt="">
+		&lt;/a>
+
+		&lt;a href="http://wallpapercave.com/wp/bnZNbJG.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+				&lt;img src="http://wallpapercave.com/wp/bnZNbJG.jpg" width="266" height="150" alt="">
+		&lt;/a>
+
+		&lt;a href="http://livehdwallpaper.com/wp-content/uploads/2015/01/New-York-City-Skyline-Wallpapers.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+				&lt;img src="http://livehdwallpaper.com/wp-content/uploads/2015/01/New-York-City-Skyline-Wallpapers.jpg" width="266" height="150" alt="">
+		&lt;/a>
+
+		&lt;a href="http://cdn.pcwallart.com/images/city-skyline-wallpaper-wallpaper-4.jpg" v-lightbox="{group: 'ville', title: 'City Skyline'}">
+				&lt;img src="http://cdn.pcwallart.com/images/city-skyline-wallpaper-wallpaper-4.jpg" width="266" height="150" alt="">
+		&lt;/a>
+				</code></pre>
 			</div>
 
 			<footer style="margin-top: 40px;">
@@ -395,6 +501,7 @@
 
 <script>
 	import LightboxDirective from './components/lightbox/LightboxDirective'
+
 
 	import Todos from './components/Todos'
 	import Carousel from './components/carousel/Carousel'
@@ -419,8 +526,7 @@
 			return {
 				rioSlides: 5,
 				rioAutoplay: true,
-				rioDuration: 2500,
-				section: 'futurama'
+				rioDuration: 2500
 			}
 		},
 		watch: {

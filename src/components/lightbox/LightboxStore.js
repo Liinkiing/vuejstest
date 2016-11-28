@@ -5,7 +5,8 @@ class LightboxStore {
 			index: null,
 			images: {},
 			direction: 'in',
-			group: 'default'
+			group: 'default',
+			count: 0
 		}
 	}
 
@@ -22,6 +23,7 @@ class LightboxStore {
 	}
 	open(url, group) {
 		this.state.group = group;
+		this.state.count = this.state.images[group].length;
 		let newIndex = this.state.images[this.state.group].findIndex(image => image.url == url);
 		if(this.state.index > newIndex) this.state.direction = "out";
 		else this.state.direction = "in";

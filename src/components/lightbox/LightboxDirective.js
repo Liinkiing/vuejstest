@@ -4,12 +4,21 @@ import store from './LightboxStore'
 Vue.directive('lightbox', {
 	bind(el, binding) {
 
-		store.addImage(el.getAttribute('href'), binding.value.title, binding.value.desc, el.querySelector('img').getAttribute('src'), (binding.value.group == undefined) ? 'default' : binding.value.group);
+		let title, desc, group;
+		if(binding.value != undefined) {
+			title = binding.value.title == undefined ? null : binding.value.title;
+			desc = binding.value.desc == undefined ? null : binding.value.desc;
+			group = (binding.value.group == undefined) ? 'default' : binding.value.group;
+		} else {
+			title = null;
+			desc = null;
+			group = 'default';
+		}
+
+		store.addImage(el.getAttribute('href'), title , desc, el.querySelector('img').getAttribute('src'), group);
 
 		el.addEventListener('click', function(e) {
 			e.preventDefault();
-			let group = (binding.value.group == undefined) ? 'default' : binding.value.group;
-			console.log(group);
 			store.open(el.getAttribute('href'), group);
 
 		})
