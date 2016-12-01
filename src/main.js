@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import App from './App'
 import VueLocalStorage from 'vue-localstorage'
-import VueAnimatedList from 'vue-animated-list'
+import router from './router/router';
+
 
 Vue.use(VueLocalStorage);
-Vue.config.keyCodes.backspace = 8;
+
+
 
 Number.prototype.clamp = function(min, max) {
 	return Math.min(Math.max(this, min), max);
@@ -12,7 +14,7 @@ Number.prototype.clamp = function(min, max) {
 
 /* eslint-disable no-new */
 new Vue({
-
+	router: router,
 	localStorage: {
 		todos: {
 			type: Array,
