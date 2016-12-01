@@ -5,9 +5,13 @@ Vue.use(VueRouter);
 
 import HomePage from '../components/pages/Home';
 import TodoPage from '../components/pages/Todo';
+import AboutPage from '../components/pages/About';
+import ProjectsPage from '../components/pages/Projects';
 
 const routes = [
 	{path: '/', component: HomePage},
+	{path: '/about', component: AboutPage},
+	{path: '/projects', component: ProjectsPage},
 	{path: '/todo', component: TodoPage}
 ];
 

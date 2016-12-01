@@ -16,7 +16,8 @@
       color: red; }
   .input-tags .tag:hover {
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.21); }
+    background: rgba(29, 137, 230, 0.21);
+    border: 1px solid rgba(55, 144, 216, 0.36); }
     .input-tags .tag:hover i {
       opacity: 1;
       transform: scale(1);
@@ -43,6 +44,8 @@
     border-radius: 3px;
     padding: 4px;
     float: left; }
+  .input-tags .input-wrapper input.edit {
+    display: none; }
 
 .slide-left-move {
   transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important; }

@@ -1,11 +1,7 @@
-
 <template>
-	<transition name="fade-image">
-		<div class="ui container" style="margin-top: 50px;">
-			<todos></todos>
-		</div>
-	</transition>
-
+	<div>
+		<todos></todos>
+	</div>
 
 </template>
 <style lang="scss">
