@@ -1,6 +1,6 @@
 <template>
 		<div>
-			<h3>Je suis l'accueil</h3>
+			<h3>Développeur fullstack / Webdesigner</h3>
 		</div>
 </template>
 <style lang="scss">

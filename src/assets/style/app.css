@@ -4,11 +4,22 @@
   src: url("./components/fonts/FiraCode-Medium.eot?#iefix") format("embedded-opentype"), url("./components/fonts/FiraCode-Medium.woff") format("woff"), url("./components/fonts/FiraCode-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal; }
+@font-face {
+  font-family: 'Geomanist';
+  src: url("./components/fonts/Geomanist-Regular.eot");
+  src: url("./components/fonts/Geomanist-Regular.eot?#iefix") format("embedded-opentype"), url("./components/fonts/Geomanist-Regular.woff") format("woff"), url("./components/fonts/Geomanist-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 * {
   box-sizing: border-box; }
 
 html {
   font-size: 100%; }
+
+h3 {
+  font-family: 'Geomanist', 'Lato', 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase; }
 
 body {
   font: 14px 'Lato', Helvetica, Arial, sans-serif;
@@ -24,10 +35,11 @@ body {
 
 #app {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex; }
+  -moz-osx-font-smoothing: grayscale; }
 
 nav.aside {
+  z-index: 100;
+  transition: all 0.3s ease-in;
   display: flex;
   width: 300px;
   background: #2c2f2f;
@@ -71,7 +83,7 @@ nav.aside {
   nav.aside ul {
     list-style: none;
     padding: 0;
-    margin: 0; }
+    margin: 0 0 20px 0; }
     nav.aside ul li {
       transition: all 0.3s;
       display: block;
@@ -89,6 +101,13 @@ nav.aside {
         color: #008c9e; }
         nav.aside ul li a:hover {
           color: #00b4cc; }
+  nav.aside .theme-chooser select {
+    padding: 5px;
+    color: black; }
+  nav.aside.closed {
+    transform: translateX(-300px); }
+  nav.aside.opened {
+    transform: translateX(0); }
 
 span.slash {
   font-size: 2.7rem;
@@ -116,15 +135,34 @@ code {
   margin: 0 auto; }
 
 .view-wrapper {
+  transition: all 0.3s ease-in;
   flex: 1; }
+  .view-wrapper.menu-opened {
+    filter: blur(6px) grayscale(90%);
+    transform: translateX(); }
+  .view-wrapper.menu-closed {
+    transform: translateX(-300px); }
 
 .view {
   padding: 40px; }
 
-.wrapper {
-  transition: all 0.3s; }
-  .wrapper.lightbox-opened, .wrapper .menu-opened {
+#wrapper {
+  transition: all 0.3s;
+  display: flex;
+  width: calc(100vw + 300px); }
+  #wrapper.lightbox-opened {
     filter: blur(15px); }
+
+body.dark-theme {
+  transition: all 0.3s ease-in; }
+
+body.light-theme {
+  transition: all 0.3s ease-in;
+  background: whitesmoke; }
+  body.light-theme .current-page {
+    color: whitesmoke; }
+  body.light-theme .view {
+    color: black; }
 
 .fade-enter-active, .fade-leave-active {
   transform-origin: top right;

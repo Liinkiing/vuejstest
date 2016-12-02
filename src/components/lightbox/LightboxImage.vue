@@ -235,13 +235,13 @@
 			};
 			this.shortcutEvent = (e) => { this.shortcutsHandler(e) };
 			document.querySelector('body').classList.add('lightbox-opened');
-			document.querySelector('.wrapper').classList.add('lightbox-opened');
+			document.querySelector('#wrapper').classList.add('lightbox-opened');
 			window.addEventListener('resize', this.resizeEvent);
 			window.addEventListener('keyup', this.shortcutEvent);
 		},
 		destroyed() {
 			document.querySelector('body').classList.remove('lightbox-opened');
-			document.querySelector('.wrapper').classList.remove('lightbox-opened');
+			document.querySelector('#wrapper').classList.remove('lightbox-opened');
 			window.removeEventListener('resize', this.resizeEvent);
 			window.removeEventListener('keyup', this.shortcutEvent);
 		}
