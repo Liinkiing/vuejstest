@@ -15,6 +15,10 @@ button {
 	font-smoothing: antialiased;
 }
 
+.todoapp header.header {
+	padding: 20px;
+}
+
 
 button,
 input[type="checkbox"] {
@@ -103,8 +107,7 @@ label[for='toggle-all'] {
 
 .toggle-all {
 	position: absolute;
-	top: -55px;
-	left: -12px;
+	top: -70px;
 	width: 60px;
 	height: 34px;
 	text-align: center;
@@ -148,6 +151,10 @@ label[for='toggle-all'] {
 	width: 506px;
 	padding: 13px 17px 12px 17px;
 	margin: 0 0 0 43px;
+}
+
+.todo-list .todo .view {
+	color: black;
 }
 
 .todo-list li.editing .view {

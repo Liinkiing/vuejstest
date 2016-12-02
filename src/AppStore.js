@@ -2,19 +2,19 @@ class AppStore {
 
 	constructor() {
 		this.state = {
-			
+			lightboxOpened: false
 		}
 	}
-	
+
 	initStore() {
 		this.nav = document.querySelector('nav.aside');
 		this.pageView = document.querySelector('.view-wrapper');
 		this.body = document.querySelector('body');
 	}
-	
-	
-	
-	
+
+
+
+
 	closeMenu() {
 		console.log(this.nav, this.pageView);
 		this.nav.classList.remove('opened');
@@ -31,7 +31,7 @@ class AppStore {
 	toggleMenu() {
 		this.isMenuOpened() ? this.closeMenu() : this.openMenu();
 	}
-	
+
 	isMenuOpened() {
 		return this.nav.classList.contains('opened');
 	}

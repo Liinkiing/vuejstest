@@ -1,19 +1,13 @@
 <template>
 	<div id="app" >
 
-		<!--<ul>-->
-			<!--<li><router-link to="/">Accueil</router-link></li>-->
-			<!--<li><router-link to="/todo">Démonstration Lightbox</router-link></li>-->
-		<!--</ul>-->
-
 		<div id="wrapper">
-
-
 			<nav class="aside opened">
-				<div class="item brand"><h1><router-link to="/">Omar JBARA</router-link></h1></div>
+				<div class="item brand"><h1><router-link to="/">JBARA Omar</router-link></h1></div>
 				<ul>
 					<li><router-link to="/about">A propos de moi</router-link></li>
 					<li><router-link to="/projects">Mes projets</router-link></li>
+					<li><router-link to="/hobbies">Mes hobbies</router-link></li>
 				</ul>
 				<div class="theme-chooser">
 					<p>Choississez un thème</p>
@@ -22,8 +16,6 @@
 						<option value="dark">Foncé</option>
 					</select>
 				</div>
-				<button @click.prevent="closeMenu()">Fermer</button>
-				<button @click.prevent="openMenu()">Ouvrir</button>
 			</nav>
 
 
@@ -56,6 +48,17 @@
 
 <style src="./assets/style/app.scss" lang="scss">
 
+	.slide-maxime-heading-enter-active, .slide-maxime-heading-leave-active {
+		transition: opacity .5s, transform 0.8s;
+	}
+
+	.slide-maxime-heading-enter, .slide-maxime-heading-leave-active {
+		opacity: 0;
+		transform: translateX(-200vw);
+
+	}
+
+
 </style>
 
 <script>
@@ -82,8 +85,8 @@
 			store.initStore();
 			store.body.classList = "";
 			store.body.classList.add('dark-theme');
-			window.addEventListener('keyup', (e) => {
-				if(e.key == "Escape") {
+			this.shortcutsEventHandler = window.addEventListener('keyup', (e) => {
+				if(e.key == "Escape" && !this.state.lightboxOpened) {
 					store.toggleMenu();
 				}
 			});
@@ -98,7 +101,7 @@
 
 		computed: {
 			pathName() {
-				if(this.$route.path == "/") return "home"
+				if(this.$route.path == "/") return "home";
 				return this.$route.path.split("/")[1];
 			}
 		}
