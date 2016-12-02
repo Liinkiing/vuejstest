@@ -1,14 +1,13 @@
 <template>
-		<div class="container">
+		<div>
 			<h3>Développeur fullstack / Webdesigner</h3>
-			<p>Passionné par le développement depuis le plus jeune, j'ai depuis maintenant plusieurs années appris les différentes technologies web qui nous entourent.
+			<p>Passionné par le développement depuis le plus  jeune, j'ai depuis maintenant plusieurs années appris les différentes technologies web qui nous entourent.
 				Étant de nature <strong>curieux</strong> et <strong>autodidacte</strong>, j'ai beaucoup appris lors de mon temps libre.</p>
 			<p>Je maîtrise / je suis à l'aise avec le langage
 				<transition name="fade" tag="span" mode="out-in">
 					<span :key="language" class="language">{{ language }}</span>
 				</transition>
 				</p>
-			<todos></todos>
 		</div>
 </template>
 <style lang="scss">

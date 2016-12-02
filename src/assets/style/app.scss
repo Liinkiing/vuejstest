@@ -170,10 +170,29 @@ header {
 	background: $dark-teal-color;
 	padding: 45px;
 	& h2 {
+		margin-top: 0;
 		font-weight: 100;
 		text-transform: uppercase;
 	}
 }
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Geomanist', 'Lato', 'Roboto', sans-serif;
+	text-transform: uppercase;
+
+}
+
+h3 {
+	padding-left: 10px;
+	border-left: 5px solid $dark-teal-color;
+}
+
+h4 {
+	text-transform: none;
+}
+
+
+
 //h2 {
 //	display: inline-block;
 //	&:before {
@@ -259,6 +278,12 @@ body.light-theme {
 
 }
 
+
+.mobile-only {
+	display: none !important;
+}
+
+
 .fade-enter-active, .fade-leave-active {
 	transform-origin: top right;
 	transition: opacity .5s, filter 0.7s;
@@ -276,5 +301,49 @@ body.light-theme {
 .slide-heading-enter, .slide-heading-leave-active {
 	opacity: 0;
 	transform: translateX(10px);
+
+}
+
+
+@media screen and (max-width: 640px){
+
+	nav.aside {
+		transform: translateX(-300px)
+	}
+	.view-wrapper {
+		padding-left: 0;
+	}
+
+	.current-page {
+		padding: 20px;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		& span.slash {
+			font-size: 1.8rem;
+			margin-right: 0;
+		}
+		& h2 {
+			font-size: 1.5rem;
+		}
+	}
+
+	.view {
+		margin-top: 42px;
+	}
+
+	.mobile-only {
+		display: block !important;
+	}
+
+	i.mobile-only {
+		display: inline-block !important;
+	}
+
+
+	html {
+		font-size: 70%;
+	}
 
 }

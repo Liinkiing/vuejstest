@@ -2,12 +2,13 @@
 	<div id="app" >
 
 		<div id="wrapper">
-			<nav class="aside opened">
+			<nav class="aside">
 				<div class="item brand"><h1><router-link to="/">JBARA Omar</router-link></h1></div>
 				<ul>
 					<li><router-link to="/about">A propos de moi</router-link></li>
 					<li><router-link to="/projects">Mes projets</router-link></li>
 					<li><router-link to="/hobbies">Mes hobbies</router-link></li>
+					<li><router-link to="/examples">Exemples</router-link></li>
 				</ul>
 				<div class="theme-chooser">
 					<p>Choississez un thème</p>
@@ -22,6 +23,7 @@
 
 			<div class="view-wrapper">
 				<header class="current-page">
+					<i style="font-size: 2rem;" class="list icon mobile-only" @click.prevent="openMenu"></i>
 					<h2 style="display: inline-block; width: 75%;"><span class="slash">/</span>
 						<transition name="slide-heading" mode="out-in">
 							<code style="display: inline-block;" :key="pathName">{{ pathName }}();</code>
@@ -85,17 +87,26 @@
 			store.initStore();
 			store.body.classList = "";
 			store.body.classList.add('dark-theme');
-			this.shortcutsEventHandler = window.addEventListener('keyup', (e) => {
-				if(e.key == "Escape" && !this.state.lightboxOpened) {
-					store.toggleMenu();
-				}
-			});
+//			this.shortcutsEventHandler = window.addEventListener('keyup', (e) => {
+//				if(e.key == "Escape" && !this.state.lightboxOpened) {
+//					store.toggleMenu();
+//				}
+//			});
 		},
 
 		watch: {
 			theme(val, oldVal) {
 				store.body.classList = "";
 				store.body.classList.add(val + '-theme');
+			}
+		},
+
+		methods: {
+			openMenu() {
+				store.openMenu();
+			},
+			closeMenu() {
+				store.closeMenu();
 			}
 		},
 
