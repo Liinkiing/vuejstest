@@ -39,19 +39,19 @@ input[type="checkbox"] {
 .todoapp input::-webkit-input-placeholder {
 	font-style: italic;
 	font-weight: 300;
-	color: #e6e6e6;
+	color: #e6e6e6 ;
 }
 
 .todoapp input::-moz-placeholder {
 	font-style: italic;
 	font-weight: 300;
-	color: #e6e6e6;
+	color: #e6e6e6 ;
 }
 
 .todoapp input::input-placeholder {
 	font-style: italic;
 	font-weight: 300;
-	color: #e6e6e6;
+	color: #e6e6e6 ;
 }
 
 .todoapp h1 {
@@ -119,7 +119,7 @@ label[for='toggle-all'] {
 }
 
 .toggle-all:checked:before {
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(255, 255, 255, 0.8) ;
 
 }
 
@@ -152,7 +152,7 @@ label[for='toggle-all'] {
 }
 
 .todo-list .todo .view {
-	color: black;
+	color: black ;
 	padding: 20px;
 }
 
@@ -195,7 +195,7 @@ label[for='toggle-all'] {
 }
 
 .todo-list li.completed label {
-	color: #d9d9d9;
+	color: #d9d9d9 ;
 	text-decoration: line-through;
 }
 

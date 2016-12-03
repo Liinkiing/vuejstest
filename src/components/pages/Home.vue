@@ -1,5 +1,5 @@
 <template>
-		<div>
+		<div class="container">
 			<h3>Développeur fullstack / Webdesigner</h3>
 			<p>Passionné par le développement depuis le plus  jeune, j'ai depuis maintenant plusieurs années appris les différentes technologies web qui nous entourent.
 				Étant de nature <strong>curieux</strong> et <strong>autodidacte</strong>, j'ai beaucoup appris lors de mon temps libre.</p>
@@ -55,10 +55,8 @@
 		mounted() {
 			this.language = this.languages[0];
 			window.setInterval(() => {
-
 				let i = this.languages.indexOf(this.language) + 1;
 				if(i > this.languages.length - 1) i = 0;
-				console.log(i);
 				this.language = this.languages[i];
 			}, 3000);
 		}

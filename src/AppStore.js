@@ -1,9 +1,10 @@
 class AppStore {
-
+	
+	
 	constructor() {
 		this.state = {
 			lightboxOpened: false
-		}
+		};
 	}
 
 	initStore() {
@@ -16,20 +17,25 @@ class AppStore {
 
 
 	closeMenu() {
-		console.log(this.nav, this.pageView);
 		this.nav.classList.remove('opened');
 		this.pageView.classList.remove('menu-opened');
-		this.pageView.classList.add('menu-closed');
-		this.nav.classList.add('closed');
+		// this.pageView.classList.add('menu-closed');
+		// this.nav.classList.add('closed');
 	}
 	openMenu() {
-		this.nav.classList.remove('closed');
-		this.pageView.classList.remove('menu-closed');
+		// this.nav.classList.remove('closed');
+		// this.pageView.classList.remove('menu-closed');
 		this.pageView.classList.add('menu-opened');
 		this.nav.classList.add('opened')
 	}
 	toggleMenu() {
 		this.isMenuOpened() ? this.closeMenu() : this.openMenu();
+	}
+	
+	//noinspection JSMethodCanBeStatic
+	isMobile() {
+		let md = new MobileDetect(window.navigator.userAgent);
+		return window.innerWidth <= 720 ||  md.phone() != null;
 	}
 
 	isMenuOpened() {
