@@ -26,7 +26,7 @@
 					<i style="font-size: 1.75rem; opacity: 0.7; margin-right: 10px;" class="sidebar icon mobile-only" @click.prevent="openMenu"></i>
 					<h2 style="display: inline-block; width: 75%;">
 						<transition name="slide-heading" mode="out-in">
-							<code style="display: inline-block;" :key="pathName">App::{{ pathName }}()</code>
+							<code style="display: inline-block;" :key="pathName"><span>App</span>::<span>get{{ pathName.capitalize() }}</span>()</code>
 						</transition>
 					</h2>
 				</header>

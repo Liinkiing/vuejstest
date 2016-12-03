@@ -80,8 +80,12 @@ nav.aside {
 
 	& .item.brand {
 		padding: 40px;
+
+
 		& h1 > a {
+
 			color: inherit;
+			display: inline-block;
 			font-size: 1.5rem;
 			transition: all $transition-duration;
 			&:before {
@@ -90,7 +94,7 @@ nav.aside {
 				margin-right: 10px;
 				color: $dark-teal-color;
 				display: inline-block;
-				transform: translateX(-10px) scale(0.8);
+				transform: translateX(-10px) scale(0.8) rotate(-25deg);
 				opacity: 0;
 			}
 			&:after {
@@ -100,19 +104,20 @@ nav.aside {
 				margin-left: 10px;
 				color: $dark-teal-color;
 				opacity: 0;
-				transform: translateX(10px) scale(0.8);
+				transform: translateX(10px) scale(0.8) rotate(25deg);
 			}
 			&:hover:before {
 				opacity: 1;
-				transform: translateX(0) scale(1);
+				transform: translateX(0) scale(1) rotate(0deg);
 			}
 			&:hover:after {
 				opacity: 1;
-				transform: translateX(0) scale(1);
+				transform: translateX(0) scale(1) rotate(0deg);
 			}
 			&:hover {
 				cursor: pointer;
 				color: $light-teal-color;
+				transform: scale(1.1);
 			}
 		}
 	}
@@ -125,12 +130,14 @@ nav.aside {
 			display: block;
 
 			border-bottom: 2px solid rgba(245, 245, 245, 0.03);
-			&:first-of-type {
-				border-top: 2px solid rgba(245, 245, 245, 0.03);
-			}
+
 			&:hover {
 				cursor: pointer;
 				background: $background-color;
+			}
+			&:first-of-type {
+				border-top: 2px solid rgba(245, 245, 245, 0.03);
+
 			}
 			& a {
 				transition: all $transition-duration;
@@ -291,6 +298,15 @@ body.light-theme {
 	& .view {
 		color: black;
 	}
+
+	nav.aside {
+		li:hover {
+			background: #dedede;
+			& a {
+				color: $dark-teal-color;
+			}
+		}
+	}
 	& span.language:before {
 		background: black;
 	}
@@ -328,6 +344,23 @@ body.light-theme {
 }
 
 
+@keyframes logo {
+	0% {
+		transform: scale(1) rotate(0deg);
+	}
+	25% {
+		transform: scale(1.05) rotate(-5deg);
+	}
+	50% {
+		transform: scale(1.05) rotate(5deg);
+	}
+	100% {
+		transform: scale(1) rotate(0deg);
+
+	}
+}
+
+
 @media screen and (max-width: 720px){
 
 	.lightbox-image {
@@ -337,7 +370,7 @@ body.light-theme {
 
 	nav.aside {
 		transform: translateX(-300px);
-		overflow: scroll;
+		overflow-y: scroll;
 		padding-bottom: 30px;
 	}
 	.view-wrapper {

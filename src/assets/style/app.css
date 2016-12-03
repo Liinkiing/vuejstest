@@ -55,6 +55,7 @@ nav.aside {
     padding: 40px; }
     nav.aside .item.brand h1 > a {
       color: inherit;
+      display: inline-block;
       font-size: 1.5rem;
       transition: all 0.3s; }
       nav.aside .item.brand h1 > a:before {
@@ -63,7 +64,7 @@ nav.aside {
         margin-right: 10px;
         color: #005f6b;
         display: inline-block;
-        transform: translateX(-10px) scale(0.8);
+        transform: translateX(-10px) scale(0.8) rotate(-25deg);
         opacity: 0; }
       nav.aside .item.brand h1 > a:after {
         transition: all 0.3s;
@@ -72,16 +73,17 @@ nav.aside {
         margin-left: 10px;
         color: #005f6b;
         opacity: 0;
-        transform: translateX(10px) scale(0.8); }
+        transform: translateX(10px) scale(0.8) rotate(25deg); }
       nav.aside .item.brand h1 > a:hover:before {
         opacity: 1;
-        transform: translateX(0) scale(1); }
+        transform: translateX(0) scale(1) rotate(0deg); }
       nav.aside .item.brand h1 > a:hover:after {
         opacity: 1;
-        transform: translateX(0) scale(1); }
+        transform: translateX(0) scale(1) rotate(0deg); }
       nav.aside .item.brand h1 > a:hover {
         cursor: pointer;
-        color: #00b4cc; }
+        color: #00b4cc;
+        transform: scale(1.1); }
   nav.aside ul {
     list-style: none;
     padding: 0;
@@ -90,11 +92,11 @@ nav.aside {
       transition: all 0.3s;
       display: block;
       border-bottom: 2px solid rgba(245, 245, 245, 0.03); }
-      nav.aside ul li:first-of-type {
-        border-top: 2px solid rgba(245, 245, 245, 0.03); }
       nav.aside ul li:hover {
         cursor: pointer;
         background: #343838; }
+      nav.aside ul li:first-of-type {
+        border-top: 2px solid rgba(245, 245, 245, 0.03); }
       nav.aside ul li a {
         transition: all 0.3s;
         display: inline-block;
@@ -193,6 +195,10 @@ body.light-theme {
     background: #008c9e; }
   body.light-theme .view {
     color: black; }
+  body.light-theme nav.aside li:hover {
+    background: #dedede; }
+    body.light-theme nav.aside li:hover a {
+      color: #005f6b; }
   body.light-theme span.language:before {
     background: black; }
 
@@ -218,6 +224,15 @@ body.light-theme {
   opacity: 0;
   transform: translateX(10px); }
 
+@keyframes logo {
+  0% {
+    transform: scale(1) rotate(0deg); }
+  25% {
+    transform: scale(1.05) rotate(-5deg); }
+  50% {
+    transform: scale(1.05) rotate(5deg); }
+  100% {
+    transform: scale(1) rotate(0deg); } }
 @media screen and (max-width: 720px) {
   .lightbox-image {
     height: calc(100vh - 120px) !important;
@@ -225,7 +240,7 @@ body.light-theme {
 
   nav.aside {
     transform: translateX(-300px);
-    overflow: scroll;
+    overflow-y: scroll;
     padding-bottom: 30px; }
 
   .view-wrapper {
