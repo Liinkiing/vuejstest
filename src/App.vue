@@ -7,7 +7,7 @@
 					<div class="item brand"><h1 @click="handleNavClick"><router-link to="/">JBARA Omar</router-link></h1></div>
 					<ul>
 						<li @click="handleNavClick"><router-link to="/about">A propos de moi</router-link></li>
-						<li @click="handleNavClick"><router-link to="/projects">Mes projets</router-link></li>
+						<li @click="handleNavClick"><router-link to="/portfolio">Mon portfolio</router-link></li>
 						<li @click="handleNavClick"><router-link to="/hobbies">Mes hobbies</router-link></li>
 						<li @click="handleNavClick"><router-link to="/examples">Exemples</router-link></li>
 					</ul>
@@ -19,7 +19,7 @@
 						</div>
 					</div>
 				</main>
-				<footer><a href="https://github.com/Liinkiing"><i style="font-size: 1.5rem; margin: 0;" class="github icon"></i></a></footer>
+				<footer><a href="https://github.com/Liinkiing" target="_blank"><i style="font-size: 1.5rem; margin: 0;" class="github icon"></i></a></footer>
 			</nav>
 
 
@@ -28,8 +28,18 @@
 				<header class="current-page">
 					<i style="font-size: 1.75rem; opacity: 0.7; margin-right: 10px;" class="sidebar icon mobile-only" @click.prevent="openMenu"></i>
 					<h2 style="display: inline-block; width: 75%;">
+						<!--<transition name="slide-heading" mode="out-in">-->
+							<!--<code style="display: inline-block;" key="noParams" v-if="!('slug' in $route.params)">-->
+								<!--<span>App</span>::<span>get{{ pathName.capitalize() }}</span>()-->
+							<!--</code>-->
+							<!--<code style="display: inline-block;" key="withParams" v-else>-->
+								<!--<span>App</span>::<span>get{{ pathName.capitalize() }}</span>('{{ $route.params.slug }}')-->
+							<!--</code>-->
+						<!--</transition>-->
 						<transition name="slide-heading" mode="out-in">
-							<code style="display: inline-block;" :key="pathName"><span>App</span>::<span>get{{ pathName.capitalize() }}</span>()</code>
+							<code style="display: inline-block;" :key="$route.path">
+								<span>App</span>::<span>get{{ pathName.capitalize() }}</span>({{ ("slug" in $route.params) ? "'" + $route.params.slug + "'" : "" }})
+							</code>
 						</transition>
 					</h2>
 				</header>
@@ -44,7 +54,6 @@
 
 
 		<lightbox></lightbox>
-		<project-details></project-details>
 
 
 	</div>
@@ -62,10 +71,9 @@
 <script>
 
 	import Lightbox from './components/lightbox/Lightbox';
-	import ProjectDetails from './components/projects/ProjectDetail';
+	import ProjectDetails from './components/pages/ProjectDetail';
 	import store from './AppStore';
-
-
+	import projectStore from './components/projects/ProjectStore';
 
 
 	export default {
@@ -109,7 +117,7 @@
 			openMenu() {
 				store.openMenu();
 				this.resizeEventHandler = window.addEventListener('resize', () => {
-					if(window.innerWidth >= 720) {
+					if (window.innerWidth >= 720) {
 						console.log('call');
 						store.nav.classList.remove('opened');
 						store.pageView.classList.remove('menu-opened');
@@ -128,14 +136,14 @@
 				return store.isMobile();
 			},
 			handleNavClick() {
-				if(this.isMobile()) this.closeMenu();
+				if (this.isMobile()) this.closeMenu();
 			}
 		},
 
 
 		computed: {
 			pathName() {
-				if(this.$route.path == "/") return "home";
+				if (this.$route.path == "/") return "home";
 				return this.$route.path.split("/")[1];
 			}
 		}

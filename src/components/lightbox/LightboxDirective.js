@@ -15,8 +15,9 @@ Vue.directive('lightbox', {
 			group = 'default';
 		}
 
+		el.classList.add('lightbox-image');
 		store.addImage(el.getAttribute('href'), title , desc, el.querySelector('img').getAttribute('src'), group);
-
+		
 		el.addEventListener('click', function(e) {
 			e.preventDefault();
 			store.open(el.getAttribute('href'), group);

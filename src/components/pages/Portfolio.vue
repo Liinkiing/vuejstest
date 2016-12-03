@@ -3,7 +3,7 @@
 			<projects>
 				<transition-group name="fade">
 					<project v-for="project in state.filteredProjects" :thumbnail="project.thumbnail" :title="project.title" :shortDescription="project.shortDescription"
-							 :category="project.category" :language="project.language" :date="project.date" :key="project.title"></project>
+							 :category="project.category" :language="project.language" :date="project.date" :images="project.images" :key="project.title"></project>
 				</transition-group>
 
 			</projects>
@@ -12,6 +12,7 @@
 <style lang="scss">
 
 	@import "../../assets/style/components/variables";
+
 
 
 

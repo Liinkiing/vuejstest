@@ -40,101 +40,107 @@
 </template>
 <style lang="scss">
 
-	.lightbox-image {
-		box-shadow: 0 1em 3em 0.5em rgba(0, 0, 0, 0.27);
-		position: fixed;
-		z-index: 9999;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+	.lightbox {
 
-		& svg {
-			width: 100%;
-			height: 100%;
-		}
+		& .lightbox-image {
+			box-shadow: 0 1em 3em 0.5em rgba(0, 0, 0, 0.27);
+			position: fixed;
+			z-index: 9999;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 
-		& .close {
-			transition: all 0.3s;
-			position: absolute;
-			right: 0;
-			top: 0;
-			padding: 13px;
-			background: transparent;
-			color: white;
-			opacity: 0.5;
-			width: 10%;
-			height: 10%;
-		  max-width: 40px;
-		  max-height: 40px;
-		  z-index: 1;
-		  min-height: 46px;
-			&:hover {
-				opacity: 1;
-				cursor: pointer;
-				transform: scale(1.1);
+			& svg {
+				width: 100%;
+				height: 100%;
+			}
+
+			& .close {
+				transition: all 0.3s;
+				position: absolute;
+				right: 0;
+				top: 0;
+				padding: 13px;
+				background: transparent;
+				color: white;
+				opacity: 0.5;
+				width: 10%;
+				height: 10%;
+				max-width: 40px;
+				max-height: 40px;
+				z-index: 1;
+				min-height: 46px;
+				&:hover {
+					opacity: 1;
+					cursor: pointer;
+					transform: scale(1.1);
+				}
+			}
+
+			& .title, .description {
+				flex: 1;
+				background: rgba(0, 0, 0, 0.63);
+				color: white;
+				max-height: 10%;
+				min-height: 52px;
+				padding: 2%;
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				flex-direction: column;
+				width: 100%;
+
+			}
+
+			& .title {
+				position: absolute;
+				top: 0;
+			}
+
+			& .description {
+				position: absolute;
+				bottom: 0;
+			}
+
+			& .pagination {
+				height: 82px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: fixed;
+				top: calc(50vh - 79px);
+				left: 0;
+				width: 100vw;
+			}
+
+			& .pagination .left, .pagination .right {
+				width: 64px;
+				height: 64px;
+				display: inline-block;
+				transition: all 0.3s;
+				opacity: 0.4;
+				padding: 10px 0;
+				&:hover {
+					opacity: 1;
+					cursor: pointer;
+
+				}
+			}
+
+			& .title {
+				text-align: center;
+				align-self: flex-start;
+			}
+
+			& .description {
+				text-align: left;
+				align-self: flex-end;
 			}
 		}
-	}
-
-	.lightbox-image .title, .lightbox-image .description {
-		flex: 1;
-		background: rgba(0, 0, 0, 0.63);
-		color: white;
-		max-height: 10%;
-		min-height: 52px;
-		padding: 2%;
-		display: flex;
-		justify-content: center;
-		align-content: center;
-		flex-direction: column;
-		width: 100%;
 
 	}
 
-	.lightbox-image .title {
-		position: absolute;
-		top: 0;
-	}
 
-	.lightbox-image .description {
-		position: absolute;
-		bottom: 0;
-	}
-
-	.lightbox-image .pagination {
-		height: 82px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		position: fixed;
-		top: calc(50vh - 79px);
-		left: 0;
-		width: 100vw;
-	}
-
-	.lightbox-image .pagination .left, .lightbox-image .pagination .right {
-		width: 64px;
-		height: 64px;
-		display: inline-block;
-		transition: all 0.3s;
-		opacity: 0.4;
-		padding: 10px 0;
-		&:hover {
-			opacity: 1;
-			cursor: pointer;
-
-		}
-	}
-
-	.lightbox-image .title {
-		text-align: center;
-		align-self: flex-start;
-	}
-
-	.lightbox-image .description {
-		text-align: left;
-		align-self: flex-end;
-	}
 
 	.loading {
 		position: fixed;

@@ -181,8 +181,8 @@ code {
 
 .container {
   padding: 40px;
-  width: 100%;
-  max-width: 1000px; }
+  width: 100vw;
+  max-width: 1300px; }
 
 i.sidebar.icon {
   cursor: pointer; }
@@ -271,6 +271,20 @@ body.light-theme {
       .theme-selector .dark-theme:hover:not(.active), .theme-selector .light-theme:hover:not(.active) {
         opacity: 0.5; }
 
+a.lightbox-image {
+  display: inline-block;
+  transition: all 0.3s;
+  margin: 5px; }
+  a.lightbox-image:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3), 0 25px 50px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer; }
+  a.lightbox-image img {
+    vertical-align: bottom;
+    max-width: 100%; }
+
+a.project.image {
+  max-width: 100%; }
+
 .mobile-only {
   display: none !important; }
 
@@ -303,7 +317,7 @@ body.light-theme {
   100% {
     transform: scale(1) rotate(0deg); } }
 @media screen and (max-width: 720px) {
-  .lightbox-image {
+  .lightbox .lightbox-image {
     height: calc(100vh - 120px) !important;
     top: 0 !important; }
 
@@ -316,7 +330,6 @@ body.light-theme {
     padding-left: 0; }
 
   .container {
-    width: 100%;
     padding: 20px; }
 
   img {
@@ -335,9 +348,9 @@ body.light-theme {
     .current-page h2 {
       font-size: 1.5rem; }
 
-  .lightbox-image h2 {
+  .lightbox .lightbox-image h2 {
     font-size: 1rem; }
-  .lightbox-image .description {
+  .lightbox .lightbox-image .description {
     font-size: 0.9rem; }
 
   header.current-page {
@@ -345,6 +358,11 @@ body.light-theme {
     padding: 10px;
     line-height: 40px;
     z-index: 9999; }
+
+  .project-title {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1); }
 
   p {
     line-height: 1.90rem; }

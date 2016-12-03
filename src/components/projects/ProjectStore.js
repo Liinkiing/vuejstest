@@ -4,13 +4,15 @@ class ProjectStore {
 		this.state = {
 			index: null,
 			projects: [
-				{thumbnail: "TestThumb", title: "Photo 1l", shortDescription: "TestDesc", category: "Photo", language: "C#", date: "mtn"},
-				{thumbnail: "TestThumb", title: "Science 1j", shortDescription: "TestDesc", category: "Science", language: "C#", date: "mtn"},
-				{thumbnail: "TestThumb", title: "Photo 2b", shortDescription: "TestDesc", category: "Photo", language: "C#", date: "mtn"},
-				{thumbnail: "TestThumb", title: "Informatique 1w", shortDescription: "TestDesc", category: "Informatique", language: "C#", date: "mtn"},
-				{thumbnail: "TestThumb", title: "Informatique 2e", shortDescription: "TestDesc", category: "Informatique", language: "C#", date: "mtn"},
-				{thumbnail: "TestThumb", title: "Photo 3a", shortDescription: "TestDesc", category: "Photo", language: "C#", date: "mtn"},
-				{thumbnail: "TestThumb", title: "Informatique 3aze", shortDescription: "TestDesc", category: "Informatique", language: "C#", date: "mtn"},
+				{thumbnail: "http://lorempicsum.com/futurama/350/220/1", title: "Slender", shortDescription: "TestDesc", category: "Photo", language: "C#", date: "mtn", images: [
+					"http://lorempicsum.com/rio/350/220/1", "http://lorempicsum.com/rio/350/220/2", "http://lorempicsum.com/rio/350/220/3", "http://lorempicsum.com/rio/350/220/4", "http://lorempicsum.com/rio/350/220/5"
+				]},
+				{thumbnail: "http://lorempicsum.com/futurama/350/220/2", title: "Vitae", shortDescription: "TestDesc", category: "Science", language: "C#", date: "mtn", images: []},
+				{thumbnail: "http://lorempicsum.com/futurama/350/220/3", title: "Marking", shortDescription: "TestDesc", category: "Photo", language: "C#", date: "mtn", images: []},
+				{thumbnail: "http://lorempicsum.com/futurama/350/220/4", title: "DB Manager", shortDescription: "TestDesc", category: "Informatique", language: "C#", date: "mtn", images: []},
+				{thumbnail: "http://lorempicsum.com/futurama/350/220/5", title: "Flyng Duck", shortDescription: "TestDesc", category: "Informatique", language: "C#", date: "mtn", images: []},
+				{thumbnail: "http://lorempicsum.com/futurama/350/220/6", title: "My Tomatoes", shortDescription: "TestDesc", category: "Photo", language: "C#", date: "mtn", images: []},
+				{thumbnail: "http://lorempicsum.com/futurama/350/220/7", title: "My Informatique", shortDescription: "TestDesc", category: "Informatique", language: "C#", date: "mtn", images: []},
 			],
 			filteredProjects: []
 		};
@@ -34,6 +36,10 @@ class ProjectStore {
 	
 	getProjectsByCategory() {
 		return _.groupBy(this.state.projects, 'category');
+	}
+	
+	getProject(name) {
+		return this.state.projects.filter((project) => project.title.slugify() == name)[0];
 	}
 	
 	filter(category) {
