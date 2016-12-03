@@ -62,6 +62,13 @@ body {
 }
 
 
+hr {
+	margin: 50px 0;
+	border: none;
+	border-bottom: 5px solid $dark-teal-color;
+	border-top: none;
+}
+
 
 nav.aside {
 	z-index: 100;
@@ -128,12 +135,13 @@ nav.aside {
 		& li {
 			transition: all $transition-duration;
 			display: block;
-
 			border-bottom: 2px solid rgba(245, 245, 245, 0.03);
+
 
 			&:hover {
 				cursor: pointer;
 				background: $background-color;
+
 			}
 			&:first-of-type {
 				border-top: 2px solid rgba(245, 245, 245, 0.03);
@@ -145,8 +153,22 @@ nav.aside {
 				width: 100%;
 				padding: 20px;
 				color: $link-color;
+				&:before {
+					transition: all $transition-duration;
+					display: inline-block;
+					content: '>';
+					margin-right: 10px;
+					color: $dark-teal-color;
+					opacity: 0;
+					transform: translateX(-50px);
+
+				}
 				&:hover {
 					color: $link-color-hover;
+					&:before {
+						opacity: 1;
+						transform: translateX(0);
+					}
 				}
 			}
 		}
@@ -165,6 +187,27 @@ nav.aside {
 	&.opened {
 		transform: translateX(0);
 	}
+
+	& footer {
+		padding: 15px;
+		justify-content: center;
+		& i {
+			transition: opacity $transition-duration;
+			opacity: 0.3;
+			&:hover {
+				cursor: pointer;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.router-link-active:not(a[href='/']) {
+	background: yellow;
+}
+
+a > i[class*="icon"] {
+	color: white;
 }
 
 span.slash {
@@ -234,6 +277,11 @@ code {
 
 }
 
+i.sidebar.icon {
+	cursor: pointer;
+
+}
+
 
 .view-wrapper {
 	transition: all $transition-duration ease-in;
@@ -284,6 +332,7 @@ code {
 
 body.dark-theme {
 	transition: all $transition-duration ease-in;
+
 }
 
 body.light-theme {
@@ -298,6 +347,12 @@ body.light-theme {
 	& .view {
 		color: black;
 	}
+	& hr {
+		border-color: $medium-teal-color
+	}
+	h3 {
+		border-left-color: $medium-teal-color;
+	}
 
 	nav.aside {
 		li:hover {
@@ -309,6 +364,47 @@ body.light-theme {
 	}
 	& span.language:before {
 		background: black;
+	}
+
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+.theme-selector {
+	display: flex;
+	justify-content: center;
+	& * {
+		margin-right: 15px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+	& .dark-theme {
+		border: 2px solid $dark-teal-color;
+		background: $dark-grey-color;
+	}
+	& .light-theme {
+		border: 2px solid $medium-teal-color;
+		background: whitesmoke;
+	}
+	& .dark-theme, .light-theme {
+		transition: opacity $transition-duration;
+		width: 32px;
+		height: 32px;
+		position: relative;
+		opacity: 0.2;
+		&.active {
+			opacity: 1;
+		}
+		&:hover {
+			cursor: pointer;
+			&:not(.active){
+				opacity: 0.5;
+			}
+		}
 	}
 
 }

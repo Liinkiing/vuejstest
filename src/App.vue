@@ -3,20 +3,23 @@
 
 		<div id="wrapper">
 			<nav class="aside">
-				<div class="item brand"><h1 @click="handleNavClick"><router-link to="/">JBARA Omar</router-link></h1></div>
-				<ul>
-					<li @click="handleNavClick"><router-link to="/about">A propos de moi</router-link></li>
-					<li @click="handleNavClick"><router-link to="/projects">Mes projets</router-link></li>
-					<li @click="handleNavClick"><router-link to="/hobbies">Mes hobbies</router-link></li>
-					<li @click="handleNavClick"><router-link to="/examples">Exemples</router-link></li>
-				</ul>
-				<div class="theme-chooser">
-					<p>Choississez un thème</p>
-					<select name="theme" id="" v-model="theme">
-						<option value="light">Clair</option>
-						<option value="dark">Foncé</option>
-					</select>
-				</div>
+				<main style="flex: 1;">
+					<div class="item brand"><h1 @click="handleNavClick"><router-link to="/">JBARA Omar</router-link></h1></div>
+					<ul>
+						<li @click="handleNavClick"><router-link to="/about">A propos de moi</router-link></li>
+						<li @click="handleNavClick"><router-link to="/projects">Mes projets</router-link></li>
+						<li @click="handleNavClick"><router-link to="/hobbies">Mes hobbies</router-link></li>
+						<li @click="handleNavClick"><router-link to="/examples">Exemples</router-link></li>
+					</ul>
+					<div class="theme-chooser">
+						<p>Choississez un thème</p>
+						<div class="theme-selector">
+							<div @click="theme = 'dark'" class="dark-theme" :class="{'active': theme == 'dark'}"></div>
+							<div @click="theme = 'light'" class="light-theme" :class="{'active': theme == 'light'}"></div>
+						</div>
+					</div>
+				</main>
+				<footer><a href="https://github.com/Liinkiing"><i style="font-size: 1.5rem; margin: 0;" class="github icon"></i></a></footer>
 			</nav>
 
 
@@ -52,15 +55,6 @@
 
 <style src="./assets/style/app.scss" lang="scss">
 
-	.slide-maxime-heading-enter-active, .slide-maxime-heading-leave-active {
-		transition: opacity .5s, transform 0.8s;
-	}
-
-	.slide-maxime-heading-enter, .slide-maxime-heading-leave-active {
-		opacity: 0;
-		transform: translateX(-200vw);
-
-	}
 
 
 </style>
