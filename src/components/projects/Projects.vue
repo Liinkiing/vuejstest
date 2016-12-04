@@ -1,8 +1,7 @@
 <template>
     <div class="projects-container">
 		<div class="categories">
-			<div @click="filter = 'all'">Tous</div>
-			<span style="margin-right: 10px;" v-for="category in categories" @click.prevent="filter = category.toLowerCase()">{{ category }}</span>
+			<span class="ui button" @click.prevent="filter = 'all'" :class="{active: filter == 'all'}">Tous</span> <span class="ui button" style="margin-right: 10px;" v-for="category in categories" @click.prevent="filter = category.toLowerCase()" :class="{active: filter == category.toLowerCase()}">{{ category }}</span>
 		</div>
 		<div class="projects-list">
 			<slot></slot>
@@ -18,11 +17,19 @@
 		flex-direction: column;
 		justify-content: center;
 
+		& .categories span {
+			margin-bottom: 10px;
+		}
+
 		& .projects-list {
-			display: flex;;
-			justify-content: center;
+			& span {
+				display: block;
+				text-align: center;
+			}
 		}
 	}
+
+
 
 
 

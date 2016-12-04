@@ -3,6 +3,9 @@ import App from './App'
 import VueLocalStorage from 'vue-localstorage'
 import router from './router/router';
 
+import ProjectsStore from './components/projects/ProjectStore';
+
+ProjectsStore.loadProjects();
 
 Vue.use(VueLocalStorage);
 
@@ -25,6 +28,8 @@ String.prototype.slugify = function ()
 		.replace(/^-+/, '')             // Trim - from start of text
 		.replace(/-+$/, '');            // Trim - from end of text
 };
+
+
 
 /* eslint-disable no-new */
 new Vue({

@@ -181,8 +181,8 @@ code {
 
 .container {
   padding: 40px;
-  width: 100vw;
-  max-width: 1300px; }
+  max-width: 1300px;
+  width: calc(100vw - 300px); }
 
 i.sidebar.icon {
   cursor: pointer; }
@@ -218,12 +218,26 @@ i.sidebar.icon {
   #wrapper.lightbox-opened {
     filter: blur(15px); }
 
+.ui.button {
+  transition: all 0.3s; }
+  .ui.button.active {
+    background: #005f6b;
+    color: whitesmoke; }
+
 body.dark-theme {
   transition: all 0.3s ease-in; }
 
 body.light-theme {
   transition: all 0.3s ease-in;
   background: #dedede; }
+  body.light-theme .ui.button {
+    background: #343838;
+    color: whitesmoke; }
+    body.light-theme .ui.button:hover, body.light-theme .ui.button :active {
+      background: #596060; }
+    body.light-theme .ui.button.active {
+      background: #008c9e;
+      color: whitesmoke; }
   body.light-theme .current-page {
     transition: all 0.3s ease-in;
     color: #dedede;
@@ -330,10 +344,14 @@ a.project.image {
     padding-left: 0; }
 
   .container {
-    padding: 20px; }
+    padding: 20px;
+    width: 100vw; }
 
   img {
     max-width: 100%; }
+
+  a.project.image {
+    width: calc(100% - 40px); }
 
   .current-page {
     padding: 20px;
@@ -353,16 +371,13 @@ a.project.image {
   .lightbox .lightbox-image .description {
     font-size: 0.9rem; }
 
-  header.current-page {
-    height: 58px;
-    padding: 10px;
-    line-height: 40px;
-    z-index: 9999; }
+  .projects-list .project {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 25px 50px 0 rgba(0, 0, 0, 0.1), inset 0 0 200px 80px rgba(0, 0, 0, 0.8) !important; }
 
   .project-title {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1); }
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important; }
 
   p {
     line-height: 1.90rem; }
@@ -383,6 +398,16 @@ a.project.image {
     display: inline-block !important; }
 
   html {
-    font-size: 85%; } }
+    font-size: 85%; }
+
+  header.current-page {
+    height: 58px;
+    padding: 10px;
+    line-height: 40px;
+    z-index: 9999; }
+    header.current-page code {
+      max-height: 26px;
+      overflow: hidden;
+      font-size: 1.2rem; } }
 
 /*# sourceMappingURL=app.css.map */

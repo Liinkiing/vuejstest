@@ -1,12 +1,10 @@
 <template>
 	<div>
 		Page de détail
-		<div v-if="project.images.length > 0">
-			<carousel>
-				<carousel-slide v-for="image in project.images" :index="project.images.indexOf(image)">
-					<img :src="image" >
-				</carousel-slide>
-			</carousel>
+		<div v-if="project != null && 'platforms' in project && project.platforms.length > 0">
+			<ul>
+				<li v-for="platform in project.platforms">{{platform}}</li>
+			</ul>
 		</div>
 	</div>
 </template>
@@ -24,16 +22,20 @@
 		data(){
 			return {
 				state: store.state,
-				project: store.getProject(this.$route.params.slug)
-			}
+				project: null
+			};
 		},
+
 		components: {
 			Carousel,
 			CarouselSlide
 		},
 
-		mounted(){
 
+		mounted(){
+			store.loadProjects(() => {
+				this.project = store.getProject(this.$route.params.slug);
+			});
 		},
 		computed() {
 

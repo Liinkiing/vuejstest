@@ -42,9 +42,11 @@
 
 		},
 
-
+		beforeMount() {
+		},
 
 		mounted() {
+			store.loadProjects();
 
 		}
 

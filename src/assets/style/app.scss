@@ -259,8 +259,8 @@ code {
 
 .container {
 	padding: 40px;
-	width: 100vw;
 	max-width: 1300px;
+	width: calc(100vw - 300px);
 
 }
 
@@ -312,6 +312,14 @@ i.sidebar.icon {
 
 }
 
+.ui.button {
+	transition: all $transition-duration;
+	&.active {
+		background: $dark-teal-color;
+		color: whitesmoke;
+	}
+}
+
 body.dark-theme {
 	transition: all $transition-duration ease-in;
 
@@ -321,6 +329,21 @@ body.light-theme {
 	transition: all $transition-duration ease-in;
 
 	background: #dedede;
+
+	& .ui.button {
+
+		background: $dark-grey-color;
+		color: whitesmoke;
+		&:hover,:active {
+			background: lighten($dark-grey-color, 15%);
+		}
+		&.active {
+			background: $medium-teal-color;
+			color: whitesmoke;
+
+		}
+	}
+
 	& .current-page {
 		transition: all $transition-duration ease-in;
 		color: #dedede;
@@ -475,10 +498,15 @@ a.project.image {
 
 	.container {
 		padding: 20px;
+		width: 100vw;
 	}
 
 	img {
 		max-width: 100%;
+	}
+
+	a.project.image {
+		width: calc(100% - 40px);
 	}
 
 	.current-page {
@@ -506,17 +534,16 @@ a.project.image {
 		}
 	}
 
-	header.current-page {
-		height: 58px;
-		padding: 10px;
-		line-height: 40px;
-		z-index: 9999;
+
+	.projects-list .project {
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 25px 50px 0 rgba(0, 0, 0, 0.1), inset 0 0 200px 80px rgba(0, 0, 0, 0.8) !important;
 	}
 
+
 	.project-title {
-		opacity: 1;
-		visibility: visible;
-		transform: scale(1);
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: scale(1) !important;
 	}
 
 	p {
@@ -544,6 +571,19 @@ a.project.image {
 
 	html {
 		font-size: 85%;
+	}
+
+	header.current-page {
+		height: 58px;
+		padding: 10px;
+		line-height: 40px;
+		z-index: 9999;
+		& code {
+			max-height: 26px;
+			overflow: hidden;
+			font-size: 1.2rem;
+
+		}
 	}
 
 }

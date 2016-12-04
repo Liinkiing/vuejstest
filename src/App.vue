@@ -70,10 +70,13 @@
 
 <script>
 
+
+
 	import Lightbox from './components/lightbox/Lightbox';
 	import ProjectDetails from './components/pages/ProjectDetail';
 	import store from './AppStore';
 	import projectStore from './components/projects/ProjectStore';
+
 
 
 	export default {
@@ -101,7 +104,6 @@
 //					store.toggleMenu();
 //				}
 //			});
-
 		},
 		updated () {
 			this.$localStorage.set('theme', this.theme);

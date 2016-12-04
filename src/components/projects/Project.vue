@@ -54,7 +54,8 @@
 		data() {
 			return {
 				style: {
-					backgroundImage: 'url(' + this.thumbnail + ')'
+					backgroundImage: 'url(' + this.thumbnail + ')',
+					backgroundSize: 'cover'
 				}
 			}
 		},

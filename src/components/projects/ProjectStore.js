@@ -1,19 +1,24 @@
 class ProjectStore {
 	
+	loadJSON(path, callback) {
+		
+		var xobj = new XMLHttpRequest();
+		xobj.overrideMimeType("application/json");
+		xobj.open('GET', path, true);
+		xobj.onreadystatechange = function () {
+			if (xobj.readyState == 4 && xobj.status == "200") {
+				console.log(xobj);
+				callback(xobj.responseText);
+			}
+		};
+		xobj.send(null);
+	}
+	
+	
 	constructor() {
 		this.state = {
 			index: null,
-			projects: [
-				{thumbnail: "http://lorempicsum.com/futurama/350/220/1", title: "Slender", shortDescription: "TestDesc", category: "Photo", language: "C#", date: "mtn", images: [
-					"http://lorempicsum.com/rio/350/220/1", "http://lorempicsum.com/rio/350/220/2", "http://lorempicsum.com/rio/350/220/3", "http://lorempicsum.com/rio/350/220/4", "http://lorempicsum.com/rio/350/220/5"
-				]},
-				{thumbnail: "http://lorempicsum.com/futurama/350/220/2", title: "Vitae", shortDescription: "TestDesc", category: "Science", language: "C#", date: "mtn", images: []},
-				{thumbnail: "http://lorempicsum.com/futurama/350/220/3", title: "Marking", shortDescription: "TestDesc", category: "Photo", language: "C#", date: "mtn", images: []},
-				{thumbnail: "http://lorempicsum.com/futurama/350/220/4", title: "DB Manager", shortDescription: "TestDesc", category: "Informatique", language: "C#", date: "mtn", images: []},
-				{thumbnail: "http://lorempicsum.com/futurama/350/220/5", title: "Flyng Duck", shortDescription: "TestDesc", category: "Informatique", language: "C#", date: "mtn", images: []},
-				{thumbnail: "http://lorempicsum.com/futurama/350/220/6", title: "My Tomatoes", shortDescription: "TestDesc", category: "Photo", language: "C#", date: "mtn", images: []},
-				{thumbnail: "http://lorempicsum.com/futurama/350/220/7", title: "My Informatique", shortDescription: "TestDesc", category: "Informatique", language: "C#", date: "mtn", images: []},
-			],
+			projects: [],
 			filteredProjects: []
 		};
 		this.state.filteredProjects = this.state.projects;
@@ -28,6 +33,16 @@ class ProjectStore {
 			language,
 			date
 		})
+	}
+	
+	loadProjects(callback) {
+		console.log('chargement données');
+		loadJSON("/static/data/projects.json", (response) => {
+			this.state.projects = JSON.parse(response);
+			this.state.filteredProjects = this.state.projects;
+			console.log('chargement réussi');
+			callback && callback();
+		});
 	}
 	
 	resetFilter() {
@@ -48,3 +63,17 @@ class ProjectStore {
 }
 
 export default new ProjectStore();
+
+function loadJSON(path, callback) {
+	
+	var xobj = new XMLHttpRequest();
+	xobj.overrideMimeType("application/json");
+	xobj.open('GET', path, true);
+	xobj.onreadystatechange = function () {
+		if (xobj.readyState == 4 && xobj.status == "200") {
+			// Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+			callback(xobj.responseText);
+		}
+	};
+	xobj.send(null);
+}
