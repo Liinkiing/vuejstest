@@ -148,11 +148,14 @@
 				return this.$route.path.split("/")[1];
 			},
 			pageName() {
+				if(this.$route.name == "error") {
+					return 'throw new HttpNotFoundException()'
+				}
 				if(Object.keys(this.$route.params).length > 0 && 'slug' in this.$route.params) {
 					if(this.getProject(this.$route.params.slug) !== undefined) {
 						return 'App::get' + this.pathName.capitalize() + "('" + this.$route.params.slug + "')"
 					} else {
-						return 'throw new HttpNotFoundException'
+						return 'throw new ProjectNotFoundException()'
 					}
 				}
 				else {

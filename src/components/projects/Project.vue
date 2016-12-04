@@ -9,6 +9,7 @@
 <style lang="scss">
 
 	@import "../../assets/style/components/variables";
+	@import "../../assets/style/components/mixins";
 
 
 	.projects-list .project {
@@ -28,10 +29,12 @@
 			opacity: 0;
 			visibility: hidden;
 			color: whitesmoke;
-			font-size: 2rem;
+			font-size: 1.5rem;
 			font-family: 'Geomanist', 'Lato', 'Roboto', sans-serif;
 			text-transform: uppercase;
 			transform: scale(0.5);
+			text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+			@include link-hover($dark-teal-color);
 		}
 
 

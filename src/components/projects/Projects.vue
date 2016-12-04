@@ -1,15 +1,27 @@
 <template>
 	<div class="projects-container">
 		<div class="categories">
-			<span class="ui button" @click.prevent="filter = 'all'" :class="{active: filter == 'all'}">Tous</span> <span
-			class="ui button" style="margin-right: 10px;" v-for="category in categories"
-			@click.prevent="filter = category.toLowerCase()" :class="{active: filter == category.toLowerCase()}">{{ category }}</span>
-			<br>
-			<span class="ui button" @click.prevent="platformsFilter = 'all'" :class="{active: platformsFilter == 'all'}">Tous</span> <span
-			class="ui button" style="margin-right: 10px;" v-for="platform in platforms"
-			@click.prevent="platformsFilter = platform" :class="{active: platformsFilter == platform}">{{ platform }}</span>
+			<div>
+				<h3>Catégorie</h3>
+				<span class="ui button" @click.prevent="filter = 'all'" :class="{active: filter == 'all'}">Tous</span>
+				<span
+					class="ui button" style="margin-right: 10px;" v-for="category in categories"
+					@click.prevent="filter = category.toLowerCase()"
+					:class="{active: filter == category.toLowerCase()}">{{ category }}</span>
+			</div>
+			<div>
+				<h3>Plateforme</h3>
+				<span class="ui button" @click.prevent="platformsFilter = 'all'"
+					  :class="{active: platformsFilter == 'all'}">Tous</span> <span
+				class="ui button" style="margin-right: 10px;" v-for="platform in platforms"
+				@click.prevent="platformsFilter = platform" :class="{active: platformsFilter == platform}">{{ platform }}</span>
+			</div>
 		</div>
 		<div class="projects-list">
+			<transition name="fade" mode="out-in">
+				<div style="margin-top: 20px" v-if="state.filteredProjects.length === 0"><h3>Aucuns projets trouvés</h3>
+				</div>
+			</transition>
 			<slot></slot>
 		</div>
 	</div>
@@ -23,8 +35,12 @@
 		flex-direction: column;
 		justify-content: center;
 
-		& .categories span {
-			margin-bottom: 10px;
+		& .categories {
+			display: flex;
+			flex-direction: row;
+			& span {
+				margin-bottom: 10px;
+			}
 		}
 
 		& .projects-list {
@@ -95,4 +111,5 @@
 			}
 		}
 	}
+
 </script>

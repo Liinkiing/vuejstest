@@ -1,4 +1,5 @@
 @import "components/variables";
+@import "components/mixins";
 
 @font-face {
 	font-family: 'Fira Code';
@@ -86,38 +87,7 @@ nav.aside {
 			color: inherit;
 			display: inline-block;
 			font-size: 1.5rem;
-			transition: all $transition-duration;
-			&:before {
-				transition: all $transition-duration;
-				content: '[';
-				margin-right: 10px;
-				color: $dark-teal-color;
-				display: inline-block;
-				transform: translateX(-10px) scale(0.8) rotate(-25deg);
-				opacity: 0;
-			}
-			&:after {
-				transition: all $transition-duration;
-				content: ']';
-				display: inline-block;
-				margin-left: 10px;
-				color: $dark-teal-color;
-				opacity: 0;
-				transform: translateX(10px) scale(0.8) rotate(25deg);
-			}
-			&:hover:before {
-				opacity: 1;
-				transform: translateX(0) scale(1) rotate(0deg);
-			}
-			&:hover:after {
-				opacity: 1;
-				transform: translateX(0) scale(1) rotate(0deg);
-			}
-			&:hover {
-				cursor: pointer;
-				color: $light-teal-color;
-				transform: scale(1.1);
-			}
+			@include link-hover($dark-teal-color)
 		}
 	}
 	& ul {
@@ -323,6 +293,15 @@ i.sidebar.icon {
 body.dark-theme {
 	transition: all $transition-duration ease-in;
 
+	.carousel.pagination {
+		& .slide-pagination {
+			background: rgba(255, 255, 255, 0.46);
+			&.active {
+				background: whitesmoke;
+				border: none;
+			}
+		}
+	}
 }
 
 body.light-theme {
@@ -537,6 +516,7 @@ a.project.image {
 
 	.projects-list .project {
 		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 25px 50px 0 rgba(0, 0, 0, 0.1), inset 0 0 200px 80px rgba(0, 0, 0, 0.8) !important;
+		max-width: calc(100% - 40px);
 	}
 
 
@@ -586,4 +566,10 @@ a.project.image {
 		}
 	}
 
+}
+
+@media screen and (max-width: 1120px) {
+	.projects-container .categories {
+		flex-direction: column !important;
+	}
 }

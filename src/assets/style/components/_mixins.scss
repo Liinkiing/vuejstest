@@ -1,0 +1,36 @@
+@import './variables';
+
+@mixin link-hover($color) {
+	transition: all $transition-duration;
+	&:before {
+		transition: all $transition-duration;
+		content: '[';
+		margin-right: 10px;
+		color: $color;
+		display: inline-block;
+		transform: translateX(-10px) scale(0.8) rotate(-25deg);
+		opacity: 0;
+	}
+	&:after {
+		transition: all $transition-duration;
+		content: ']';
+		display: inline-block;
+		margin-left: 10px;
+		color: $color;
+		opacity: 0;
+		transform: translateX(10px) scale(0.8) rotate(25deg);
+	}
+	&:hover:before {
+		opacity: 1;
+		transform: translateX(0) scale(1) rotate(0deg);
+	}
+	&:hover:after {
+		opacity: 1;
+		transform: translateX(0) scale(1) rotate(0deg);
+	}
+	&:hover {
+		cursor: pointer;
+		color: lighten($color, 20%);
+		transform: scale(1.1);
+	}
+}

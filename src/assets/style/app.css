@@ -88,7 +88,7 @@ nav.aside {
         transform: translateX(0) scale(1) rotate(0deg); }
       nav.aside .item.brand h1 > a:hover {
         cursor: pointer;
-        color: #00b4cc;
+        color: #00bad1;
         transform: scale(1.1); }
   nav.aside ul {
     list-style: none;
@@ -226,6 +226,11 @@ i.sidebar.icon {
 
 body.dark-theme {
   transition: all 0.3s ease-in; }
+  body.dark-theme .carousel.pagination .slide-pagination {
+    background: rgba(255, 255, 255, 0.46); }
+    body.dark-theme .carousel.pagination .slide-pagination.active {
+      background: whitesmoke;
+      border: none; }
 
 body.light-theme {
   transition: all 0.3s ease-in;
@@ -372,7 +377,8 @@ a.project.image {
     font-size: 0.9rem; }
 
   .projects-list .project {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 25px 50px 0 rgba(0, 0, 0, 0.1), inset 0 0 200px 80px rgba(0, 0, 0, 0.8) !important; }
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 25px 50px 0 rgba(0, 0, 0, 0.1), inset 0 0 200px 80px rgba(0, 0, 0, 0.8) !important;
+    max-width: calc(100% - 40px); }
 
   .project-title {
     opacity: 1 !important;
@@ -409,5 +415,8 @@ a.project.image {
       max-height: 26px;
       overflow: hidden;
       font-size: 1.2rem; } }
+@media screen and (max-width: 1120px) {
+  .projects-container .categories {
+    flex-direction: column !important; } }
 
 /*# sourceMappingURL=app.css.map */
