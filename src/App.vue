@@ -28,17 +28,9 @@
 				<header class="current-page">
 					<i style="font-size: 1.75rem; opacity: 0.7; margin-right: 10px;" class="sidebar icon mobile-only" @click.prevent="openMenu"></i>
 					<h2 style="display: inline-block; width: 75%;">
-						<!--<transition name="slide-heading" mode="out-in">-->
-							<!--<code style="display: inline-block;" key="noParams" v-if="!('slug' in $route.params)">-->
-								<!--<span>App</span>::<span>get{{ pathName.capitalize() }}</span>()-->
-							<!--</code>-->
-							<!--<code style="display: inline-block;" key="withParams" v-else>-->
-								<!--<span>App</span>::<span>get{{ pathName.capitalize() }}</span>('{{ $route.params.slug }}')-->
-							<!--</code>-->
-						<!--</transition>-->
 						<transition name="slide-heading" mode="out-in">
 							<code style="display: inline-block;" :key="$route.path">
-								<span>App</span>::<span>get{{ pathName.capitalize() }}</span>({{ ("slug" in $route.params) ? "'" + $route.params.slug + "'" : "" }})
+								<span>{{pageName}}</span>
 							</code>
 						</transition>
 					</h2>
@@ -81,10 +73,14 @@
 
 	export default {
 
+
+
 		components: {
 			Lightbox,
 			ProjectDetails
 		},
+
+
 
 		data() {
 			return {
@@ -134,6 +130,9 @@
 				store.closeMenu();
 				window.removeEventListener('resize', this.resizeEventHandler);
 			},
+			getProject(name) {
+				return projectStore.getProject(name);
+			},
 			isMobile() {
 				return store.isMobile();
 			},
@@ -147,6 +146,18 @@
 			pathName() {
 				if (this.$route.path == "/") return "home";
 				return this.$route.path.split("/")[1];
+			},
+			pageName() {
+				if(Object.keys(this.$route.params).length > 0 && 'slug' in this.$route.params) {
+					if(this.getProject(this.$route.params.slug) !== undefined) {
+						return 'App::get' + this.pathName.capitalize() + "('" + this.$route.params.slug + "')"
+					} else {
+						return 'throw new HttpNotFoundException'
+					}
+				}
+				else {
+					return 'App::get' + this.pathName.capitalize() + '()';
+				}
 			}
 		}
 

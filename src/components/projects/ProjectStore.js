@@ -53,12 +53,31 @@ class ProjectStore {
 		return _.groupBy(this.state.projects, 'category');
 	}
 	
+	
+	
 	getProject(name) {
 		return this.state.projects.filter((project) => project.title.slugify() == name)[0];
 	}
 	
-	filter(category) {
-		this.state.filteredProjects = _.filter(this.state.projects, (project) => project.category.toLowerCase() == category.toLowerCase());
+	filter(category, platforms = "all") {
+		if(category == "all" && platforms == "all") this.state.filteredProjects = this.state.projects;
+		else {
+			this.state.filteredProjects = _.filter(this.state.projects, (project) => {
+				let catTester = true;
+				let platTester = true;
+				
+				if(category !== "all") {
+					catTester = project.category.toLowerCase() == category.toLowerCase();
+				}
+				
+				if(platforms !== "all") {
+					if(Object.keys(project.platforms).length === 0) platTester = true;
+					else platTester = project.platforms.indexOf(platforms) > - 1;
+				}
+				return (catTester && platTester)
+			})
+		}
+		
 	}
 }
 

@@ -1,12 +1,25 @@
 <template>
-	<div>
-		Page de détail
-		<div v-if="project != null && 'platforms' in project && project.platforms.length > 0">
-			<ul>
-				<li v-for="platform in project.platforms">{{platform}}</li>
-			</ul>
+	<div class="container">
+		<div v-if="project !== undefined">
+			Page de détail
+			<div v-if="project != null && 'platforms' in project && project.platforms.length > 0">
+				<ul>
+					<li v-for="platform in project.platforms">{{platform}}</li>
+				</ul>
+			</div>
+			<div v-if="project != null && 'images' in project">
+				<carousel>
+					<carousel-slide v-for="image in project.images" :index="project.images.indexOf(image)">
+						<img :src="image">
+					</carousel-slide>
+				</carousel>
+			</div>
+		</div>
+		<div v-else>
+			Projet non trouvé !
 		</div>
 	</div>
+
 </template>
 <style lang="scss">
 

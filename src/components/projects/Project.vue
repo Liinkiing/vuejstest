@@ -1,7 +1,10 @@
 <template>
-	<router-link class="project image" :style="style" :to="'/project/' + slug">
-		<div class="project-title"><h2>{{title}}</h2></div>
-	</router-link>
+	<div class="project image" :style="style">
+		<router-link class="project-title" :to="'/project/' + slug">
+			{{title}}
+		</router-link>
+	</div>
+
 </template>
 <style lang="scss">
 
@@ -18,12 +21,16 @@
 		height: 220px;
 		margin: 20px;
 		transition: all $transition-duration;
+		padding: 20px;
 
 		.project-title {
 			transition: all $transition-duration;
 			opacity: 0;
 			visibility: hidden;
 			color: whitesmoke;
+			font-size: 2rem;
+			font-family: 'Geomanist', 'Lato', 'Roboto', sans-serif;
+			text-transform: uppercase;
 			transform: scale(0.5);
 		}
 
