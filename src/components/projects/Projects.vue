@@ -5,7 +5,7 @@
 				<h3>Catégorie</h3>
 				<span class="ui button" @click.prevent="filter = 'all'" :class="{active: filter == 'all'}">Tous</span>
 				<span
-					class="ui button" style="margin-right: 10px;" v-for="category in categories"
+					class="ui button" v-for="category in categories"
 					@click.prevent="filter = category.toLowerCase()"
 					:class="{active: filter == category.toLowerCase()}">{{ category }}</span>
 			</div>
@@ -13,7 +13,7 @@
 				<h3>Plateforme</h3>
 				<span class="ui button" @click.prevent="platformsFilter = 'all'"
 					  :class="{active: platformsFilter == 'all'}">Tous</span> <span
-				class="ui button" style="margin-right: 10px;" v-for="platform in platforms"
+				class="ui button" v-for="platform in platforms"
 				@click.prevent="platformsFilter = platform" :class="{active: platformsFilter == platform}">{{ platform }}</span>
 			</div>
 		</div>
@@ -39,7 +39,7 @@
 			display: flex;
 			flex-direction: row;
 			& span {
-				margin-bottom: 10px;
+				margin: 0 10px 10px 0;
 			}
 		}
 

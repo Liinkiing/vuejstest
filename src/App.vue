@@ -25,7 +25,7 @@
 
 
 			<div class="view-wrapper">
-				<header class="current-page">
+				<header class="current-page" :class="{'is-project': projectState.project != null}" :style="headerStyle">
 					<i style="font-size: 1.75rem; opacity: 0.7; margin-right: 10px;" class="sidebar icon mobile-only" @click.prevent="openMenu"></i>
 					<h2 style="display: inline-block; width: 80%;">
 						<transition name="slide-heading" mode="out-in">
@@ -63,16 +63,13 @@
 <script>
 
 
-
 	import Lightbox from './components/lightbox/Lightbox';
 	import ProjectDetails from './components/pages/ProjectDetail';
 	import store from './AppStore';
 	import projectStore from './components/projects/ProjectStore';
 
 
-
 	export default {
-
 
 
 		components: {
@@ -81,11 +78,11 @@
 		},
 
 
-
 		data() {
 			return {
 				state: store.state,
-				theme: 'dark'
+				projectState: projectStore.state,
+				theme: 'dark',
 			}
 		},
 
@@ -95,11 +92,8 @@
 			store.body.classList.add('dark-theme');
 			this.theme = this.$localStorage.get('theme') == 'undefined' ? 'dark' : this.$localStorage.get('theme');
 			this.setTheme(this.theme);
-//			this.shortcutsEventHandler = window.addEventListener('keyup', (e) => {
-//				if(e.key == "Escape" && !this.state.lightboxOpened) {
-//					store.toggleMenu();
-//				}
-//			});
+
+
 		},
 		updated () {
 			this.$localStorage.set('theme', this.theme);
@@ -143,16 +137,30 @@
 
 
 		computed: {
+			headerStyle() {
+				if (this.projectState.project != null) {
+					return {
+						background: 'url(' + this.projectState.project.thumbnail + ')',
+						backgroundPosition: 'center center',
+						backgroundSize: 'cover',
+						backgroundAttachment: 'fixed'
+					}
+				}
+				return null;
+			},
 			pathName() {
 				if (this.$route.path == "/") return "home";
 				return this.$route.path.split("/")[1];
 			},
+			currentProject() {
+				return this.projectState.project;
+			},
 			pageName() {
-				if(this.$route.name == "error") {
+				if (this.$route.name == "error") {
 					return (this.isMobile()) ? 'throw new Exception()' : 'throw new HttpNotFoundException()'
 				}
-				if(Object.keys(this.$route.params).length > 0 && 'slug' in this.$route.params) {
-					if(this.getProject(this.$route.params.slug) !== undefined) {
+				if (Object.keys(this.$route.params).length > 0 && 'slug' in this.$route.params) {
+					if (this.getProject(this.$route.params.slug) !== undefined) {
 						return 'App::get' + this.pathName.capitalize() + "('" + this.$route.params.slug + "')"
 					} else {
 						return (this.isMobile()) ? 'throw new Exception()' : 'throw new ProjectNotFoundException()'

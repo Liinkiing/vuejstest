@@ -17,11 +17,16 @@ class ProjectStore {
 
 	constructor() {
 		this.state = {
-			index: null,
+			project: null,
 			projects: [],
 			filteredProjects: []
 		};
 		this.state.filteredProjects = this.state.projects;
+	}
+
+
+	setCurrentProject(project){
+		this.state.project = project;
 	}
 
 	addProject(thumbnail, title, shortDescription, category, language, date) {

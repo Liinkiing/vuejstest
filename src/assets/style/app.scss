@@ -177,14 +177,37 @@ span.slash {
 	opacity: 0.5;
 }
 
-header {
+header.current-page {
+	transition: all $transition-duration;
 	width: 100%;
 	background: $dark-teal-color;
 	padding: 45px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.39);
 	& h2 {
 		margin-top: 0;
 		font-weight: 100;
 		text-transform: uppercase;
+	}
+	&.is-project {
+		box-shadow: none;
+		text-shadow: 0 0 10px black;
+		height: 240px;
+		display: flex;
+		align-items: flex-end;
+		position: relative;
+		& h2 {
+			z-index: 1;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: transparent;
+			box-shadow: inset 0 0 200px 100px rgba(0,0,0,0.7);
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 
@@ -216,10 +239,6 @@ h4 {
 //	}
 //}
 
-header.current-page {
-	max-height: 124px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.39);
-}
 
 code {
 	font-family: 'Fira Code', monospace;
@@ -481,6 +500,10 @@ a.lightbox-image {
 	.container {
 		padding: 20px;
 		width: 100vw;
+		&.offset {
+			transition: none;
+			margin-top: 295px;
+		}
 	}
 
 	img {
@@ -505,6 +528,20 @@ a.lightbox-image {
 		& h2 {
 			font-size: 1.5rem;
 		}
+
+	}
+
+	header.current-page.is-project.fixed {
+		transition: none;
+		height: 58px;
+		position: fixed;
+
+		& i {
+			position: relative;
+			bottom: 12px;
+		}
+
+
 	}
 
 	.lightbox .lightbox-image {
@@ -523,6 +560,14 @@ a.lightbox-image {
 		max-width: calc(100% - 20px);
 	}
 
+	.projects-container .categories {
+		span:nth-of-type(even){
+			margin-right: 0;
+		}
+		div span:first-of-type {
+			margin-right: 7px;
+		}
+	}
 
 	.project-title, .project-description, .project-categories {
 		opacity: 1 !important;
@@ -569,16 +614,24 @@ a.lightbox-image {
 	}
 
 	header.current-page {
+		transition: none;
 		height: 58px;
 		padding: 10px;
 		line-height: 40px;
 		z-index: 9999;
+		&.is-project {
+			& i {
+				position: relative;
+				bottom: 10px;
+			}
+		}
 		& code {
 			max-height: 26px;
 			overflow: hidden;
 			font-size: 1.2rem;
 
 		}
+
 	}
 
 }

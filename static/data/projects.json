@@ -1,7 +1,7 @@
 [
 	{
-		"thumbnail": "http://lorempicsum.com/futurama/350/220/1",
-		"title": "Slender ",
+		"thumbnail": "http://www.intrawallpaper.com/static/images/eiffel-tower-wallpaper-18_TJ30uc8.jpg",
+		"title": "Slender titre ",
 		"shortDescription": "Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. ",
 		"category": "Photo",
 		"language": "C#",
@@ -15,7 +15,9 @@
 			"http://lorempicsum.com/rio/350/220/2",
 			"http://lorempicsum.com/rio/350/220/3",
 			"http://lorempicsum.com/rio/350/220/4",
-			"http://lorempicsum.com/rio/350/220/5"
+			"http://lorempicsum.com/rio/350/220/5",
+			"http://lorempicsum.com/rio/350/220/6",
+			"http://lorempicsum.com/rio/350/220/7"
 		]
 	},
 	{
@@ -119,6 +121,7 @@
 		"thumbnail": "http://lorempicsum.com/futurama/350/220/7",
 		"title": "My Informatique",
 		"shortDescription": "TestDesc",
+		"content": " ",
 		"category": "Informatique",
 		"language": "C#",
 		"platforms": [

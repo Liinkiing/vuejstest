@@ -1,6 +1,6 @@
 class AppStore {
-	
-	
+
+
 	constructor() {
 		this.state = {
 			lightboxOpened: false
@@ -11,6 +11,8 @@ class AppStore {
 		this.nav = document.querySelector('nav.aside');
 		this.pageView = document.querySelector('.view-wrapper');
 		this.body = document.querySelector('body');
+		this.container = document.querySelector('.container.view');
+		this.header = document.querySelector('header.current-page');
 	}
 
 
@@ -31,7 +33,7 @@ class AppStore {
 	toggleMenu() {
 		this.isMenuOpened() ? this.closeMenu() : this.openMenu();
 	}
-	
+
 	//noinspection JSMethodCanBeStatic
 	isMobile() {
 		let md = new MobileDetect(window.navigator.userAgent);
