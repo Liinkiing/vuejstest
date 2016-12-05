@@ -13,12 +13,11 @@ import ProjectDetailPage from '../components/pages/ProjectDetail';
 import ErrorPage from '../components/pages/Error';
 
 const routes = [
-	{path: '/', component: HomePage},
-	{path: '/about', component: AboutPage},
-	{path: '/portfolio', name: 'project_list', component: PortfolioPage},
-	{path: '/hobbies', component: HobbiesPage},
-	{path: '/examples', component: ExamplesPage},
-	{path: '/todo', component: TodoPage},
+	{path: '/', name: 'homepage', component: HomePage},
+	{path: '/about', name: 'about', component: AboutPage},
+	{path: '/projects', name: 'portfolio', component: PortfolioPage},
+	{path: '/hobbies', name: 'hobbies', component: HobbiesPage},
+	{path: '/examples', name: 'examples', component: ExamplesPage},
 	{path: '/project/:slug', name: 'project_show', component: ProjectDetailPage},
 	{path: '*', name: 'error', component: ErrorPage}
 ];

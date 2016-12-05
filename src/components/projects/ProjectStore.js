@@ -1,7 +1,7 @@
 class ProjectStore {
-	
+
 	loadJSON(path, callback) {
-		
+
 		var xobj = new XMLHttpRequest();
 		xobj.overrideMimeType("application/json");
 		xobj.open('GET', path, true);
@@ -13,8 +13,8 @@ class ProjectStore {
 		};
 		xobj.send(null);
 	}
-	
-	
+
+
 	constructor() {
 		this.state = {
 			index: null,
@@ -23,7 +23,7 @@ class ProjectStore {
 		};
 		this.state.filteredProjects = this.state.projects;
 	}
-	
+
 	addProject(thumbnail, title, shortDescription, category, language, date) {
 		this.state.projects.push({
 			thumbnail,
@@ -34,7 +34,7 @@ class ProjectStore {
 			date
 		})
 	}
-	
+
 	loadProjects(callback) {
 		console.log('chargement données');
 		loadJSON("/static/data/projects.json", (response) => {
@@ -44,32 +44,32 @@ class ProjectStore {
 			callback && callback();
 		});
 	}
-	
+
 	resetFilter() {
 		this.state.filteredProjects = this.state.projects;
 	}
-	
+
 	getProjectsByCategory() {
 		return _.groupBy(this.state.projects, 'category');
 	}
-	
-	
-	
+
+
+
 	getProject(name) {
 		return this.state.projects.filter((project) => project.title.slugify() == name)[0];
 	}
-	
+
 	filter(category, platforms = "all") {
 		if(category == "all" && platforms == "all") this.state.filteredProjects = this.state.projects;
 		else {
 			this.state.filteredProjects = _.filter(this.state.projects, (project) => {
 				let catTester = true;
 				let platTester = true;
-				
+
 				if(category !== "all") {
 					catTester = project.category.toLowerCase() == category.toLowerCase();
 				}
-				
+
 				if(platforms !== "all") {
 					if(Object.keys(project.platforms).length === 0) platTester = true;
 					else platTester = project.platforms.indexOf(platforms) > - 1;
@@ -77,14 +77,14 @@ class ProjectStore {
 				return (catTester && platTester)
 			})
 		}
-		
+
 	}
 }
 
 export default new ProjectStore();
 
 function loadJSON(path, callback) {
-	
+
 	var xobj = new XMLHttpRequest();
 	xobj.overrideMimeType("application/json");
 	xobj.open('GET', path, true);

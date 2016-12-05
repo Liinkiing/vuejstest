@@ -45,7 +45,6 @@
 
 		& .projects-list {
 			& span {
-				display: block;
 				text-align: center;
 			}
 		}
@@ -94,19 +93,9 @@
 		},
 		watch: {
 			filter(val) {
-				if (val == "all") {
-					store.resetFilter();
-					return;
-				}
 				store.filter(val, this.platformsFilter);
 			},
 			platformsFilter(val) {
-				if (val == "all") {
-					console.log('Filter all')
-					store.filter(this.filter);
-					return;
-				}
-				console.log('Filter ' + val)
 				store.filter(this.filter, val);
 			}
 		}

@@ -290,6 +290,13 @@ i.sidebar.icon {
 	}
 }
 
+i.web.icon {
+	font-family: 'Icons';
+	&:before {
+		content: "\f13b";
+	}
+}
+
 body.dark-theme {
 	transition: all $transition-duration ease-in;
 
@@ -410,10 +417,6 @@ a.lightbox-image {
 
 }
 
-a.project.image {
-	max-width: 100%;
-}
-
 .mobile-only {
 	display: none !important;
 }
@@ -516,14 +519,16 @@ a.project.image {
 
 	.projects-list .project {
 		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 25px 50px 0 rgba(0, 0, 0, 0.1), inset 0 0 200px 80px rgba(0, 0, 0, 0.8) !important;
-		max-width: calc(100% - 40px);
+		width: 100% !important;
+		max-width: calc(100% - 20px);
 	}
 
 
-	.project-title {
+	.project-title, .project-description, .project-categories {
 		opacity: 1 !important;
 		visibility: visible !important;
 		transform: scale(1) !important;
+		filter: blur(0) !important;
 	}
 
 	p {
@@ -551,6 +556,16 @@ a.project.image {
 
 	html {
 		font-size: 85%;
+	}
+
+	.projects-container {
+		& .categories {
+			& span[class~="button"] {
+				display: inline-block;
+				width: 45%;
+
+			}
+		}
 	}
 
 	header.current-page {

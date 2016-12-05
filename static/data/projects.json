@@ -2,12 +2,13 @@
 	{
 		"thumbnail": "http://lorempicsum.com/futurama/350/220/1",
 		"title": "Slender ",
-		"shortDescription": "TestDesc",
+		"shortDescription": "Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. ",
 		"category": "Photo",
 		"language": "C#",
 		"date": "mtn",
 		"platforms": [
-			"iOS", "Android", "Web", "Zinder", "OnlySlender"
+			"Apple",
+			"Android"
 		],
 		"images": [
 			"http://lorempicsum.com/rio/350/220/1",
@@ -23,10 +24,10 @@
 		"shortDescription": "TestDesc",
 		"category": "Photo",
 		"language": "C#",
-		"date": "mtn",
 		"platforms": [
-			"iOS"
+			"Android"
 		],
+		"date": "mtn",
 		"images": [
 			"http://lorempicsum.com/rio/350/220/1",
 			"http://lorempicsum.com/rio/350/220/2",
@@ -40,10 +41,10 @@
 		"title": "Nouveau projet",
 		"shortDescription": "TestDesc",
 		"category": "Nature",
-		"platforms": [
-			"iOS", "Android", "Web"
-		],
 		"language": "C#",
+		"platforms": [
+			"Android"
+		],
 		"date": "mtn",
 		"images": [
 			"http://lorempicsum.com/rio/350/220/1",
@@ -54,11 +55,14 @@
 		"thumbnail": "http://lorempicsum.com/futurama/350/220/2",
 		"title": "Vitae",
 		"shortDescription": "TestDesc",
-		"platforms": [
-			"iOS"
-		],
 		"category": "Science",
 		"language": "C#",
+		"platforms": [
+			"Apple",
+			"Android",
+			"Web",
+			"Windows"
+		],
 		"date": "mtn",
 		"images": []
 	},
@@ -68,7 +72,10 @@
 		"shortDescription": "TestDesc",
 		"category": "Photo",
 		"language": "C#",
-		"platforms": ["Windows", "iOS"],
+		"platforms": [
+			"Windows",
+			"Web"
+		],
 		"date": "mtn",
 		"images": []
 	},
@@ -79,7 +86,7 @@
 		"category": "Informatique",
 		"language": "C#",
 		"platforms": [
-			"iOS"
+			"Apple"
 		],
 		"date": "mtn",
 		"images": []
@@ -91,7 +98,7 @@
 		"category": "Informatique",
 		"language": "C#",
 		"platforms": [
-			"iOS"
+			"Android"
 		],
 		"date": "mtn",
 		"images": []
@@ -101,10 +108,10 @@
 		"title": "My Tomatoes",
 		"shortDescription": "TestDesc",
 		"category": "Photo",
-		"language": "C#",
 		"platforms": [
-			"Windows", "Android"
+			"Android"
 		],
+		"language": "C#",
 		"date": "mtn",
 		"images": []
 	},

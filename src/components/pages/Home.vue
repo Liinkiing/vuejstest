@@ -7,7 +7,11 @@
 			temps libre.</p>
 		<p style="line-height: 3rem;"><transition name="fade" tag="span" mode="out-in">
 			<span :key="language" class="language">{{ language }}</span>
-		</transition> est un langage que je maîtrise / je suis à l'aise
+		</transition> est un
+			<transition name="fade" tag="span" mode="out-in">
+				<span :key="type" class="language">{{ type }}</span>
+			</transition>
+			que je maîtrise / je suis à l'aise
 
 		</p>
 
@@ -26,6 +30,7 @@
 		font-family: 'Hack', monospace;
 		margin-left: 5px;
 		margin-bottom: 20px;
+		margin-right: 5px;
 		&:before {
 			content: '';
 			position: absolute;
@@ -50,17 +55,34 @@
 		},
 		data() {
 			return {
-				languages: ['C#', 'PHP', 'HTML / CSS', 'JavaScript', 'Java', 'ASP.Net', 'VB.Net'],
-				language: ''
+				langs: [
+					{'C#' : 'langage'},
+					{'PHP' : 'langage'},
+					{'HTML / CSS' : 'langage'},
+					{'JavaScript' : 'langage'},
+					{'Java' : 'langage'},
+					{'VB.net' : 'langage'},
+					{'ASP.net' : 'framework'},
+					{'Symfony' : 'framework PHP'},
+					{'Laravel' : 'framework PHP'},
+					{'Bootstrap' : 'framework CSS'},
+					{'Semantic-ui' : 'framework CSS'}
+				],
+				language: '',
+				type: ''
 			}
 		},
 
 		mounted() {
-			this.language = this.languages[0];
+
+			this.language = Object.keys(this.langs[0])[0];
+			this.type = this.langs[0][Object.keys(this.langs[0])[0]];
+			let i = 0;
 			window.setInterval(() => {
-				let i = this.languages.indexOf(this.language) + 1;
-				if (i > this.languages.length - 1) i = 0;
-				this.language = this.languages[i];
+				i++;
+				if (i > this.langs.length - 1) i = 0;
+				this.language = Object.keys(this.langs[i])[0];
+				this.type = this.langs[i][Object.keys(this.langs[i])[0]];
 			}, 3000);
 		}
 	}

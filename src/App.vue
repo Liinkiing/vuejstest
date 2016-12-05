@@ -6,10 +6,10 @@
 				<main style="flex: 1;">
 					<div class="item brand"><h1 @click="handleNavClick"><router-link to="/">JBARA Omar</router-link></h1></div>
 					<ul>
-						<li @click="handleNavClick"><router-link to="/about">A propos de moi</router-link></li>
-						<li @click="handleNavClick"><router-link to="/portfolio">Mon portfolio</router-link></li>
-						<li @click="handleNavClick"><router-link to="/hobbies">Mes hobbies</router-link></li>
-						<li @click="handleNavClick"><router-link to="/examples">Exemples</router-link></li>
+						<li @click="handleNavClick"><router-link :to="{name: 'about'}">A propos de moi</router-link></li>
+						<li @click="handleNavClick"><router-link :to="{name: 'portfolio'}">Mon portfolio</router-link></li>
+						<li @click="handleNavClick"><router-link :to="{name: 'hobbies'}">Mes hobbies</router-link></li>
+						<li @click="handleNavClick"><router-link :to="{name: 'examples'}">Exemples</router-link></li>
 					</ul>
 					<div class="theme-chooser">
 						<p>Choississez un thème</p>
@@ -27,7 +27,7 @@
 			<div class="view-wrapper">
 				<header class="current-page">
 					<i style="font-size: 1.75rem; opacity: 0.7; margin-right: 10px;" class="sidebar icon mobile-only" @click.prevent="openMenu"></i>
-					<h2 style="display: inline-block; width: 75%;">
+					<h2 style="display: inline-block; width: 80%;">
 						<transition name="slide-heading" mode="out-in">
 							<code style="display: inline-block;" :key="$route.path">
 								<span>{{pageName}}</span>
@@ -149,13 +149,13 @@
 			},
 			pageName() {
 				if(this.$route.name == "error") {
-					return 'throw new HttpNotFoundException()'
+					return (this.isMobile()) ? 'throw new Exception()' : 'throw new HttpNotFoundException()'
 				}
 				if(Object.keys(this.$route.params).length > 0 && 'slug' in this.$route.params) {
 					if(this.getProject(this.$route.params.slug) !== undefined) {
 						return 'App::get' + this.pathName.capitalize() + "('" + this.$route.params.slug + "')"
 					} else {
-						return 'throw new ProjectNotFoundException()'
+						return (this.isMobile()) ? 'throw new Exception()' : 'throw new ProjectNotFoundException()'
 					}
 				}
 				else {
