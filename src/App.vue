@@ -19,7 +19,10 @@
 						</div>
 					</div>
 				</main>
-				<footer><a href="https://github.com/Liinkiing" target="_blank"><i style="font-size: 1.5rem; margin: 0;" class="github icon"></i></a></footer>
+				<footer>
+					<a href="https://github.com/Liinkiing" target="_blank"><i style="font-size: 1.5rem; margin: 0;" class="github icon"></i></a>
+					<div class="copyright">&copy; JBARA Omar - 2016</div>
+				</footer>
 			</nav>
 
 

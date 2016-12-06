@@ -3,7 +3,7 @@
 		"thumbnail": "http://www.intrawallpaper.com/static/images/eiffel-tower-wallpaper-18_TJ30uc8.jpg",
 		"title": "Slender titre ",
 		"shortDescription": "Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. ",
-		"category": "Photo",
+		"category": "Jeu",
 		"language": "C#",
 		"date": "mtn",
 		"platforms": [
@@ -24,7 +24,7 @@
 		"thumbnail": "http://lorempicsum.com/rio/350/220/1",
 		"title": "Markings",
 		"shortDescription": "TestDesc",
-		"category": "Photo",
+		"category": "Jeu",
 		"language": "C#",
 		"platforms": [
 			"Android"
@@ -42,7 +42,7 @@
 		"thumbnail": "http://lorempicsum.com/futurama/350/220/8",
 		"title": "Nouveau projet",
 		"shortDescription": "TestDesc",
-		"category": "Nature",
+		"category": "Audiovisuel",
 		"language": "C#",
 		"platforms": [
 			"Android"
@@ -59,14 +59,21 @@
 		"shortDescription": "TestDesc",
 		"category": "Science",
 		"language": "C#",
+		"content": "<h2>Je suis un projet</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eligendi facere nobis voluptatum! Ab, alias architecto, cum eius facere fuga minima molestias perferendis similique soluta velit voluptatum. Dolorem inventore, molestias.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ex excepturi illo impedit laborum nemo nisi quas quidem repellendus voluptates. Ab consequuntur error expedita ipsa ipsum neque, nulla quidem repudiandae?</p>",
 		"platforms": [
 			"Apple",
 			"Android",
 			"Web",
 			"Windows"
 		],
-		"date": "mtn",
-		"images": []
+		"date": "16/02/2016",
+		"images": [
+			"http://lorempicsum.com/rio/350/220/1",
+			"http://lorempicsum.com/rio/350/220/2",
+			"http://lorempicsum.com/rio/350/220/3",
+			"http://lorempicsum.com/rio/350/220/4",
+			"http://lorempicsum.com/rio/350/220/5"
+		]
 	},
 	{
 		"thumbnail": "http://lorempicsum.com/futurama/350/220/3",
@@ -121,7 +128,7 @@
 		"thumbnail": "http://lorempicsum.com/futurama/350/220/7",
 		"title": "My Informatique",
 		"shortDescription": "TestDesc",
-		"content": " ",
+		"content": "",
 		"category": "Informatique",
 		"language": "C#",
 		"platforms": [

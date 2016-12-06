@@ -160,6 +160,11 @@ nav.aside {
 				opacity: 1;
 			}
 		}
+		& .copyright {
+			margin-top: 10px;
+			opacity: 0.5;
+			font-size: 0.8rem;
+		}
 	}
 }
 
@@ -248,7 +253,7 @@ code {
 
 .container {
 	padding: 40px;
-	max-width: 1300px;
+	max-width: 1200px;
 	width: calc(100vw - 300px);
 
 }
@@ -502,9 +507,14 @@ a.lightbox-image {
 		width: 100vw;
 		&.offset {
 			transition: none;
-			margin-top: 295px;
+			margin-top: 297px;
 		}
 	}
+
+	.current-page.is-project.fixed  ~ .view.offset {
+		margin-top: 242px;
+	}
+
 
 	img {
 		max-width: 100%;
@@ -582,6 +592,10 @@ a.lightbox-image {
 
 	.view {
 		margin-top: 58px;
+	}
+
+	.is-project ~ .view {
+		margin-top: 0;
 	}
 
 	h2 {
