@@ -270,7 +270,7 @@ i.sidebar.icon {
 
 	&.menu-opened {
 		filter: blur(6px) #{"grayscale(90%)"};
-		transform: scale(1.03) translateX(300px);
+		transform: translateX(300px);
 		width: 100vw;
 		height: 98vh;
 		overflow: hidden;
@@ -486,6 +486,7 @@ a.lightbox-image {
 	}
 }
 
+
 @media screen and (max-width: 720px) {
 
 	.lightbox .lightbox-image {
@@ -506,7 +507,6 @@ a.lightbox-image {
 		padding: 20px;
 		width: 100vw;
 		&.offset {
-			transition: none;
 			margin-top: 297px;
 		}
 	}
@@ -514,6 +514,7 @@ a.lightbox-image {
 	.current-page.is-project.fixed  ~ .view.offset {
 		margin-top: 242px;
 	}
+
 
 
 	img {

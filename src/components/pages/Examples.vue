@@ -1,11 +1,24 @@
 <template>
 		<div class="container">
-			<h2>Exemples de composants</h2>
-			<h3>Lightbox</h3>
+			<h2>Exemples de composants créés avec Vuejs</h2>
 			<p>Durant mon temps libre, j'ai appris petit à petit, à utiliser VueJS. J'ai tout de suite accroché à la façon dont VueJS nous permettait de créer des composants très simplements et surtout ces derniers sont
-			<strong>modulable</strong>, c'est-à-dire que je peux désormais très facilement inclure un composant VueJS dans une autre application. Vous trouverez donc sur cette page les différents composants que j'ai créée de A à Z (apparence comprise)
+				<strong>modulable</strong>, c'est-à-dire que je peux désormais très facilement inclure un composant VueJS dans une autre application. Vous trouverez donc sur cette page les différents composants que j'ai créée de A à Z (apparence comprise)
 				avec le code source nécessaire au rendu de ce composant.
 			</p>
+			<h3>Carousel</h3>
+			<carousel :autoplay="true" :slide-duration="2000">
+				<carousel-slide v-for="n in 8" :index="n - 1">
+					<h1>Je suis la slide n {{n}}</h1>
+				</carousel-slide>
+			</carousel>
+			<h3>Tags components</h3>
+			<tags :max="5"></tags>
+			<h3>Lightbox</h3>
+
+			<a href="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" v-lightbox="{group: 'nature', title: 'Shaimes Mirenda', 'desc': 'Shaimes le bg'}">
+				<img src="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" width="266" height="150" alt="">
+			</a>
+
 			<a href="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" v-lightbox="{group: 'nature', title: 'Je suis un titre et la première image'}">
 				<img src="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" width="266" height="150" alt="">
 			</a>
@@ -73,11 +86,17 @@
 <script>
 
 	import Todos from '../Todos'
+	import Tags from '../tags/Tags.vue'
+	import Carousel from '../carousel/Carousel.vue'
+	import CarouselSlide from '../carousel/CarouselSlide.vue'
 	import store from '../../AppStore';
 
 	export default {
 		components: {
-			Todos
+			Todos,
+			Carousel,
+			CarouselSlide,
+			Tags
 		},
 		data() {
 			return {
@@ -95,10 +114,8 @@
 		mounted() {
 			this.language = this.languages[0];
 			window.setInterval(() => {
-
 				let i = this.languages.indexOf(this.language) + 1;
 				if(i > this.languages.length - 1) i = 0;
-				console.log(i);
 				this.language = this.languages[i];
 			}, 3000);
 		}

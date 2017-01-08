@@ -216,7 +216,7 @@
 				}
 				this.style = {
 					width: w + "px",
-					height: (h - 120) + "px",
+					height: h  + "px",
 					top: ((window.innerHeight - h) * 0.5) + 'px',
 					left: ((window.innerWidth - w) * 0.5) + 'px',
 					background: "url(" + this.src + ")",

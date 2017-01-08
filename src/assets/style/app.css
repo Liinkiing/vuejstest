@@ -213,7 +213,7 @@ i.sidebar.icon {
   padding-left: 300px; }
   .view-wrapper.menu-opened {
     filter: blur(6px) grayscale(90%);
-    transform: scale(1.03) translateX(300px);
+    transform: translateX(300px);
     width: 100vw;
     height: 98vh;
     overflow: hidden; }
@@ -374,7 +374,6 @@ a.lightbox-image {
     padding: 20px;
     width: 100vw; }
     .container.offset {
-      transition: none;
       margin-top: 297px; }
 
   .current-page.is-project.fixed ~ .view.offset {

@@ -17,6 +17,7 @@ button {
 
 .todoapp header.header {
 	padding: 20px;
+	background-color: #008c9e;
 }
 
 
@@ -52,6 +53,10 @@ input[type="checkbox"] {
 	font-style: italic;
 	font-weight: 300;
 	color: #e6e6e6 ;
+}
+
+header.header {
+	color: whitesmoke;
 }
 
 .todoapp h1 {

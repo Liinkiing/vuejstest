@@ -4,7 +4,7 @@
 		<div id="wrapper">
 			<nav class="aside">
 				<main style="flex: 1;">
-					<div class="item brand"><h1 @click="handleNavClick"><router-link to="/">JBARA Omar</router-link></h1></div>
+					<div class="item brand"><h1 @click="handleNavClick"><router-link to="/">Omar JBARA</router-link></h1></div>
 					<ul>
 						<li @click="handleNavClick"><router-link :to="{name: 'about'}">A propos de moi</router-link></li>
 						<li @click="handleNavClick"><router-link :to="{name: 'portfolio'}">Mon portfolio</router-link></li>
@@ -146,7 +146,8 @@
 						background: 'url(' + this.projectState.project.thumbnail + ')',
 						backgroundPosition: 'center center',
 						backgroundSize: 'cover',
-						backgroundAttachment: 'fixed'
+						backgroundAttachment: 'fixed',
+						transition: 'none'
 					}
 				}
 				return null;

@@ -5,8 +5,8 @@
 				<div v-if="'content' in project" v-html="project.content"></div>
 				<div class="project-gallery" v-if="'images' in project && project.images.length > 0">
 					<h3>Galerie</h3>
-					<a v-for="image in project.images" :href="image" v-lightbox="{group: project.title.slugify()}">
-						<img :src="image" width="140" height="100">
+					<a v-for="image in project.images" :href="image.url" v-lightbox="{group: project.title.slugify(), title: 'title' in image ? image.title : null, desc: 'desc' in image ? image.desc : null}">
+						<img :src="image.url" width="140" height="100">
 					</a>
 				</div>
 			</div>

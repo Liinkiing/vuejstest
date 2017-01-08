@@ -9,6 +9,7 @@
 <style lang="scss">
 
 	.carousel-slide {
+		padding: 60px 120px;
 		position: relative;
 		& img {
 			width: 100%;
