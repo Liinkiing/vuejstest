@@ -16,7 +16,13 @@ class AppStore {
 	}
 
 
-
+	resetSelectors() {
+		this.nav = document.querySelector('nav.aside');
+		this.pageView = document.querySelector('.view-wrapper');
+		this.body = document.querySelector('body');
+		this.container = document.querySelector('.container.view');
+		this.header = document.querySelector('header.current-page');
+	}
 
 	closeMenu() {
 		this.nav.classList.remove('opened');

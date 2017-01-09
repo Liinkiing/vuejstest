@@ -13,7 +13,7 @@
 			<div class="metas" v-if="'platforms' in project && project.platforms.length > 0">
 				<ul>
 					<li v-for="platform in project.platforms"><i :class="platform.toLowerCase() + ' icon'"></i>{{platform}}</li>
-					<li class="date"><i class="calendar icon"></i>{{project.date}}</li>
+					<li class="date"><i class="calendar icon"></i>{{date}}</li>
 				</ul>
 			</div>
 		</div>
@@ -38,6 +38,9 @@
 		& .content {
 			flex: 3;
 			padding-right: 40px;
+			@media screen and (max-width: 720px) {
+				padding-right: 0;
+			}
 		}
 		& .metas {
 			flex: 1;
@@ -55,9 +58,12 @@
 			& i[class~="icon"] {
 				margin-right: 15px;
 			}
-			& li.date {
-				margin-top: 20px;
-				opacity: 0.5;
+			& li {
+				margin-bottom: 5px;
+				&.date {
+					margin-top: 20px;
+					opacity: 0.5;
+				}
 			}
 			@media screen and (max-width: 720px) {
 				border-left: none;
@@ -98,17 +104,21 @@
 
 		mounted(){
 			store.setCurrentProject(store.getProject(this.$route.params.slug));
+			console.log(store.state.project);
+			appStore.resetSelectors();
 			let scrollListener = window.addEventListener('scroll', () => {
 				if (window.scrollY >= 187) {
-					// console.log(window.scrollY);
 					if(!appStore.header.classList.contains('fixed')) {
 						appStore.container.classList.add('offset');
+						console.log(appStore.container);
 						appStore.header.classList.add('fixed');
+						console.log('add offset');
 					}
 				} else {
 					if(appStore.header.classList.contains('fixed'))  {
 						appStore.container.classList.remove('offset');
 						appStore.header.classList.remove('fixed');
+					console.log('remove offset')
 					}
 				}
 			});
@@ -119,6 +129,11 @@
 		computed: {
 			project() {
 				return this.state.project;
+			},
+			date() {
+				let date = new Date(this.project.date);
+
+				return date.toLocaleString('fr-FR', {month: 'long'}).capitalize() + ' ' + date.getFullYear()
 			}
 		},
 		methods: {}

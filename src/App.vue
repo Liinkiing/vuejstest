@@ -6,10 +6,9 @@
 				<main style="flex: 1;">
 					<div class="item brand"><h1 @click="handleNavClick"><router-link to="/">Omar JBARA</router-link></h1></div>
 					<ul>
-						<li @click="handleNavClick"><router-link :to="{name: 'about'}">A propos de moi</router-link></li>
 						<li @click="handleNavClick"><router-link :to="{name: 'portfolio'}">Mon portfolio</router-link></li>
 						<li @click="handleNavClick"><router-link :to="{name: 'hobbies'}">Mes hobbies</router-link></li>
-						<li @click="handleNavClick"><router-link :to="{name: 'examples'}">Exemples</router-link></li>
+						<li @click="handleNavClick"><router-link :to="{name: 'examples'}">Mes composants VueJS</router-link></li>
 					</ul>
 					<div class="theme-chooser">
 						<p>Choississez un thème</p>
@@ -21,7 +20,10 @@
 				</main>
 				<footer>
 					<a href="https://github.com/Liinkiing" target="_blank"><i style="font-size: 1.5rem; margin: 0;" class="github icon"></i></a>
-					<div class="copyright">&copy; JBARA Omar - 2016</div>
+					<a href="https://soundcloud.com/haplegrand" target="_blank"><i style="font-size: 1.5rem; margin: 0;" class="soundcloud icon"></i></a>
+					<a href="https://www.linkedin.com/in/omar-jbara-9a2020121?trk=nav_responsive_tab_profile_pic" target="_blank"><i style="font-size: 1.5rem; margin: 0;" class="linkedin icon"></i></a>
+					<a href="mailto:omar.jbara2@gmail.com"><i style="font-size: 1.5rem; margin: 0;" class="mail icon"></i></a>
+					<div class="copyright">&copy; JBARA Omar - {{new Date().getFullYear()}}</div>
 				</footer>
 			</nav>
 

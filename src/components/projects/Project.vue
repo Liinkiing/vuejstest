@@ -111,7 +111,8 @@
 			return {
 				style: {
 					backgroundImage: 'url(' + this.thumbnail + ')',
-					backgroundSize: 'cover'
+					backgroundSize: 'cover',
+					backgroundPosition: 'center center'
 				}
 			}
 		},

@@ -44,6 +44,7 @@ class ProjectStore {
 		console.log('chargement données');
 		loadJSON("/static/data/projects.json", (response) => {
 			this.state.projects = JSON.parse(response);
+			this.state.projects = this.state.projects.sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 			this.state.filteredProjects = this.state.projects;
 			console.log('chargement réussi');
 			callback && callback();
@@ -65,7 +66,7 @@ class ProjectStore {
 	}
 
 	filter(category, platforms = "all") {
-		if(category == "all" && platforms == "all") this.state.filteredProjects = this.state.projects;
+		if(category == "all") this.state.filteredProjects = this.state.projects;
 		else {
 			this.state.filteredProjects = _.filter(this.state.projects, (project) => {
 				let catTester = true;
@@ -77,12 +78,25 @@ class ProjectStore {
 
 				if(platforms !== "all") {
 					if(Object.keys(project.platforms).length === 0) platTester = true;
+					else if(category == 'site web' || category == 'plugin') platTester = true;
 					else platTester = project.platforms.indexOf(platforms) > - 1;
 				}
 				return (catTester && platTester)
 			})
 		}
 
+	}
+	
+	changeOrder(order, catFilter, platFilter) {
+		switch (order) {
+			case 'desc':
+				this.state.projects = this.state.projects.sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+				break;
+			case 'asc':
+				this.state.projects = this.state.projects.sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+				break;
+		}
+		this.filter(catFilter, platFilter);
 	}
 }
 

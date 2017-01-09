@@ -42,8 +42,6 @@
 </style>
 <script>
 
-	import Tab from "./Tab";
-
 	export default {
 		data() {
 			return {

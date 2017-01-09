@@ -4,7 +4,7 @@
 			<transition-group name="slide-left" tag="p">
 				<span @dbclick="editTag(tag.index)" class="tag" v-for="tag in tags" :key="tag">#{{tag.name}}<i @click="removeTag(tag.index)">x</i></span>
 			</transition-group>
-			<input type="text" v-model="newTag" :value="newTag" @keyup.enter.space="addTag()" @keyup.escape="removeLastTag()" :style="style">
+			<input type="text" v-model="newTag" :value="newTag" @keyup.enter.space="addTag()" @keyup.delete="removeLastTag()" :style="style">
 		</div>
 		<transition name="fade-blur">
 			<div v-if="errorMessage != null"><span style="color: red; margin-top: 10px; display: inline-block;">{{errorMessage}}</span></div>
@@ -83,7 +83,6 @@
 				this.tags = this.tags.filter((tag) => tag.index != i);
 			},
 			removeLastTag() {
-				console.log('bacj');
 				if (this.newTag == "") {
 					this.tags.pop();
 				}

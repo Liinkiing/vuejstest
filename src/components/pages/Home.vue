@@ -5,6 +5,7 @@
 			différentes technologies web qui nous entourent.
 			Étant de nature <strong>curieux</strong> et <strong>autodidacte</strong>, j'ai beaucoup appris lors de mon
 			temps libre.</p>
+		<p>Tous les composants utilisés sur mon site web (Lightbox, Carousel, système de tri de projets etc...) ont été créé et designé par moi même dans le cadre de mon apprentissage de <strong>VueJS</strong>.</p>
 		<p>De plus, je suis actuellement étudiant à l'<strong>Université Paris-Est Marne-la-Vallée</strong>, en DUT Métiers du Multimédia et de l'Internet. J'ai donc aussi
 		la chance de pouvoir pratiquer aussi tout ce qui est développement web dans le cadre de ma formation.</p>
 		<p>N'hésitez pas à jeter un oeil à mon <a href="https://github.com/Liinkiing">GitHub</a></p>

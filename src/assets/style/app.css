@@ -16,6 +16,9 @@
 html {
   font-size: 100%; }
 
+.container p {
+  text-align: justify; }
+
 h3 {
   font-family: 'Geomanist', 'Lato', 'Roboto', sans-serif;
   font-size: 1.6rem;
@@ -131,7 +134,12 @@ nav.aside {
     transform: translateX(0); }
   nav.aside footer {
     padding: 15px;
-    justify-content: center; }
+    justify-content: center;
+    margin-top: 80px; }
+    nav.aside footer a {
+      margin-right: 10px; }
+      nav.aside footer a:last-of-type {
+        margin-right: 0; }
     nav.aside footer i {
       transition: opacity 0.3s;
       opacity: 0.3; }
@@ -241,8 +249,8 @@ i.sidebar.icon {
 .ui.button {
   transition: all 0.3s; }
   .ui.button.active {
-    background: #005f6b;
-    color: whitesmoke; }
+    background: #005f6b !important;
+    color: whitesmoke !important; }
 
 i.web.icon {
   font-family: 'Icons'; }
@@ -338,8 +346,15 @@ a.lightbox-image {
   opacity: 0;
   filter: blur(5px); }
 
+.fadeFromLeft-enter-active, .fadeFromLeft-leave-active {
+  transition: opacity .3s, filter 0.3s; }
+
+.fadeFromLeft-enter, .fadeFromLeft-leave-active {
+  opacity: 0;
+  filter: blur(5px); }
+
 .fade-move {
-  transition: transform 0.4s; }
+  transition: transform 0.3s; }
 
 .slide-heading-enter-active, .slide-heading-leave-active {
   transition: opacity .5s, transform 0.8s; }

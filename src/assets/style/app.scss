@@ -29,6 +29,10 @@ html {
 	font-size: 100%;
 }
 
+.container p {
+	text-align: justify;
+}
+
 h3 {
 	font-family: 'Geomanist', 'Lato', 'Roboto', sans-serif;
 	font-size: 1.6rem;
@@ -152,6 +156,14 @@ nav.aside {
 	& footer {
 		padding: 15px;
 		justify-content: center;
+		margin-top: 80px;
+
+		& a {
+			margin-right: 10px;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
 		& i {
 			transition: opacity $transition-duration;
 			opacity: 0.3;
@@ -309,8 +321,8 @@ i.sidebar.icon {
 .ui.button {
 	transition: all $transition-duration;
 	&.active {
-		background: $dark-teal-color;
-		color: whitesmoke;
+		background: $dark-teal-color !important;
+		color: whitesmoke !important;
 	}
 }
 
@@ -456,8 +468,17 @@ a.lightbox-image {
 	filter: blur(5px);
 }
 
+.fadeFromLeft-enter-active, .fadeFromLeft-leave-active {
+	transition: opacity .3s, filter 0.3s;
+}
+
+.fadeFromLeft-enter, .fadeFromLeft-leave-active {
+	opacity: 0;
+	filter: blur(5px);
+}
+
 .fade-move {
-	transition: transform 0.4s;
+	transition: transform 0.3s;
 }
 
 .slide-heading-enter-active, .slide-heading-leave-active {
@@ -493,6 +514,8 @@ a.lightbox-image {
 		height: calc(100vh - 120px) !important;
 		top: 0 !important;
 	}
+
+
 
 	nav.aside {
 		transform: translateX(-300px);

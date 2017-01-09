@@ -222,7 +222,7 @@
 					background: "url(" + this.src + ")",
 					backgroundSize: 'cover',
 					backgroundPosition: 'center center',
-					// maxHeight: 'calc(100vh - 120px)'
+					maxHeight: 'calc(100vh - 120px)'
 				}
 
 

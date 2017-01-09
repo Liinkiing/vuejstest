@@ -10,12 +10,19 @@
 					:class="{active: filter == category.toLowerCase()}">{{ category }}</span>
 			</div>
 			<div>
-				<h3>Plateforme</h3>
-				<span class="ui button" @click.prevent="platformsFilter = 'all'"
-					  :class="{active: platformsFilter == 'all'}">Tous</span> <span
-				class="ui button" v-for="platform in platforms"
-				@click.prevent="platformsFilter = platform" :class="{active: platformsFilter == platform}">{{ platform }}</span>
+				<h3>Tri</h3>
+				<span class="ui button" @click.prevent="changeOrder('desc')" :class="{active: order == 'desc'}">Descendant</span>
+				<span class="ui button" @click.prevent="changeOrder('asc')" :class="{active: order == 'asc'}">Ascendant</span>
 			</div>
+			<transition name="fadeFromLeft">
+				<div v-if="filter == 'jeu'">
+					<h3>Plateforme</h3>
+					<span class="ui button" @click.prevent="platformsFilter = 'all'"
+						  :class="{active: platformsFilter == 'all'}">Tous</span> <span
+					class="ui button" v-for="platform in platforms"
+					@click.prevent="platformsFilter = platform" :class="{active: platformsFilter == platform}" v-if="platform != 'HTML5'">{{ platform }}</span>
+				</div>
+			</transition>
 		</div>
 		<div class="projects-list">
 			<transition name="fade" mode="out-in">
@@ -65,12 +72,13 @@
 				state: store.state,
 				platforms: [],
 				filter: 'all',
-				platformsFilter: 'all'
+				platformsFilter: 'all',
+				order: 'desc'
 			}
 		},
 		computed: {
 			categories() {
-				return _.uniq(this.state.projects.map((project) => project.category));
+				return _.uniq(this.state.projects.map((project) => project.category)).sort();
 			},
 		},
 		methods: {
@@ -79,6 +87,10 @@
 			},
 			changePlatformsFilter(newFilter) {
 				this.platformsFilter = newFilter;
+			},
+			changeOrder(order) {
+				this.order = order;
+				store.changeOrder(this.order, this.filter, this.platformsFilter);
 			}
 		},
 		mounted() {

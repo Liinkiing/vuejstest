@@ -11,6 +11,17 @@
 					<h1>Je suis la slide n {{n}}</h1>
 				</carousel-slide>
 			</carousel>
+			<h3>Tabs components</h3>
+			<tabs-container>
+				<tab header="Je suis un onglet" :index="0">Je suis le contenu</tab>
+				<tab header="Et moi un autre" :index="1">Et moi l'autre</tab>
+			</tabs-container>
+			<pre class="language-markup"><code>
+&lt;tabs-container>
+	&lt;tab header="Je suis un onglet" :index="0">Je suis le contenu&lt;/tab>
+	&lt;tab header="Et moi un autre" :index="1">Et moi l'autre&lt;/tab>
+&lt;/tabs-container>
+			</code></pre>
 			<h3>Tags components</h3>
 			<tags :max="5"></tags>
 			<h3>Lightbox</h3>
@@ -89,6 +100,8 @@
 	import Tags from '../tags/Tags.vue'
 	import Carousel from '../carousel/Carousel.vue'
 	import CarouselSlide from '../carousel/CarouselSlide.vue'
+	import TabsContainer from '../tabs/TabsContainer.vue'
+	import Tab from '../tabs/Tab.vue'
 	import store from '../../AppStore';
 
 	export default {
@@ -96,7 +109,9 @@
 			Todos,
 			Carousel,
 			CarouselSlide,
-			Tags
+			Tags,
+			TabsContainer,
+			Tab
 		},
 		data() {
 			return {

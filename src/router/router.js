@@ -5,7 +5,6 @@ Vue.use(VueRouter);
 
 import HomePage from '../components/pages/Home';
 import TodoPage from '../components/pages/Todo';
-import AboutPage from '../components/pages/About';
 import PortfolioPage from '../components/pages/Portfolio';
 import HobbiesPage from '../components/pages/Hobbies';
 import ExamplesPage from '../components/pages/Examples';
@@ -14,7 +13,6 @@ import ErrorPage from '../components/pages/Error';
 
 const routes = [
 	{path: '/', name: 'homepage', component: HomePage},
-	{path: '/about', name: 'about', component: AboutPage},
 	{path: '/projects', name: 'portfolio', component: PortfolioPage},
 	{path: '/hobbies', name: 'hobbies', component: HobbiesPage},
 	{path: '/examples', name: 'examples', component: ExamplesPage},
