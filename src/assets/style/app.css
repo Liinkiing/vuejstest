@@ -202,6 +202,9 @@ h3 {
 h4 {
   text-transform: none; }
 
+.hljs {
+  background: #2c2f2f; }
+
 code {
   font-family: 'Fira Code', monospace;
   text-transform: none;
