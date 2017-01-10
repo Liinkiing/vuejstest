@@ -3,8 +3,8 @@
 		<div class="carousel-inner">
 			<slot></slot>
 		</div>
-		<button class="carousel-navigation prev" @click="prev()">❰</button>
-		<button class="carousel-navigation next" @click="next()">❱</button>
+		<button class="carousel-navigation prev" @click="prev()">&lt;</button>
+		<button class="carousel-navigation next" @click="next()">&gt;</button>
 		<div class="carousel pagination">
 			<div class="slide-pagination" v-for="slide in slides" @click.prevent="goto(slide.index)"
 				 :class="{active: activeSlide == slide.index}"></div>

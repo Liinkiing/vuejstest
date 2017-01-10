@@ -10,10 +10,12 @@
 					</a>
 				</div>
 			</div>
-			<div class="metas" v-if="'platforms' in project && project.platforms.length > 0">
+			<div class="metas" v-if="('platforms' in project && project.platforms.length > 0) || ('language' in project && project.language.length > 0)">
 				<ul>
-					<li v-for="platform in project.platforms"><i :class="platform.toLowerCase() + ' icon'"></i>{{platform}}</li>
+					<li v-if="('platforms' in project && project.platforms.length > 0)" v-for="platform in project.platforms"><i :class="platform.toLowerCase() + ' icon'"></i>{{platform}}</li>
 					<li class="date"><i class="calendar icon"></i>{{date}}</li>
+					<li v-if="'language' in project && project.language.length > 0" class="languages"><i class="code icon"></i>Langages utilisés : {{project.language}}</li>
+
 				</ul>
 			</div>
 		</div>
@@ -64,6 +66,10 @@
 					margin-top: 20px;
 					opacity: 0.5;
 				}
+				&.languages {
+					margin-top: 20px;
+					opacity: 0.5;
+				}
 			}
 			@media screen and (max-width: 720px) {
 				border-left: none;
@@ -84,6 +90,7 @@
 <script>
 
 	import store from '../projects/ProjectStore';
+	import lbstore from '../lightbox/LightboxStore'
 	import appStore from '../../AppStore';
 	import Carousel from '../carousel/Carousel';
 	import CarouselSlide from '../carousel/CarouselSlide';
@@ -103,6 +110,7 @@
 
 
 		mounted(){
+			lbstore.close();
 			store.setCurrentProject(store.getProject(this.$route.params.slug));
 			console.log(store.state.project);
 			appStore.resetSelectors();

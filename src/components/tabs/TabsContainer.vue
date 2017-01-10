@@ -52,7 +52,6 @@
 		computed: {
 		},
 		mounted() {
-			console.log(this.tabs);
 		},
 		methods: {
 			setTab(i) {

@@ -48,6 +48,8 @@
 <script>
 
 	import Todos from '../Todos'
+	import lbstore from '../lightbox/LightboxStore'
+
 
 	export default {
 		components: {
@@ -74,7 +76,7 @@
 		},
 
 		mounted() {
-
+			lbstore.close();
 			this.language = Object.keys(this.langs[0])[0];
 			this.type = this.langs[0][Object.keys(this.langs[0])[0]];
 			let i = 0;

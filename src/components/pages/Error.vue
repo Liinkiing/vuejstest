@@ -9,5 +9,11 @@
 
 </style>
 <script>
+	import lbstore from '../lightbox/LightboxStore'
 
+	export default {
+		mounted() {
+			lbstore.close()
+		}
+	}
 </script>

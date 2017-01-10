@@ -4,7 +4,6 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
 import HomePage from '../components/pages/Home';
-import TodoPage from '../components/pages/Todo';
 import PortfolioPage from '../components/pages/Portfolio';
 import HobbiesPage from '../components/pages/Hobbies';
 import ExamplesPage from '../components/pages/Examples';

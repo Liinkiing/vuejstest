@@ -37,7 +37,7 @@
 		"title": "Tutotoformes",
 		"shortDescription": "Une plateforme de tutoriels en ligne",
 		"category": "Site web",
-		"language": "C#",
+		"language": "HTML5, CSS3, JavaScript, PHP",
 		"platforms": [
 			"HTML5"
 		],
@@ -56,7 +56,7 @@
 		"title": "C-Vitae",
 		"shortDescription": "Une plateforme de mise en relation",
 		"category": "Site web",
-		"language": "HTML5, JavaScript, PHP",
+		"language": "HTML5, CSS3, JavaScript, PHP",
 		"platforms": [
 			"HTML5"
 		],
@@ -148,7 +148,7 @@
 		"title": "Portrait chinois #1",
 		"shortDescription": "Un projet réalisé dans le cadre de mon DUT",
 		"category": "Site web",
-		"language": "HTML, CSS",
+		"language": "HTML5, CSS3, JavaScript",
 		"platforms": [
 			"HTML5"
 		],
@@ -160,7 +160,7 @@
 		"title": "Portrait chinois #2",
 		"shortDescription": "Un projet réalisé dans le cadre de mon DUT",
 		"category": "Site web",
-		"language": "HTML, CSS",
+		"language": "HTML5, CSS3, JavaScript",
 		"platforms": [
 			"HTML5"
 		],
@@ -172,7 +172,7 @@
 		"title": "Mon site web",
 		"shortDescription": "Oui, ce que vous voyez actuellement",
 		"category": "Site web",
-		"language": "HTML, CSS",
+		"language": "HTML5, CSS3, JavaScript",
 		"platforms": [
 			"HTML5"
 		],

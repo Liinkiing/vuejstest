@@ -21,6 +21,7 @@
 </style>
 <script>
 
+	import lbstore from '../lightbox/LightboxStore'
 	import Projects from '../projects/Projects.vue';
 	import Project from '../projects/Project.vue';
 	import LightboxDirective from '../lightbox/LightboxDirective'
@@ -46,6 +47,7 @@
 		},
 
 		mounted() {
+			lbstore.close();
 		}
 
 	}

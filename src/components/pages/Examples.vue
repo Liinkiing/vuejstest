@@ -11,13 +11,13 @@
 		<h3>Carousel</h3>
 		<carousel :autoplay="true" :slide-duration="2000">
 			<carousel-slide v-for="n in 8" :index="n - 1">
-				<h1>Je suis la slide n {{n}}</h1>
+				<h1>Je suis la slide n°{{n}}</h1>
 			</carousel-slide>
 		</carousel>
 		<pre><code class="html">
 &lt;carousel :autoplay="true" :slide-duration="2000">
 	&lt;carousel-slide v-for="n in 8" :index="n - 1">
-		&lt;h1>Je suis la slide n {{n}}&lt;/h1>
+		&lt;h1>Je suis la slide n°{n}&lt;/h1>
 	&lt;/carousel-slide>
 &lt;/carousel>
 		</code></pre>
@@ -168,7 +168,7 @@
 
 </style>
 <script>
-
+	import lbstore from '../lightbox/LightboxStore'
 	import Todos from '../Todos'
 	import Tags from '../tags/Tags.vue'
 	import Carousel from '../carousel/Carousel.vue'
@@ -200,6 +200,7 @@
 		},
 
 		mounted() {
+			lbstore.close()
 			hljs.initHighlighting();
 			this.language = this.languages[0];
 			window.setInterval(() => {

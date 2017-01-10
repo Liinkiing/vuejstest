@@ -3,24 +3,19 @@
 		<div class="categories">
 			<div>
 				<h3>Catégorie</h3>
-				<span class="ui button" @click.prevent="filter = 'all'" :class="{active: filter == 'all'}">Tous</span>
+				<span class="ui button" @click.prevent="changeFilter('all')" :class="{active: filter == 'all'}">Tous</span>
 				<span
 					class="ui button" v-for="category in categories"
-					@click.prevent="filter = category.toLowerCase()"
-					:class="{active: filter == category.toLowerCase()}">{{ category }}</span>
-			</div>
-			<div>
-				<h3>Tri</h3>
-				<span class="ui button" @click.prevent="changeOrder('desc')" :class="{active: order == 'desc'}">Descendant</span>
-				<span class="ui button" @click.prevent="changeOrder('asc')" :class="{active: order == 'asc'}">Ascendant</span>
+					@click.prevent="setFilter(category.toLowerCase())"
+					:class="{active: state.filter == category.toLowerCase()}">{{ category }}</span>
 			</div>
 			<transition name="fadeFromLeft">
 				<div v-if="filter == 'jeu'">
 					<h3>Plateforme</h3>
-					<span class="ui button" @click.prevent="platformsFilter = 'all'"
-						  :class="{active: platformsFilter == 'all'}">Tous</span> <span
+					<span class="ui button" @click.prevent="changePlatformsFilter('all')"
+						  :class="{active: state.platformsFilter == 'all'}">Tous</span> <span
 					class="ui button" v-for="platform in platforms"
-					@click.prevent="platformsFilter = platform" :class="{active: platformsFilter == platform}" v-if="platform != 'HTML5'">{{ platform }}</span>
+					@click.prevent="setPlatformsFilter(platform)" :class="{active: platformsFilter == platform}" v-if="platform != 'HTML5'">{{ platform }}</span>
 				</div>
 			</transition>
 		</div>
@@ -70,27 +65,37 @@
 		data(){
 			return {
 				state: store.state,
-				platforms: [],
-				filter: 'all',
-				platformsFilter: 'all',
-				order: 'desc'
+				platforms: []
 			}
 		},
 		computed: {
 			categories() {
 				return _.uniq(this.state.projects.map((project) => project.category)).sort();
 			},
+			filter() {
+				return this.state.filter;
+			},
+			platformsFilter() {
+				return this.state.platformsFilter;
+			}
 		},
 		methods: {
 			changeFilter(newFilter) {
-				this.filter = newFilter;
+				store.state.filter = newFilter;
 			},
 			changePlatformsFilter(newFilter) {
-				this.platformsFilter = newFilter;
+				store.state.platformsFilter = newFilter;
 			},
 			changeOrder(order) {
-				this.order = order;
+				store.state.order = order;
 				store.changeOrder(this.order, this.filter, this.platformsFilter);
+			},
+			setFilter(filter) {
+				store.state.filter = filter;
+			},
+			setPlatformsFilter(platformFilter) {
+				store.state.platformsFilter = platformFilter;
+
 			}
 		},
 		mounted() {

@@ -19,7 +19,10 @@ class ProjectStore {
 		this.state = {
 			project: null,
 			projects: [],
-			filteredProjects: []
+			filteredProjects: [],
+			filter: 'all',
+			platformsFilter: 'all',
+			order: 'desc'
 		};
 		this.state.filteredProjects = this.state.projects;
 	}
@@ -86,7 +89,7 @@ class ProjectStore {
 		}
 
 	}
-	
+
 	changeOrder(order, catFilter, platFilter) {
 		switch (order) {
 			case 'desc':
