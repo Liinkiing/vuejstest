@@ -43,11 +43,6 @@
 		   v-lightbox="{group: 'nature', title: 'Titre image', 'desc': 'Description de l\'image'}">
 			<img src="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" width="266" height="150" alt="">
 		</a>
-
-		<a href="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg"
-		   v-lightbox="{group: 'nature', title: 'Je suis un titre et la première image'}">
-			<img src="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" width="266" height="150" alt="">
-		</a>
 		<a href="http://wallpapercave.com/wp/eaFUfBE.jpg"
 		   v-lightbox="{group: 'nature', desc: 'Je suis une description'}">
 			<img src="http://wallpapercave.com/wp/eaFUfBE.jpg" width="266" height="150" alt="">
@@ -96,10 +91,6 @@
 
 		<pre><code class="html">
 &lt;a href="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" v-lightbox="{group: 'nature', title: 'Titre image', 'desc': 'Description de l\'image'}">
-	&lt;img src="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" width="266" height="150" alt="">
-&lt;/a>
-
-&lt;a href="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" v-lightbox="{group: 'nature', title: 'Je suis un titre et la première image'}">
 	&lt;img src="http://cdn.wallpapersafari.com/33/5/9TPZ3I.jpg" width="266" height="150" alt="">
 &lt;/a>
 &lt;a href="http://wallpapercave.com/wp/eaFUfBE.jpg" v-lightbox="{group: 'nature', desc: 'Je suis une description'}">

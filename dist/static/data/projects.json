@@ -1,0 +1,184 @@
+[
+	{
+		"thumbnail": "https://p5b4y2t6.ssl.hwcdn.net/game-thumbnail/500/30950-kmppivph.jpg",
+		"title": "Slender",
+		"shortDescription": "Un jeu vidéo réalisé en C# avec Unity3D",
+		"category": "Jeu",
+		"language": "C#",
+		"date": "07/01/2014",
+		"platforms": [
+			"Windows", "Linux", "Apple"
+		],
+		"content": "<h1>Slender - The Cursed Forest</h1><p>Petit jeuvidéo réalisé dans le cadre de mes vacances scolaires. Je l'ai fait pour m'entraîner au moteur de jeu Unity3D et en C#. En effet, j'avais la volonté d'apprendre ce langage, j'ai donc décidé de me lancer dans un projet d'une plus grande envergure.</p><p> Aujourd'hui, le jeu comptabilise actuellement plus de <strong>100 000</strong> vues, et est jouable en <strong>multijoueur</strong>. Cela a été une réelle opportunité, j'ai pu en apprendre sur plusieurs facettes de la création de jeuvidéo, en passant par la réalisation d'effet spéciaux, à la partie réseau du jeu.</p><p>Le jeu est disponible sur <a target='_blank' href='http://gamejolt.com/games/slender-the-cursed-forest/30950'>GameJolt</a> et vous pouvez le télécharger</p>",
+		"images": [
+			{"url": "https://p5b4y2t6.ssl.hwcdn.net/screenshot-thumbnail/800x800/60517.jpg", "title": "Première image"},
+			{"url": "https://p5b4y2t6.ssl.hwcdn.net/screenshot-thumbnail/800x800/60516.jpg", "title": "Affichage du menu en jeu"},
+			{"url": "https://p5b4y2t6.ssl.hwcdn.net/screenshot-thumbnail/800x800/60515.jpg", "title": "Écran de connexion"},
+			{"url": "https://p5b4y2t6.ssl.hwcdn.net/screenshot-thumbnail/1600x1600/60205.jpg"}
+		]
+	},
+	{
+		"thumbnail": "http://evogame.fr/wp-content/uploads/2015/12/curve_fever_img.png",
+		"title": "Curve Fever",
+		"shortDescription": "Un petit jeu vidéo réalisé en C# avec Unity3D ",
+		"category": "Jeu",
+		"language": "C#",
+		"platforms": [
+			"Windows", "Linux", "Apple"
+		],
+		"date": "12/01/2016",
+		"content": "<h1>Curve Fever</h1><p>Ce petit jeu vidéo est inspiré du jeu du même nom <a target='_blank' href='http://forum.curvefever.com/play2.php'>Curve Fever</a>. J'ai décidé de faire un jeu de la sorte car cela faisait un petit bout de temps que je n'avais pas touché à Unity. En effet, mon dernier gros projet sur Unity a été mon jeu vidéo <strong>Slender The Cursed Forest</strong>.</p><p>J'ai voulu donc reprendre la programmation en C#, et je me suis ainsi lancé comme défi de reproduire ce petit jeu, simple de premier abord mais très addictif ! Le principe du jeu est simple : il faut être le dernier survivant. Afin d'éviter de mourir, vous devez éviter d'entrer en collison avec les autres joueurs.</p>",
+		"images": [
+			{"url": "http://puu.sh/tfpxG/a8a3956470.png", "title": "Jouable jusqu'à 4 joueurs"}
+		]
+	},
+	{
+		"thumbnail": "http://puu.sh/tgCRd/10f39c6807.jpg",
+		"title": "Tutotoformes",
+		"shortDescription": "Une plateforme de tutoriels en ligne",
+		"category": "Site web",
+		"language": "HTML5, CSS3, JavaScript, PHP",
+		"platforms": [
+			"HTML5"
+		],
+		"content": "<h1>Tutotoformes</h1><p>Ce projet a été notre projet de fin d'année pour notre DUT MMI. En effet, ayant été sélectionné pour terminer mes études à Québec, nous avons dû réaliser ce projet pour notre Semestre 3.</p><p>Il s'agit d'une plateforme de tutoriels en ligne. Des utilisateurs s'inscrivent, et peuvent ainsi suivre leur cours, débloquer des succès... Ce projet a été très enrichissant, et nous avons utilisé le framework PHP <strong>Symfony</strong>.</p><p><a target='_blank' href='http://tutotoformes.fr'>Accéder au site web</a></p>",
+		"date": "01/01/2017",
+		"images": [
+			{"url": "http://puu.sh/tgCTt/04fe0f8f41.png", "title": "Page d'accueil"},
+			{"url": "http://puu.sh/tgCYk/c7eb5850e6.jpg", "title": "Liste des tutoriels"},
+			{"url": "http://puu.sh/tgCZo/320e9dac73.png", "title": "Introduction d'un tutoriel"},
+			{"url": "http://puu.sh/tgD1y/915ac1abf3.png", "title": "Lecture d'un tutoriel"},
+			{"url": "http://puu.sh/tgD46/9363f3899c.png", "title": "Affichage des succès"}
+		]
+	},
+	{
+		"thumbnail": "http://puu.sh/tgFj6/8639b52981.jpg",
+		"title": "C-Vitae",
+		"shortDescription": "Une plateforme de mise en relation",
+		"category": "Site web",
+		"language": "HTML5, CSS3, JavaScript, PHP",
+		"platforms": [
+			"HTML5"
+		],
+		"content": "<h1>C-Vitae</h1><p>Réalisation d'une plateforme réunissant les étudiants de ma promotion en DUT MMI.</p><p>Ce projet a été fait dans le cadre du projet tutoré en fin de première année en MMI. J'ai donc utilisé Symfony pour le développement, utilisation donc de Doctrine comme ORM (permet de faire la liaison entre la couche logique de l'application et la couche de données), PostgreSQL en base de données.</p><p>Les étudiants ont la possibilité de modifier leur CV, de rajouter des informations à propos d'eux, et peuvent directement être contacté via leur profil publique d'étudiant</p><p><a target='_blank' href='https://c-vitae.herokuapp.com'>Accéder au site web</a></p>",
+		"date": "05/30/2016",
+		"images": [
+			{"url": "http://puu.sh/tgFoV/d9a4b9df46.jpg", "title": "Liste des étudiants"},
+			{"url": "http://puu.sh/tgFtM/1dec52afeb.png", "title": "Page proposant une offre de stage"},
+			{"url": "http://puu.sh/tgFxR/e2205dee37.png", "title": "Profil d'un étudiant"}
+		]
+	},
+	{
+		"thumbnail": "https://puu.sh/tgGeY/dc5c5b207a.jpg",
+		"title": "Timelify",
+		"shortDescription": "Un plugin jQuery affichant une timeline",
+		"category": "Plugin",
+		"language": "JavaScript",
+		"platforms": [
+			"HTML5"
+		],
+		"content": "<h1>Timelify</h1><p>Ce petit plugin jQuery a été créé dans le cadre de mon CV interactif disponible à <a target='_blank' href='http://perso-etudiant.u-pem.fr/~ojbara/cv_interactif/'>cette adresse</a>. En effet, j'avais le besoin d'afficher mes différents projets réalisés sous forme d'une timeline.</p><p>J'ai donc décidé, afin de m'entraîner, de réaliser un petit plugin.</p><p><a target='_blank' href='https://github.com/Liinkiing/jquery-timelify'>Accéder au dépôt du plugin</a></p>",
+		"date": "06/01/2016",
+		"images": [
+			{"url": "http://puu.sh/pd2dg/6f9688cce7.gif"}
+		]
+	},
+	{
+		"thumbnail": "https://puu.sh/tgFWh/8c864d76c4.png",
+		"title": "Block that Mario",
+		"shortDescription": "Un jeu vidéo réalisé sous Construct2",
+		"category": "Jeu",
+		"language": "JavaScript",
+		"platforms": [
+			"Windows"
+		],
+		"content": "<h1>Block That Mario</h1><p>Ce jeu a été réalisé lorsque je commençais tout juste le développement. En effet, j'avais découvert le logiciel <a href='https://www.scirra.com/construct2'>Construct2</a>, qui permettait la création de jeu assez facilement.</p><p>J'ai donc décidé de tenter ma chance, et j'ai réalisé un jeu de plateforme inspiré de Mario (les ressources graphiques ne sont pas de moi).</p>",
+		"date": "12/29/2013",
+		"images": [
+			{"url": "http://puu.sh/tgJgQ/4c9f81d0fa.png"},
+			{"url": "http://puu.sh/tgJkJ/1682ed2c45.png"}
+		]
+	},
+	{
+		"thumbnail": "http://puu.sh/tgJGT/3c5c727670.png",
+		"title": "Bot Twitter",
+		"shortDescription": "Un bot réalisé en JavaScript sur Node.js",
+		"category": "Plugin",
+		"language": "JavaScript",
+		"platforms": [
+			"Windows", "Linux", "Apple"
+		],
+		"content": "<h1>Bot twitter</h1><p>Lors de mes études, un ami à moi m'avait parlé des concours Twitter. En effet, les concours twitter se déroulent de la manière suivante : nous devons RT un tweet et follow la personne qui organise le concours. Je me suis donc demandé pourquoi ne pas essayer de créer un bot pour twitter qui réaliserait cela tout seul.</p><p>Pour le moment, le bot m'a fait gagné 3 concours, et il a été conçu de manière très modulable, c'est-à-dire qu'il peut très facilement s'installer sous n'importe quel serveur Nodejs.</p><p>Tous les détails concernant sa mise en place sont disponible sur le dépôt du projet sur mon GitHub.</p><p><a target='_blank' href='https://github.com/Liinkiing/twitter-bot'>Accéder au dépot du plugin</a></p>",
+		"date": "12/01/2016"
+	},
+	{
+		"thumbnail": "http://puu.sh/tgLgS/8300ef3d0f.jpg",
+		"title": "CMS Personnel",
+		"shortDescription": "Un CMS réalisé sur Symfony",
+		"category": "Site web",
+		"language": "HTML, JavaScript, PHP",
+		"platforms": [
+			"HTML5"
+		],
+		"content": "<h1>CMS Personel</h1><p>Un CMS (pour Content Management System) permet d'administrer et de gérer du contenu sur un site web. Wordpress est un exemple très connu de CMS, car ce dernier permet, de manière très aisé, d'administrer tout type de contneu via une interface d'administration.</p><p>J'ai donc voulu récréer quelque chose de similaire à Wordpress (évidemment avec beaucoup moins de fonctionnalité que ce dernier), car à cette période là, je commençais tout juste le développement sous Symfony.</p><p>J'ai donc créé de A à Z, y compris l'apparence, un CMS permettant de gérer des utilisateurs et leur attribuer des rôles (Auteur, Modérateur, Administrateur, Utilisateur etc...), de gérer un blog mais aussi de gérer un protfolio et ajouter des projets directement depuis une interface.</p>",
+		"date": "05/29/2016",
+		"images": [
+			{"url": "http://puu.sh/tgMw1/4ef38b4662.jpg", "title": "Index des articles"},
+			{"url": "http://puu.sh/tgMDU/ffa2fc7107.jpg", "title": "Modification des rôles d'un utilisateur"},
+			{"url": "http://puu.sh/tgMJd/9d19f5da27.jpg", "title": "Modification d'un projet du portfolio"}
+		]
+	},
+	{
+		"thumbnail": "http://puu.sh/tgLCo/c9d7577941.png",
+		"title": "Flying Duck",
+		"shortDescription": "Un petit clone de Flappy Bird réalisé sous Unity3D",
+		"category": "Jeu",
+		"language": "C#",
+		"platforms": [
+			"Android"
+		],
+		"content": "<h1>Flying Duck</h1><p>Après avoir créé mon jeuvidéo Slender the cursed forest sous Unity3D, j'ai voulu tester le moteur 2D du logiciel.</p><p>En effet, la conception de jeu en 2D est quelque chose qui me plaît fortement, car j'aime beaucoup les jeux en deux dimensions. Je me suis donc lancé dans la conception d'un jeu comme Flappy Bird, où l'on doit juste faire sauter un personnage entre deux obstacles. J'ai cependant ajouté quelques petit plus par rapport à l'original, tel que l'ajout de quelques power-ups, ou encore la difficulté croissante au fur et à mesure de l'avancement.</p>",
+		"images": [
+			{"url": "http://puu.sh/tgM9F/15623d9bfc.gif"}
+		],
+		"date": "11/15/2014"
+	},
+	{
+		"thumbnail": "http://puu.sh/tgN8I/ac10aed932.jpg",
+		"title": "Portrait chinois #1",
+		"shortDescription": "Un projet réalisé dans le cadre de mon DUT",
+		"category": "Site web",
+		"language": "HTML5, CSS3, JavaScript",
+		"platforms": [
+			"HTML5"
+		],
+		"content": "<h1>Portrait chinois #1</h1><p>Lors de ma première année de mon DUT MMI, nous avions comme projet au premier semestre de réalisé un portrait chinois.</p><p>Qu'est ce qu'un portrait chinois ?</p><blockquote cite='https://fr.wikipedia.org/wiki/Portrait_chinois'>Un portrait chinois est un jeu littéraire, de type questionnaire de Proust, où il s'agit de déceler certains aspects de la personnalité d'un individu ou d'identifier des goûts ou des préférences personnelles, au travers d'un questionnaire basé sur l'identification à des personnes, des objets ou des éléments divers</blockquote><p>J'ai donc décidé de réaliser deux versions de mon portrait chinois.</p><p><a href='http://perso-etudiant.u-pem.fr/~ojbara/portrait_chinois1/'>Accéder au site web</a></p>",
+		"date": "10/12/2015"
+	},
+	{
+		"thumbnail": "http://puu.sh/tgNPK/2d0b673bb9.jpg",
+		"title": "Portrait chinois #2",
+		"shortDescription": "Un projet réalisé dans le cadre de mon DUT",
+		"category": "Site web",
+		"language": "HTML5, CSS3, JavaScript",
+		"platforms": [
+			"HTML5"
+		],
+		"content": "<h1>Portrait chinois #2</h1><p>J'ai décidé de réaliser une deuxième version de mon portrait chinois à la demande de ma professeur d'intégration web, qui voulait que j'essaie quelque chose d'autre.</p><p>J'ai donc décidé d'opter pour un slider en plein écran, que j'ai donc réalisé en JavaScript.</p><p><a href='http://perso-etudiant.u-pem.fr/~ojbara/portrait_chinois2/'>Accéder au site web</a></p>",
+		"date": "10/15/2015"
+	},
+	{
+		"thumbnail": "http://puu.sh/tgOx7/d5d8dd70d0.jpg",
+		"title": "Mon site web",
+		"shortDescription": "Oui, ce que vous voyez actuellement",
+		"category": "Site web",
+		"language": "HTML5, CSS3, JavaScript",
+		"platforms": [
+			"HTML5"
+		],
+		"content": "<h1>Mon site web</h1><p>Pourquoi mettre ce site web dans mes projets me diriez-vous ? Et bien car j'ai utilisé le framework VueJS afin de créer mon site. Il permet de crééer des composants ré-utilisables (tel que la lightbox que j'utilise pour afficher la galerie de mes projets, que j'ai donc réalisé aussi avec VueJS), mais aussi de crééer des SPA (Single Page Application).</p><p>En effet, ce site web est en réalité plus qu'un simple One Page, car il y a en réalisé de la logique derrière, tel que par exemple une gestion des pages qui n'existent pas (essayez par exemple cette url <a href='/j-existe-pas'>/j-existe-pas</a></p><p>Il s'agit donc de mon tout premier projet sous VueJS</p>",
+		"date": "01/09/2017"
+	}
+]
+
+
