@@ -1,3 +1,6 @@
+import appStore from '../../AppStore';
+
+
 class LightboxStore {
 
 	constructor() {
@@ -29,6 +32,7 @@ class LightboxStore {
 		this.state.images = {}
 	}
 	open(url, group) {
+		appStore.state.lightboxOpened = true;
 		this.state.group = group;
 		this.state.count = this.state.images[group].length;
 		let newIndex = this.state.images[this.state.group].findIndex(image => image.url == url);
@@ -38,6 +42,7 @@ class LightboxStore {
 	}
 
 	close() {
+		appStore.state.lightboxOpened = false;
 		this.state.index = null ;
 	}
 

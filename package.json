@@ -6,12 +6,14 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+  	"deploy": "npm run build && git subtree push --prefix dist heroku master"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "vue": "^2.0.1",
     "vue-localstorage": "^0.1.2",
-	  "vue-router": "latest"
+    "vue-router": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -36,6 +38,7 @@
     "opn": "^4.0.2",
     "ora": "^0.3.0",
     "sass-loader": "^4.0.2",
+    "sass-material-colors": "0.0.5",
     "semver": "^5.3.0",
     "shelljs": "^0.7.4",
     "url-loader": "^0.5.7",

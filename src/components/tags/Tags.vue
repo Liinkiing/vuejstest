@@ -4,8 +4,7 @@
 			<transition-group name="slide-left" tag="p">
 				<span @dbclick="editTag(tag.index)" class="tag" v-for="tag in tags" :key="tag">#{{tag.name}}<i @click="removeTag(tag.index)">x</i></span>
 			</transition-group>
-			<input type="text" v-model="newTag" :value="newTag" @keyup.enter.space="addTag()"
-				   @keyup.backspace="removeLastTag()" :style="style">
+			<input type="text" v-model="newTag" :value="newTag" @keyup.enter.space="addTag()" @keyup.delete="removeLastTag()" :style="style">
 		</div>
 		<transition name="fade-blur">
 			<div v-if="errorMessage != null"><span style="color: red; margin-top: 10px; display: inline-block;">{{errorMessage}}</span></div>
@@ -54,6 +53,7 @@
 				this.$el.querySelector('input').focus();
 			},
 			addTag() {
+				console.log('add tag');
 				if (this.newTag.startsWith(" ")) {
 					this.newTag = "";
 					return false;
