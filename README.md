@@ -4,7 +4,7 @@
 
 ## Previews
 
-You can see a [live website](https://ojbara.herokuapp.com/), running with my components that I've created. All is done thanks to Vue.js 2
+You can see a [live website](https://omar-jbara.herokuapp.com/), running with my components that I've created. All is done thanks to Vue.js 2
 
 ### Lightbox component
 
