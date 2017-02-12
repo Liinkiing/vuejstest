@@ -5,6 +5,7 @@
 	"author": "Omar Jbara <omar.jbara2@gmail.com>",
 	"private": false,
 	"scripts": {
-		"postinstall": "npm install express && npm install connect-history-api-fallback"
+		"postinstall": "npm install express && npm install connect-history-api-fallback",
+		"start": "node server.js"
 	}
 }
