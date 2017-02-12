@@ -19,17 +19,20 @@
 	},
 	{
 		"thumbnail": "http://evogame.fr/wp-content/uploads/2015/12/curve_fever_img.png",
-		"title": "Curve Fever",
+		"title": "Snake Party",
 		"shortDescription": "Un petit jeu vidéo réalisé en C# avec Unity3D ",
 		"category": "Jeu",
 		"language": "C#",
 		"platforms": [
 			"Windows", "Linux", "Apple"
 		],
-		"date": "12/01/2016",
-		"content": "<h1>Curve Fever</h1><p>Ce petit jeu vidéo est inspiré du jeu du même nom <a target='_blank' href='http://forum.curvefever.com/play2.php'>Curve Fever</a>. J'ai décidé de faire un jeu de la sorte car cela faisait un petit bout de temps que je n'avais pas touché à Unity. En effet, mon dernier gros projet sur Unity a été mon jeu vidéo <strong>Slender The Cursed Forest</strong>.</p><p>J'ai voulu donc reprendre la programmation en C#, et je me suis ainsi lancé comme défi de reproduire ce petit jeu, simple de premier abord mais très addictif ! Le principe du jeu est simple : il faut être le dernier survivant. Afin d'éviter de mourir, vous devez éviter d'entrer en collison avec les autres joueurs.</p>",
+		"date": "11/02/2017",
+		"content": "<h1>Snake Party</h1><p>Ce petit jeu vidéo est inspiré du jeu <a target='_blank' href='http://forum.curvefever.com/play2.php'>Curve Fever</a>. J'ai décidé de faire un jeu de la sorte car cela faisait un petit bout de temps que je n'avais pas touché à Unity. En effet, mon dernier gros projet sur Unity a été mon jeu vidéo <strong><a href='/project/slender'>Slender The Cursed Forest</a></strong>.</p><p>J'ai voulu donc reprendre la programmation en C#, et je me suis ainsi lancé comme défi de reproduire ce petit jeu, simple de premier abord mais très addictif ! Le principe du jeu est simple : il faut être le dernier survivant. Afin d'éviter de mourir, vous devez éviter d'entrer en collison avec les autres joueurs.</p><p>Pour ce projet, j'ai voulu dépendre le moins sur des ressources externes. C'est pour cela que je n'ai utilisé aucun packages issu de l'Asset Store d'Unity, et que j'ai préféré tout refaire de zéro afin de me ré-habituer au moteur.</p>",
 		"images": [
-			{"url": "http://puu.sh/tfpxG/a8a3956470.png", "title": "Jouable jusqu'à 4 joueurs"}
+			{"url": "https://puu.sh/tYX9X/4736903e58.png", "title": "Menu principal"},
+			{"url": "https://puu.sh/tYXcm/22357b3421.png"},
+			{"url": "https://puu.sh/tYXg7/623316a62c.png", "title": "Interface non définitive"},
+			{"url": "https://puu.sh/tYXpJ/69259ce037.png"}
 		]
 	},
 	{
