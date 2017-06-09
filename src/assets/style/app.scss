@@ -63,6 +63,15 @@ body {
 	//font-size: 0;
 }
 
+p.hero {
+
+	padding: 10px;
+	background: $dark-teal-color;
+	text-align: center;
+	font-size: 1.2rem;
+	box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.13)
+}
+
 hr {
 	margin: 50px 0;
 	border: none;

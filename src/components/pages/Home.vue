@@ -3,11 +3,12 @@
 		<h3>Développeur fullstack / Webdesigner</h3>
 		<p>Passionné par le développement depuis le plus jeune, j'ai depuis maintenant plusieurs années appris les
 			différentes technologies web qui nous entourent.
-			Étant de nature <strong>curieux</strong> et <strong>autodidacte</strong>, j'ai beaucoup appris lors de mon
+			Étant de nature <strong>curieuse</strong> et <strong>autodidacte</strong>, j'ai beaucoup appris lors de mon
 			temps libre.</p>
-		<p>Tous les composants utilisés sur mon site web (Lightbox, Carousel, système de tri de projets etc...) ont été créé et designé par moi même dans le cadre de mon apprentissage de <strong>VueJS</strong>.</p>
-		<p>De plus, je suis actuellement étudiant à l'<strong>Université Paris-Est Marne-la-Vallée</strong>, en DUT Métiers du Multimédia et de l'Internet. J'ai donc aussi
+		<p>Tous les composants utilisés sur mon site web (Lightbox, Carousel, système de tri de projets etc...) ont été créés et conçus par moi-même dans le cadre de mon apprentissage de <strong>VueJS</strong>.</p>
+		<p>De plus, je suis actuellement étudiant à <strong><a href="https://www.gobelins.fr/">Gobelins, l'école de l'image</a></strong>, en bachelor Designer et Développeur interactif, en option développeur. J'ai donc aussi
 		la chance de pouvoir pratiquer aussi tout ce qui est développement web dans le cadre de ma formation.</p>
+		<p class="hero"><strong>Je suis actuellement à la recherche d'un contrat d'apprentissage à partir de Septembre.</strong></p>
 		<p>N'hésitez pas à jeter un oeil à mon <a href="https://github.com/Liinkiing">GitHub</a></p>
 		<p style="line-height: 3rem;"><transition name="fade" tag="span" mode="out-in">
 			<span :key="language" class="language">{{ language }}</span>
@@ -67,6 +68,9 @@
 					{'ASP.net' : 'framework'},
 					{'Symfony' : 'framework PHP'},
 					{'Laravel' : 'framework PHP'},
+					{'React' : 'framework JS'},
+					{'Vue' : 'framework JS'},
+					{'Angular' : 'framework JS'},
 					{'Bootstrap' : 'framework CSS'},
 					{'Semantic-ui' : 'framework CSS'}
 				],
