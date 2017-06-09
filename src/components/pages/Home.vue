@@ -8,7 +8,7 @@
 		<p>Tous les composants utilisés sur mon site web (Lightbox, Carousel, système de tri de projets etc...) ont été créés et conçus par moi-même dans le cadre de mon apprentissage de <strong>VueJS</strong>.</p>
 		<p>De plus, je suis actuellement étudiant à <strong><a href="https://www.gobelins.fr/">Gobelins, l'école de l'image</a></strong>, en bachelor Designer et Développeur interactif, en option développeur. J'ai donc aussi
 		la chance de pouvoir pratiquer aussi tout ce qui est développement web dans le cadre de ma formation.</p>
-		<p class="hero"><strong>Je suis actuellement à la recherche d'un contrat d'apprentissage à partir de Septembre.</strong></p>
+		<p class="hero"><strong>Je suis actuellement à la recherche d'un contrat d'apprentissage à partir de Septembre 2017.</strong></p>
 		<p>N'hésitez pas à jeter un oeil à mon <a href="https://github.com/Liinkiing">GitHub</a></p>
 		<p style="line-height: 3rem;"><transition name="fade" tag="span" mode="out-in">
 			<span :key="language" class="language">{{ language }}</span>
