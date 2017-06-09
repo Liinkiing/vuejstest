@@ -383,6 +383,11 @@ body.light-theme {
 		border-bottom-color: $light-teal-color;
 	}
 
+	& p.hero {
+		background: $medium-teal-color;
+		color: #dedede;
+	}
+
 	& .current-page {
 		transition: all $transition-duration ease-in;
 		color: #dedede;
