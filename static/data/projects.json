@@ -45,7 +45,7 @@
 		"platforms": [
 			"HTML5"
 		],
-		"content": "<h1>Tutotoformes</h1><p>Ce projet a été notre projet de fin d'année pour notre DUT MMI. En effet, ayant été sélectionné pour terminer mes études à Québec, nous avons dû réaliser ce projet pour notre Semestre 3.</p><p>Il s'agit d'une plateforme de tutoriels en ligne. Des utilisateurs s'inscrivent, et peuvent ainsi suivre leur cours, débloquer des succès... Ce projet a été très enrichissant, et nous avons utilisé le framework PHP <strong>Symfony</strong>.</p><p><a target='_blank' href='http://tutotoformes.fr'>Accéder au site web</a></p>",
+		"content": "<h1>Tutotoformes</h1><p>Ce projet a été notre projet de fin d'année pour notre DUT MMI. En effet, ayant été sélectionné pour terminer mes études à Québec, nous avons dû réaliser ce projet pour notre Semestre 3.</p><p>Il s'agit d'une plateforme de tutoriels en ligne. Des utilisateurs s'inscrivent, et peuvent ainsi suivre leur cours, débloquer des succès... Ce projet a été très enrichissant, et nous avons utilisé le framework PHP <strong>Symfony</strong>.</p><p><a target='_blank' href='https://tutotoformes.herokuapp.com'>Accéder au site web</a></p>",
 		"date": "01/01/2017",
 		"images": [
 			{"url": "http://puu.sh/tgCTt/04fe0f8f41.png", "title": "Page d'accueil"},
